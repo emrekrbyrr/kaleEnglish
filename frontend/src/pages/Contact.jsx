@@ -31,22 +31,18 @@ const Contact = () => {
     e.preventDefault();
     
     if (!formData.consent) {
-      toast({
-        title: 'Consent Required',
-        description: 'Please accept the privacy policy to continue.',
-        variant: 'destructive'
-      });
+      toast.error('Please accept the privacy policy to continue.');
       return;
     }
 
     setIsSubmitting(true);
 
-    // Mock submission - will be replaced with actual API call
-    setTimeout(() => {
-      toast({
-        title: 'Message Sent!',
-        description: 'Thank you for contacting us. We will get back to you soon.'
-      });
+    try {
+      await submitContactForm(formData);
+      
+      toast.success('Message sent successfully! We will get back to you soon.');
+      
+      // Reset form
       setFormData({
         name: '',
         email: '',
@@ -55,8 +51,12 @@ const Contact = () => {
         message: '',
         consent: false
       });
+    } catch (error) {
+      console.error('Error submitting form:', error);
+      toast.error('Failed to send message. Please try again or contact us directly.');
+    } finally {
       setIsSubmitting(false);
-    }, 1500);
+    }
   };
 
   return (
