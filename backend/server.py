@@ -73,7 +73,7 @@ async def get_testimonials():
 @api_router.get("/clients")
 async def get_clients():
     """Get list of client companies"""
-    clients = await db.clients.find({"isActive": True}).sort("order", 1).to_list(100)
+    clients = await db.clients.find({"isActive": True}, {"_id": 0}).sort("order", 1).to_list(100)
     return [client["name"] for client in clients]
 
 
