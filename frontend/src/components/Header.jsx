@@ -24,9 +24,9 @@ const Header = () => {
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-2">
             <img 
-              src="https://customer-assets.emergentagent.com/job_f26ed2bd-7f38-45ed-a0bc-2f5ec395f275/artifacts/yyywgdw6_LIFT.png"
+              src="https://customer-assets.emergentagent.com/job_f26ed2bd-7f38-45ed-a0bc-2f5ec395f275/artifacts/5mgkyw4x_kaleliftlogo.png"
               alt="Kale Lift"
-              className="h-12 w-auto"
+              className="h-10 w-auto"
             />
           </Link>
 
