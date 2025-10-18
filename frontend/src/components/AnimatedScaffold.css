@@ -86,7 +86,7 @@
   .animated-scaffold-container {
     right: 10px;
     width: 70px;
-    opacity: 0.8;
+    opacity: 1;
   }
   
   .scaffold-image-wrapper {
@@ -110,7 +110,7 @@
   .animated-scaffold-container {
     right: 5px;
     width: 50px;
-    opacity: 0.6;
+    opacity: 0.95;
   }
   
   .scaffold-image-wrapper {
