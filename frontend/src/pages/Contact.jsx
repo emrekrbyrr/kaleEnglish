@@ -260,7 +260,7 @@ const Contact = () => {
                       <span className="font-medium text-slate-900">Closed</span>
                     </div>
                     <div className="pt-3 mt-3 border-t border-slate-200">
-                      <p className="text-blue-600 font-medium">Emergency support available 24/7</p>
+                      <p className="text-red-600 font-medium">Emergency support available 24/7</p>
                     </div>
                   </div>
                 </div>
