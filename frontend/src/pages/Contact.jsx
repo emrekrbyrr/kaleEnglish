@@ -5,7 +5,6 @@ import { toast } from 'sonner';
 import { submitContactForm } from '../services/api';
 
 const Contact = () => {
-  const { toast } = useToast();
   const [formData, setFormData] = useState({
     name: '',
     email: '',
