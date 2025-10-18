@@ -155,7 +155,7 @@ const Home = () => {
                   </p>
                   <Link
                     to={`/products#${product.slug}`}
-                    className="inline-flex items-center space-x-2 text-blue-600 hover:text-blue-700 font-medium text-sm group-hover:translate-x-1 transition-transform"
+                    className="inline-flex items-center space-x-2 text-red-600 hover:text-red-700 font-medium text-sm group-hover:translate-x-1 transition-transform"
                   >
                     <span>Learn More</span>
                     <ArrowRight className="w-4 h-4" />
