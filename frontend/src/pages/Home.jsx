@@ -276,7 +276,7 @@ const Home = () => {
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
             Ready to Start Your Project?
           </h2>
-          <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
+          <p className="text-xl text-red-50 mb-8 max-w-2xl mx-auto">
             Get in touch with our expert team for a free consultation and quote on suspended
             scaffold rental or sales.
           </p>
