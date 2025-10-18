@@ -30,7 +30,7 @@ const AnimatedScaffold = () => {
         {/* Actual Scaffold Image */}
         <div className="scaffold-image-wrapper">
           <img 
-            src="https://customer-assets.emergentagent.com/job_f26ed2bd-7f38-45ed-a0bc-2f5ec395f275/artifacts/wq6kcr9z_asma_iskele_1.JPG"
+            src="https://customer-assets.emergentagent.com/job_f26ed2bd-7f38-45ed-a0bc-2f5ec395f275/artifacts/pnkjpxsc_asma_iskele_1.png"
             alt="Kale Platform Suspended Scaffold"
             className="scaffold-image"
           />
