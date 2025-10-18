@@ -197,8 +197,7 @@ async def seed_testimonials_only():
             "message": "Testimonials seeded successfully",
             "status": "success",
             "inserted": len(result.inserted_ids),
-            "total_count": count,
-            "testimonials": testimonials_data
+            "total_count": count
         }
     except Exception as e:
         logger.error(f"Seed testimonials error: {str(e)}")
