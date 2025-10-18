@@ -200,7 +200,7 @@ const Contact = () => {
                 <h2 className="text-2xl font-bold text-slate-900 mb-6">Contact Information</h2>
                 <div className="space-y-6 mb-8">
                   <div className="flex items-start space-x-4">
-                    <div className="w-12 h-12 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center flex-shrink-0">
+                    <div className="w-12 h-12 rounded-full bg-red-100 text-red-600 flex items-center justify-center flex-shrink-0">
                       <Phone className="w-6 h-6" />
                     </div>
                     <div>
@@ -216,7 +216,7 @@ const Contact = () => {
                   </div>
 
                   <div className="flex items-start space-x-4">
-                    <div className="w-12 h-12 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center flex-shrink-0">
+                    <div className="w-12 h-12 rounded-full bg-red-100 text-red-600 flex items-center justify-center flex-shrink-0">
                       <Mail className="w-6 h-6" />
                     </div>
                     <div>
@@ -232,7 +232,7 @@ const Contact = () => {
                   </div>
 
                   <div className="flex items-start space-x-4">
-                    <div className="w-12 h-12 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center flex-shrink-0">
+                    <div className="w-12 h-12 rounded-full bg-red-100 text-red-600 flex items-center justify-center flex-shrink-0">
                       <MapPin className="w-6 h-6" />
                     </div>
                     <div>
