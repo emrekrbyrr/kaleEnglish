@@ -62,3 +62,14 @@ button, a {
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
+
+/* Hide Emergent badge */
+[class*="emergent-badge"],
+[class*="made-with"],
+[id*="emergent-badge"],
+a[href*="emergent.sh"]:has(img) {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
