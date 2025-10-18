@@ -193,7 +193,7 @@ const About = () => {
       <section className="py-20 bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
-            <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-blue-100 text-blue-600 mb-6">
+            <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-red-100 text-red-600 mb-6">
               <Building className="w-8 h-8" />
             </div>
             <h2 className="text-3xl font-bold text-slate-900 mb-4">Our Location</h2>
