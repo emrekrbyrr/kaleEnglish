@@ -227,13 +227,13 @@ const Home = () => {
               Client Testimonials
             </h2>
             <p className="text-lg text-slate-600">
-              What Our Customers Say About Us
+              What Our International Customers Say About Us
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
             {data.testimonials.map((testimonial, index) => (
-              <div key={index} className="bg-white p-6 rounded-xl shadow-sm">
+              <div key={index} className="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow">
                 <div className="flex items-center space-x-1 mb-4">
                   {[...Array(testimonial.rating)].map((_, i) => (
                     <svg
@@ -245,10 +245,10 @@ const Home = () => {
                     </svg>
                   ))}
                 </div>
-                <p className="text-slate-600 mb-4 italic">"{testimonial.text}"</p>
-                <div>
-                  <div className="font-semibold text-slate-900">{testimonial.name}</div>
-                  <div className="text-sm text-slate-500">{testimonial.company}</div>
+                <p className="text-slate-600 mb-4 text-sm leading-relaxed">"{testimonial.text}"</p>
+                <div className="border-t border-gray-200 pt-4">
+                  <div className="font-semibold text-slate-900 text-sm">{testimonial.name}</div>
+                  <div className="text-xs text-slate-500 mt-1">{testimonial.company}</div>
                 </div>
               </div>
             ))}
