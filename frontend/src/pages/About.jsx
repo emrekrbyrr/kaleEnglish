@@ -210,7 +210,7 @@ const About = () => {
               </a>
               <a
                 href={`mailto:${companyInfo.email}`}
-                className="px-6 py-3 bg-slate-100 text-slate-700 rounded-lg hover:bg-slate-200 transition-colors"
+                className="px-6 py-3 bg-gray-100 text-slate-700 rounded-lg hover:bg-gray-200 transition-colors"
               >
                 Email: {companyInfo.email}
               </a>
