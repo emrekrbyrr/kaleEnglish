@@ -244,7 +244,7 @@ const Contact = () => {
                 </div>
 
                 {/* Business Hours */}
-                <div className="bg-slate-50 rounded-xl p-6">
+                <div className="bg-gray-100 rounded-xl p-6">
                   <h3 className="font-semibold text-slate-900 mb-4">Business Hours</h3>
                   <div className="space-y-2 text-sm">
                     <div className="flex justify-between">
