@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { Mail, Phone, MapPin, Send } from 'lucide-react';
 import { companyInfo } from '../mock';
-import { useToast } from '../hooks/use-toast';
+import { toast } from 'sonner';
+import { submitContactForm } from '../services/api';
 
 const Contact = () => {
   const { toast } = useToast();
