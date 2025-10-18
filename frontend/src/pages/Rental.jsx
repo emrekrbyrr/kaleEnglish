@@ -178,7 +178,7 @@ const Rental = () => {
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <a
               href="/contact"
-              className="px-8 py-4 bg-white text-blue-600 rounded-lg hover:bg-blue-50 transition-colors font-medium"
+              className="px-8 py-4 bg-white text-red-600 rounded-lg hover:bg-red-50 transition-colors font-medium"
             >
               Get Started
             </a>
