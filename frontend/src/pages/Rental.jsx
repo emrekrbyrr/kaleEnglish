@@ -87,7 +87,7 @@ const Rental = () => {
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
               <div className="text-center">
-                <div className="w-16 h-16 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center mx-auto mb-4">
+                <div className="w-16 h-16 rounded-full bg-red-100 text-red-600 flex items-center justify-center mx-auto mb-4">
                   <Shield className="w-8 h-8" />
                 </div>
                 <h3 className="font-bold text-slate-900 mb-2">Safety Certified</h3>
@@ -97,7 +97,7 @@ const Rental = () => {
               </div>
 
               <div className="text-center">
-                <div className="w-16 h-16 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center mx-auto mb-4">
+                <div className="w-16 h-16 rounded-full bg-red-100 text-red-600 flex items-center justify-center mx-auto mb-4">
                   <Wrench className="w-8 h-8" />
                 </div>
                 <h3 className="font-bold text-slate-900 mb-2">Installation</h3>
@@ -107,7 +107,7 @@ const Rental = () => {
               </div>
 
               <div className="text-center">
-                <div className="w-16 h-16 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center mx-auto mb-4">
+                <div className="w-16 h-16 rounded-full bg-red-100 text-red-600 flex items-center justify-center mx-auto mb-4">
                   <Clock className="w-8 h-8" />
                 </div>
                 <h3 className="font-bold text-slate-900 mb-2">24/7 Support</h3>
@@ -117,7 +117,7 @@ const Rental = () => {
               </div>
 
               <div className="text-center">
-                <div className="w-16 h-16 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center mx-auto mb-4">
+                <div className="w-16 h-16 rounded-full bg-red-100 text-red-600 flex items-center justify-center mx-auto mb-4">
                   <Phone className="w-8 h-8" />
                 </div>
                 <h3 className="font-bold text-slate-900 mb-2">Consultation</h3>
