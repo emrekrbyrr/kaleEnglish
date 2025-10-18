@@ -57,7 +57,7 @@ async def get_product_by_slug(slug: str):
 @api_router.get("/services", response_model=List[Service])
 async def get_services():
     """Get all active services"""
-    services = await db.services.find({"isActive": True}).sort("order", 1).to_list(100)
+    services = await db.services.find({"isActive": True}, {"_id": 0}).sort("order", 1).to_list(100)
     return services
 
 
