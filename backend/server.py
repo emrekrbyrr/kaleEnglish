@@ -177,6 +177,34 @@ async def seed_database():
         raise HTTPException(status_code=500, detail=str(e))
 
 
+# Force seed testimonials only
+@api_router.get("/seed-testimonials")
+async def seed_testimonials_only():
+    """Force seed testimonials - can be called multiple times"""
+    try:
+        from seed_data import testimonials_data
+        
+        # Clear existing testimonials
+        await db.testimonials.delete_many({})
+        
+        # Insert testimonials
+        result = await db.testimonials.insert_many(testimonials_data)
+        
+        # Verify count
+        count = await db.testimonials.count_documents({})
+        
+        return {
+            "message": "Testimonials seeded successfully",
+            "status": "success",
+            "inserted": len(result.inserted_ids),
+            "total_count": count,
+            "testimonials": testimonials_data
+        }
+    except Exception as e:
+        logger.error(f"Seed testimonials error: {str(e)}")
+        raise HTTPException(status_code=500, detail=str(e))
+
+
 # Include the router in the main app
 app.include_router(api_router)
 
