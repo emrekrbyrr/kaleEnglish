@@ -145,8 +145,8 @@ const Home = () => {
                 key={product.id}
                 className="group bg-white rounded-xl overflow-hidden hover:shadow-xl transition-all duration-300"
               >
-                <div className="h-48 bg-gradient-to-br from-blue-100 to-slate-100 flex items-center justify-center">
-                  <div className="text-6xl font-bold text-blue-600/20">{product.name[0]}</div>
+                <div className="h-48 bg-gradient-to-br from-red-50 to-gray-100 flex items-center justify-center">
+                  <div className="text-6xl font-bold text-red-600/20">{product.name[0]}</div>
                 </div>
                 <div className="p-6">
                   <h3 className="text-xl font-bold text-slate-900 mb-2">{product.name}</h3>
