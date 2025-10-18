@@ -83,7 +83,7 @@ const Header = () => {
               ))}
               <a
                 href={`tel:${companyInfo.phone}`}
-                className="flex items-center justify-center space-x-2 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
+                className="flex items-center justify-center space-x-2 px-4 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700 transition-colors"
               >
                 <Phone className="w-4 h-4" />
                 <span className="text-sm font-medium">Quick Contact</span>
