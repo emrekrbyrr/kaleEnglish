@@ -133,7 +133,7 @@ async def root():
 
 
 # Seed database endpoint (for initial setup)
-@api_router.post("/seed-database")
+@api_router.get("/seed-database")
 async def seed_database():
     """Seed database with initial data - USE ONLY ONCE"""
     try:
