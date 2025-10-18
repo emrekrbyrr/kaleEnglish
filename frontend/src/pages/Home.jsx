@@ -14,6 +14,15 @@ const Home = () => {
     clients: []
   });
 
+  const [emblaRef, emblaApi] = useEmblaCarousel({ 
+    loop: true,
+    align: 'start',
+    slidesToScroll: 1
+  });
+
+  const scrollPrev = () => emblaApi && emblaApi.scrollPrev();
+  const scrollNext = () => emblaApi && emblaApi.scrollNext();
+
   useEffect(() => {
     document.title = 'Kale Platform - Suspended Scaffold Rental & Sales | Istanbul, Turkey';
     fetchData();
