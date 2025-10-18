@@ -14,12 +14,33 @@ const Home = () => {
     clients: []
   });
 
+  // Calculate how many cards to show per slide based on screen size
+  const getCardsPerSlide = () => {
+    if (typeof window === 'undefined') return 1;
+    if (window.innerWidth >= 1024) return 3; // Desktop: 3 cards
+    if (window.innerWidth >= 640) return 2;  // Tablet: 2 cards
+    return 1; // Mobile: 1 card
+  };
+
+  const [cardsPerSlide, setCardsPerSlide] = useState(getCardsPerSlide());
+
+  useEffect(() => {
+    const handleResize = () => {
+      setCardsPerSlide(getCardsPerSlide());
+    };
+    
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  const maxSlides = Math.ceil(data.testimonials.length / cardsPerSlide);
+
   const scrollPrev = () => {
-    setCurrentSlide((prev) => (prev === 0 ? data.testimonials.length - 1 : prev - 1));
+    setCurrentSlide((prev) => (prev === 0 ? maxSlides - 1 : prev - 1));
   };
 
   const scrollNext = () => {
-    setCurrentSlide((prev) => (prev === data.testimonials.length - 1 ? 0 : prev + 1));
+    setCurrentSlide((prev) => (prev === maxSlides - 1 ? 0 : prev + 1));
   };
 
   useEffect(() => {
