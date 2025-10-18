@@ -91,14 +91,30 @@ async def get_rental_info():
 # Contact form endpoint
 @api_router.post("/contact", response_model=ContactSubmission)
 async def submit_contact_form(contact: ContactSubmissionCreate):
-    """Submit contact form"""
+    """Submit contact form and send email"""
     contact_dict = contact.dict()
     contact_obj = ContactSubmission(**contact_dict)
     
     # Save to database
     await db.contacts.insert_one(contact_obj.dict())
     
-    # TODO: Send email notification (to be implemented later)
+    # Send email notification
+    try:
+        email_sent = send_contact_email(
+            name=contact.name,
+            email=contact.email,
+            phone=contact.phone or "",
+            company=contact.company or "",
+            message=contact.message
+        )
+        
+        if email_sent:
+            logger.info(f"Contact form email sent successfully to {contact.email}")
+        else:
+            logger.warning(f"Failed to send contact form email for {contact.email}")
+    except Exception as e:
+        logger.error(f"Error sending contact email: {str(e)}")
+        # Don't fail the request if email fails, just log it
     
     return contact_obj
 
