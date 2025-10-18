@@ -58,6 +58,15 @@ const Home = () => {
     return <Icon className="w-8 h-8" />;
   };
 
+  const productImages = {
+    'suspended-scaffold': 'https://customer-assets.emergentagent.com/job_f26ed2bd-7f38-45ed-a0bc-2f5ec395f275/artifacts/gb68hohd_asma_iskele_1.png',
+    'facade-platform': 'https://customer-assets.emergentagent.com/job_f26ed2bd-7f38-45ed-a0bc-2f5ec395f275/artifacts/47094lly_ASMA-ISKELE-CEPHE-PLATFORMU.webp',
+    'monorail': 'https://customer-assets.emergentagent.com/job_f26ed2bd-7f38-45ed-a0bc-2f5ec395f275/artifacts/jh99or1g_monoray.webp',
+    'matafora': 'https://customer-assets.emergentagent.com/job_f26ed2bd-7f38-45ed-a0bc-2f5ec395f275/artifacts/gb68hohd_asma_iskele_1.png',
+    'manlift': 'https://customer-assets.emergentagent.com/job_f26ed2bd-7f38-45ed-a0bc-2f5ec395f275/artifacts/0ac5688b_manlift.jpg',
+    'accessories': 'https://customer-assets.emergentagent.com/job_f26ed2bd-7f38-45ed-a0bc-2f5ec395f275/artifacts/xa5cei55_Asma-iskele-Aksesuar-Konsol.webp'
+  };
+
   if (loading) {
     return (
       <div className="min-h-screen flex items-center justify-center">
