@@ -69,7 +69,7 @@ const About = () => {
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
             <div className="bg-white p-8 rounded-xl shadow-sm">
-              <div className="w-14 h-14 rounded-lg bg-blue-100 text-blue-600 flex items-center justify-center mb-4">
+              <div className="w-14 h-14 rounded-lg bg-red-100 text-red-600 flex items-center justify-center mb-4">
                 <Target className="w-8 h-8" />
               </div>
               <h3 className="text-xl font-bold text-slate-900 mb-3">Our Mission</h3>
@@ -80,7 +80,7 @@ const About = () => {
             </div>
 
             <div className="bg-white p-8 rounded-xl shadow-sm">
-              <div className="w-14 h-14 rounded-lg bg-blue-100 text-blue-600 flex items-center justify-center mb-4">
+              <div className="w-14 h-14 rounded-lg bg-red-100 text-red-600 flex items-center justify-center mb-4">
                 <Eye className="w-8 h-8" />
               </div>
               <h3 className="text-xl font-bold text-slate-900 mb-3">Our Vision</h3>
@@ -91,7 +91,7 @@ const About = () => {
             </div>
 
             <div className="bg-white p-8 rounded-xl shadow-sm">
-              <div className="w-14 h-14 rounded-lg bg-blue-100 text-blue-600 flex items-center justify-center mb-4">
+              <div className="w-14 h-14 rounded-lg bg-red-100 text-red-600 flex items-center justify-center mb-4">
                 <Award className="w-8 h-8" />
               </div>
               <h3 className="text-xl font-bold text-slate-900 mb-3">Our Values</h3>
