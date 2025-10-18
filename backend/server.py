@@ -132,6 +132,51 @@ async def root():
     return {"message": "Kale Platform API", "status": "operational"}
 
 
+# Seed database endpoint (for initial setup)
+@api_router.post("/seed-database")
+async def seed_database():
+    """Seed database with initial data - USE ONLY ONCE"""
+    try:
+        from seed_data import (
+            company_data, products_data, services_data,
+            testimonials_data, clients_data, rental_info_data
+        )
+        
+        # Check if already seeded
+        existing_company = await db.company.find_one()
+        if existing_company:
+            return {"message": "Database already seeded", "status": "skipped"}
+        
+        # Seed all data
+        await db.company.insert_one(company_data)
+        await db.products.insert_many(products_data)
+        await db.services.insert_many(services_data)
+        await db.testimonials.insert_many(testimonials_data)
+        
+        clients_with_order = [
+            {"name": name, "order": idx + 1, "isActive": True}
+            for idx, name in enumerate(clients_data)
+        ]
+        await db.clients.insert_many(clients_with_order)
+        await db.rental_info.insert_one(rental_info_data)
+        
+        return {
+            "message": "Database seeded successfully",
+            "status": "success",
+            "data": {
+                "company": 1,
+                "products": len(products_data),
+                "services": len(services_data),
+                "testimonials": len(testimonials_data),
+                "clients": len(clients_data),
+                "rental_info": 1
+            }
+        }
+    except Exception as e:
+        logger.error(f"Seed database error: {str(e)}")
+        raise HTTPException(status_code=500, detail=str(e))
+
+
 # Include the router in the main app
 app.include_router(api_router)
 
