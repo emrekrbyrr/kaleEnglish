@@ -84,7 +84,7 @@ const Home = () => {
         <div className="container mx-auto">
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="text-5xl md:text-6xl font-bold text-slate-900 mb-6">
-              {data.company?.tagline}
+              {data.company?.tagline || 'Your Solution Partner While Rising'}
             </h1>
             <p className="text-xl text-slate-600 mb-8 leading-relaxed">
               Professional suspended scaffold rental and sales for high-rise construction,
@@ -100,15 +100,6 @@ const Home = () => {
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </Link>
               <Link
-                to="/contact"
-                className="px-8 py-4 bg-white text-slate-700 border-2 border-slate-200 rounded-lg hover:border-blue-600 hover:text-blue-600 transition-all font-medium"
-              >
-                Get a Quote
-              </Link>
-            </div>
-          </div>
-        </div>
-      </section>
                 to="/contact"
                 className="px-8 py-4 bg-white text-slate-700 border-2 border-slate-200 rounded-lg hover:border-blue-600 hover:text-blue-600 transition-all font-medium"
               >
