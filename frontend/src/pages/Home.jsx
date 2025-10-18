@@ -5,6 +5,7 @@ import { getCompany, getProducts, getServices, getTestimonials, getClients } fro
 
 const Home = () => {
   const [loading, setLoading] = useState(true);
+  const [currentSlide, setCurrentSlide] = useState(0);
   const [data, setData] = useState({
     company: null,
     products: [],
@@ -13,14 +14,13 @@ const Home = () => {
     clients: []
   });
 
-  const [emblaRef, emblaApi] = useEmblaCarousel({ 
-    loop: true,
-    align: 'start',
-    slidesToScroll: 1
-  });
+  const scrollPrev = () => {
+    setCurrentSlide((prev) => (prev === 0 ? data.testimonials.length - 1 : prev - 1));
+  };
 
-  const scrollPrev = () => emblaApi && emblaApi.scrollPrev();
-  const scrollNext = () => emblaApi && emblaApi.scrollNext();
+  const scrollNext = () => {
+    setCurrentSlide((prev) => (prev === data.testimonials.length - 1 ? 0 : prev + 1));
+  };
 
   useEffect(() => {
     document.title = 'Kale Platform - Suspended Scaffold Rental & Sales | Istanbul, Turkey';
