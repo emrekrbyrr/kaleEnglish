@@ -48,7 +48,7 @@ const Products = () => {
                 {/* Product Image Placeholder */}
                 <div className="flex-1">
                   <div className="h-80 rounded-xl bg-gradient-to-br from-red-50 to-gray-100 flex items-center justify-center shadow-lg">
-                    <div className="text-8xl font-bold text-blue-600/30">
+                    <div className="text-8xl font-bold text-red-600/30">
                       {product.name[0]}
                     </div>
                   </div>
