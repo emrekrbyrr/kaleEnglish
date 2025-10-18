@@ -82,7 +82,7 @@ const Products = () => {
                         {product.applications.map((app, idx) => (
                           <span
                             key={idx}
-                            className="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-sm"
+                            className="px-3 py-1 bg-red-100 text-red-700 rounded-full text-sm"
                           >
                             {app}
                           </span>
