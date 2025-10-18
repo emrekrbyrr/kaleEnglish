@@ -1,12 +1,12 @@
 .animated-scaffold-container {
   position: fixed;
-  right: 20px;
+  right: 30px;
   top: 0;
-  width: 80px;
+  width: 150px;
   height: 100vh;
   pointer-events: none;
   z-index: 1000;
-  opacity: 0.7;
+  overflow: hidden;
 }
 
 .scaffold-wrapper {
@@ -15,183 +15,113 @@
   transition: top 0.05s linear;
 }
 
-/* Ropes */
+/* Suspension Ropes */
 .rope {
   position: absolute;
-  width: 2px;
-  height: 100vh;
+  width: 3px;
+  height: 200vh;
   background: linear-gradient(180deg, 
-    rgba(100, 150, 200, 0.8) 0%,
-    rgba(100, 150, 200, 0.6) 50%,
-    rgba(100, 150, 200, 0.4) 100%
+    rgba(80, 80, 80, 0.9) 0%,
+    rgba(100, 100, 100, 0.7) 50%,
+    rgba(120, 120, 120, 0.6) 100%
   );
-  top: -100vh;
-  animation: ropeShimmer 3s infinite;
+  top: -200vh;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.3);
 }
 
 .rope-left {
-  left: 15px;
+  left: 25px;
 }
 
 .rope-right {
-  right: 15px;
+  right: 25px;
 }
 
-@keyframes ropeShimmer {
-  0%, 100% { opacity: 0.6; }
-  50% { opacity: 0.9; }
-}
-
-/* Platform */
-.scaffold-platform {
+/* Scaffold Image */
+.scaffold-image-wrapper {
   position: relative;
-  width: 70px;
-  height: 60px;
-  margin: 0 auto;
+  width: 150px;
+  height: auto;
+  filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.2));
+  animation: scaffoldSway 4s ease-in-out infinite;
 }
 
-.platform-top {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 4px;
-  background: linear-gradient(90deg, 
-    rgba(70, 130, 180, 0.9),
-    rgba(100, 150, 200, 0.9),
-    rgba(70, 130, 180, 0.9)
-  );
-  border-radius: 2px;
-  box-shadow: 0 0 10px rgba(100, 150, 200, 0.6);
+.scaffold-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  opacity: 0.95;
 }
 
-.platform-body {
-  position: absolute;
-  top: 8px;
-  left: 5px;
-  right: 5px;
-  height: 35px;
-  background: linear-gradient(135deg, 
-    rgba(70, 130, 180, 0.4),
-    rgba(100, 150, 200, 0.3)
-  );
-  border: 1px solid rgba(100, 150, 200, 0.8);
-  border-radius: 3px;
-  backdrop-filter: blur(2px);
-  box-shadow: 
-    0 0 15px rgba(100, 150, 200, 0.4),
-    inset 0 0 10px rgba(100, 150, 200, 0.2);
-}
-
-.platform-grid {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  display: flex;
-  justify-content: space-around;
-  padding: 5px;
-}
-
-.grid-line {
-  width: 1px;
-  height: 100%;
-  background: rgba(100, 150, 200, 0.4);
-}
-
-.safety-rail {
-  position: absolute;
-  left: -2px;
-  right: -2px;
-  height: 2px;
-  background: rgba(100, 150, 200, 0.8);
-  top: -3px;
-  box-shadow: 0 0 5px rgba(100, 150, 200, 0.6);
-}
-
-.safety-rail.bottom {
-  top: auto;
-  bottom: -3px;
-}
-
-/* Pulleys */
-.pulley {
-  position: absolute;
-  top: -8px;
-  width: 12px;
-  height: 12px;
-  background: radial-gradient(circle, 
-    rgba(100, 150, 200, 0.9),
-    rgba(70, 130, 180, 0.7)
-  );
-  border: 1px solid rgba(100, 150, 200, 1);
-  border-radius: 50%;
-  box-shadow: 
-    0 0 8px rgba(100, 150, 200, 0.8),
-    inset 0 0 4px rgba(255, 255, 255, 0.3);
-  animation: pulleyRotate 2s linear infinite;
-}
-
-.pulley-left {
-  left: 8px;
-}
-
-.pulley-right {
-  right: 8px;
-}
-
-@keyframes pulleyRotate {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
-}
-
-/* Hologram glow effect */
-.hologram-glow {
-  position: absolute;
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 100px;
-  height: 80px;
-  background: radial-gradient(ellipse at center,
-    rgba(100, 150, 200, 0.2) 0%,
-    rgba(100, 150, 200, 0.1) 40%,
-    transparent 70%
-  );
-  animation: glowPulse 2s ease-in-out infinite;
-  pointer-events: none;
-}
-
-@keyframes glowPulse {
+@keyframes scaffoldSway {
   0%, 100% { 
-    opacity: 0.5;
-    transform: translateX(-50%) scale(1);
+    transform: translateX(0) rotate(0deg);
   }
   50% { 
-    opacity: 0.8;
-    transform: translateX(-50%) scale(1.1);
+    transform: translateX(2px) rotate(0.5deg);
   }
 }
 
 /* Responsive */
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   .animated-scaffold-container {
-    right: 5px;
-    width: 50px;
-    opacity: 0.5;
+    right: 15px;
+    width: 100px;
   }
   
-  .scaffold-platform {
-    width: 45px;
-    height: 40px;
+  .scaffold-image-wrapper {
+    width: 100px;
   }
   
   .rope-left {
-    left: 10px;
+    left: 18px;
   }
   
   .rope-right {
+    right: 18px;
+  }
+}
+
+@media (max-width: 768px) {
+  .animated-scaffold-container {
     right: 10px;
+    width: 70px;
+    opacity: 0.8;
+  }
+  
+  .scaffold-image-wrapper {
+    width: 70px;
+  }
+  
+  .rope {
+    width: 2px;
+  }
+  
+  .rope-left {
+    left: 12px;
+  }
+  
+  .rope-right {
+    right: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .animated-scaffold-container {
+    right: 5px;
+    width: 50px;
+    opacity: 0.6;
+  }
+  
+  .scaffold-image-wrapper {
+    width: 50px;
+  }
+  
+  .rope-left {
+    left: 8px;
+  }
+  
+  .rope-right {
+    right: 8px;
   }
 }
