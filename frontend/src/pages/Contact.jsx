@@ -207,7 +207,7 @@ const Contact = () => {
                       <h3 className="font-semibold text-slate-900 mb-1">Phone</h3>
                       <a
                         href={`tel:${companyInfo.phone}`}
-                        className="text-slate-600 hover:text-blue-600 transition-colors"
+                        className="text-slate-600 hover:text-red-600 transition-colors"
                       >
                         {companyInfo.phone}
                       </a>
@@ -223,7 +223,7 @@ const Contact = () => {
                       <h3 className="font-semibold text-slate-900 mb-1">Email</h3>
                       <a
                         href={`mailto:${companyInfo.email}`}
-                        className="text-slate-600 hover:text-blue-600 transition-colors"
+                        className="text-slate-600 hover:text-red-600 transition-colors"
                       >
                         {companyInfo.email}
                       </a>
