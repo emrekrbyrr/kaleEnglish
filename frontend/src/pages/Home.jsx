@@ -259,7 +259,7 @@ const Home = () => {
             {data.clients.map((client, index) => (
               <div
                 key={index}
-                className="flex items-center justify-center p-4 bg-slate-50 rounded-lg hover:bg-slate-100 transition-colors"
+                className="flex items-center justify-center p-4 bg-white rounded-lg hover:bg-gray-100 transition-colors"
               >
                 <span className="text-sm font-medium text-slate-600 text-center">
                   {client}
