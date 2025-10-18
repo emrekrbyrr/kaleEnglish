@@ -99,11 +99,16 @@ const Footer = () => {
         </div>
 
         {/* Bottom Bar */}
-        <div className="border-t border-slate-800 mt-8 pt-8 text-center">
-          <p className="text-sm text-slate-400">
+        <div className="border-t border-slate-800 mt-8 pt-8">
+          <div className="text-center mb-4">
+            <p className="text-sm text-slate-400">
+              KaleLift is a brand of Kale Platform.
+            </p>
+          </div>
+          <p className="text-sm text-slate-400 text-center">
             © {currentYear} {companyInfo.name}. All rights reserved.
           </p>
-          <p className="text-xs text-slate-500 mt-2">
+          <p className="text-xs text-slate-500 mt-2 text-center">
             Certified CE & TSE Standards | ISO 9001 Quality Management
           </p>
         </div>
