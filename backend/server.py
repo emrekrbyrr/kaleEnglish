@@ -1,15 +1,15 @@
-from fastapi import FastAPI, APIRouter
+from fastapi import FastAPI, APIRouter, HTTPException
 from dotenv import load_dotenv
 from starlette.middleware.cors import CORSMiddleware
 from motor.motor_asyncio import AsyncIOMotorClient
 import os
 import logging
 from pathlib import Path
-from pydantic import BaseModel, Field, ConfigDict
+from models import (
+    Company, Product, Service, Testimonial, Client,
+    ContactSubmission, ContactSubmissionCreate, RentalInfo
+)
 from typing import List
-import uuid
-from datetime import datetime, timezone
-
 
 ROOT_DIR = Path(__file__).parent
 load_dotenv(ROOT_DIR / '.env')
@@ -26,45 +26,94 @@ app = FastAPI()
 api_router = APIRouter(prefix="/api")
 
 
-# Define Models
-class StatusCheck(BaseModel):
-    model_config = ConfigDict(extra="ignore")  # Ignore MongoDB's _id field
+# Company endpoints
+@api_router.get("/company")
+async def get_company():
+    """Get company information"""
+    company = await db.company.find_one()
+    if not company:
+        raise HTTPException(status_code=404, detail="Company information not found")
+    return company
+
+
+# Product endpoints
+@api_router.get("/products", response_model=List[Product])
+async def get_products():
+    """Get all active products"""
+    products = await db.products.find({"isActive": True}).sort("order", 1).to_list(100)
+    return products
+
+
+@api_router.get("/products/{slug}")
+async def get_product_by_slug(slug: str):
+    """Get single product by slug"""
+    product = await db.products.find_one({"slug": slug, "isActive": True})
+    if not product:
+        raise HTTPException(status_code=404, detail="Product not found")
+    return product
+
+
+# Service endpoints
+@api_router.get("/services", response_model=List[Service])
+async def get_services():
+    """Get all active services"""
+    services = await db.services.find({"isActive": True}).sort("order", 1).to_list(100)
+    return services
+
+
+# Testimonial endpoints
+@api_router.get("/testimonials", response_model=List[Testimonial])
+async def get_testimonials():
+    """Get all active testimonials"""
+    testimonials = await db.testimonials.find({"isActive": True}).to_list(100)
+    return testimonials
+
+
+# Client endpoints
+@api_router.get("/clients")
+async def get_clients():
+    """Get list of client companies"""
+    clients = await db.clients.find({"isActive": True}).sort("order", 1).to_list(100)
+    return [client["name"] for client in clients]
+
+
+# Rental info endpoint
+@api_router.get("/rental-info")
+async def get_rental_info():
+    """Get rental information"""
+    rental = await db.rental_info.find_one()
+    if not rental:
+        raise HTTPException(status_code=404, detail="Rental information not found")
+    return rental
+
+
+# Contact form endpoint
+@api_router.post("/contact", response_model=ContactSubmission)
+async def submit_contact_form(contact: ContactSubmissionCreate):
+    """Submit contact form"""
+    contact_dict = contact.dict()
+    contact_obj = ContactSubmission(**contact_dict)
     
-    id: str = Field(default_factory=lambda: str(uuid.uuid4()))
-    client_name: str
-    timestamp: datetime = Field(default_factory=lambda: datetime.now(timezone.utc))
+    # Save to database
+    await db.contacts.insert_one(contact_obj.dict())
+    
+    # TODO: Send email notification (to be implemented later)
+    
+    return contact_obj
 
-class StatusCheckCreate(BaseModel):
-    client_name: str
 
-# Add your routes to the router instead of directly to app
+@api_router.get("/contacts", response_model=List[ContactSubmission])
+async def get_contacts():
+    """Get all contact submissions (for admin use)"""
+    contacts = await db.contacts.find().sort("createdAt", -1).to_list(1000)
+    return contacts
+
+
+# Health check
 @api_router.get("/")
 async def root():
-    return {"message": "Hello World"}
+    return {"message": "Kale Platform API", "status": "operational"}
 
-@api_router.post("/status", response_model=StatusCheck)
-async def create_status_check(input: StatusCheckCreate):
-    status_dict = input.model_dump()
-    status_obj = StatusCheck(**status_dict)
-    
-    # Convert to dict and serialize datetime to ISO string for MongoDB
-    doc = status_obj.model_dump()
-    doc['timestamp'] = doc['timestamp'].isoformat()
-    
-    _ = await db.status_checks.insert_one(doc)
-    return status_obj
-
-@api_router.get("/status", response_model=List[StatusCheck])
-async def get_status_checks():
-    # Exclude MongoDB's _id field from the query results
-    status_checks = await db.status_checks.find({}, {"_id": 0}).to_list(1000)
-    
-    # Convert ISO string timestamps back to datetime objects
-    for check in status_checks:
-        if isinstance(check['timestamp'], str):
-            check['timestamp'] = datetime.fromisoformat(check['timestamp'])
-    
-    return status_checks
 
 # Include the router in the main app
 app.include_router(api_router)
@@ -72,7 +121,7 @@ app.include_router(api_router)
 app.add_middleware(
     CORSMiddleware,
     allow_credentials=True,
-    allow_origins=os.environ.get('CORS_ORIGINS', '*').split(','),
+    allow_origins=["*"],
     allow_methods=["*"],
     allow_headers=["*"],
 )
