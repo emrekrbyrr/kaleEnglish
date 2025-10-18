@@ -131,7 +131,7 @@ const Rental = () => {
       </section>
 
       {/* Pricing Info */}
-      <section className="py-20 bg-slate-50">
+      <section className="py-20 bg-gray-100">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto bg-white rounded-2xl p-8 shadow-lg">
             <h2 className="text-3xl font-bold text-slate-900 mb-6 text-center">
