@@ -30,7 +30,7 @@ api_router = APIRouter(prefix="/api")
 @api_router.get("/company")
 async def get_company():
     """Get company information"""
-    company = await db.company.find_one()
+    company = await db.company.find_one({}, {"_id": 0})
     if not company:
         raise HTTPException(status_code=404, detail="Company information not found")
     return company
