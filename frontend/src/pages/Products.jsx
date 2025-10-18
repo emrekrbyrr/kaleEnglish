@@ -68,7 +68,7 @@ const Products = () => {
                       <ul className="space-y-2">
                         {product.features.map((feature, idx) => (
                           <li key={idx} className="flex items-start space-x-2">
-                            <CheckCircle className="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5" />
+                            <CheckCircle className="w-5 h-5 text-red-600 flex-shrink-0 mt-0.5" />
                             <span className="text-slate-600">{feature}</span>
                           </li>
                         ))}
