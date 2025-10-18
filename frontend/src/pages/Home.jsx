@@ -1,12 +1,46 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight, Award, Users, TrendingDown, ShieldCheck, Clock, CheckCircle, HardHat, Wrench, CreditCard } from 'lucide-react';
-import { companyInfo, stats, products, services, clients, testimonials } from '../mock';
+import { getCompany, getProducts, getServices, getTestimonials, getClients } from '../services/api';
 
 const Home = () => {
+  const [loading, setLoading] = useState(true);
+  const [data, setData] = useState({
+    company: null,
+    products: [],
+    services: [],
+    testimonials: [],
+    clients: []
+  });
+
   useEffect(() => {
     document.title = 'Kale Platform - Suspended Scaffold Rental & Sales | Istanbul, Turkey';
+    fetchData();
   }, []);
+
+  const fetchData = async () => {
+    try {
+      const [companyData, productsData, servicesData, testimonialsData, clientsData] = await Promise.all([
+        getCompany(),
+        getProducts(),
+        getServices(),
+        getTestimonials(),
+        getClients()
+      ]);
+
+      setData({
+        company: companyData,
+        products: productsData,
+        services: servicesData,
+        testimonials: testimonialsData,
+        clients: clientsData
+      });
+    } catch (error) {
+      console.error('Error fetching data:', error);
+    } finally {
+      setLoading(false);
+    }
+  };
 
   const getIcon = (iconName) => {
     const icons = {
@@ -24,6 +58,24 @@ const Home = () => {
     return <Icon className="w-8 h-8" />;
   };
 
+  if (loading) {
+    return (
+      <div className="min-h-screen flex items-center justify-center">
+        <div className="text-center">
+          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600 mx-auto mb-4"></div>
+          <p className="text-slate-600">Loading...</p>
+        </div>
+      </div>
+    );
+  }
+
+  const stats = data.company?.stats ? [
+    { label: "Years of Experience", value: `${data.company.stats.yearsExperience}+` },
+    { label: "Happy Customers", value: `${data.company.stats.customers}+` },
+    { label: "Completed Projects", value: `${data.company.stats.projects}+` },
+    { label: "Countries Exported", value: `${data.company.stats.countries}+` }
+  ] : [];
+
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
@@ -32,7 +84,7 @@ const Home = () => {
         <div className="container mx-auto">
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="text-5xl md:text-6xl font-bold text-slate-900 mb-6">
-              {companyInfo.tagline}
+              {data.company?.tagline}
             </h1>
             <p className="text-xl text-slate-600 mb-8 leading-relaxed">
               Professional suspended scaffold rental and sales for high-rise construction,
@@ -48,6 +100,15 @@ const Home = () => {
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </Link>
               <Link
+                to="/contact"
+                className="px-8 py-4 bg-white text-slate-700 border-2 border-slate-200 rounded-lg hover:border-blue-600 hover:text-blue-600 transition-all font-medium"
+              >
+                Get a Quote
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
                 to="/contact"
                 className="px-8 py-4 bg-white text-slate-700 border-2 border-slate-200 rounded-lg hover:border-blue-600 hover:text-blue-600 transition-all font-medium"
               >
