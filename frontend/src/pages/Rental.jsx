@@ -172,7 +172,7 @@ const Rental = () => {
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
             Ready to Rent Suspended Scaffold Equipment?
           </h2>
-          <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
+          <p className="text-xl text-red-50 mb-8 max-w-2xl mx-auto">
             Contact us today for a free consultation and competitive rental quote.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
