@@ -77,7 +77,7 @@ const Footer = () => {
               </li>
               <li className="flex items-center space-x-2">
                 <Mail className="w-4 h-4 flex-shrink-0" />
-                <a href={`mailto:${companyInfo.email}`} className="text-sm hover:text-blue-400 transition-colors">
+                <a href={`mailto:${companyInfo.email}`} className="text-sm hover:text-red-400 transition-colors">
                   {companyInfo.email}
                 </a>
               </li>
