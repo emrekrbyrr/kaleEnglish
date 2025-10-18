@@ -40,9 +40,9 @@ const Rental = () => {
               {rentalInfo.benefits.map((benefit, index) => (
                 <div
                   key={index}
-                  className="flex items-start space-x-3 p-4 rounded-lg bg-slate-50 hover:bg-blue-50 transition-colors"
+                  className="flex items-start space-x-3 p-4 rounded-lg bg-white hover:bg-red-50 transition-colors"
                 >
-                  <CheckCircle className="w-6 h-6 text-blue-600 flex-shrink-0 mt-0.5" />
+                  <CheckCircle className="w-6 h-6 text-red-600 flex-shrink-0 mt-0.5" />
                   <span className="text-slate-700">{benefit}</span>
                 </div>
               ))}
