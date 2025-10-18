@@ -36,7 +36,7 @@ const Products = () => {
       </section>
 
       {/* Products List */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto space-y-16">
             {products.map((product, index) => (
