@@ -242,13 +242,16 @@ const Home = () => {
           </div>
 
           <div className="max-w-7xl mx-auto relative">
-            {/* Carousel Container */}
-            <div className="overflow-hidden" ref={emblaRef}>
-              <div className="flex gap-4 md:gap-6">
+            {/* Simple Slider Container */}
+            <div className="overflow-hidden">
+              <div 
+                className="flex transition-transform duration-500 ease-in-out gap-4 md:gap-6"
+                style={{ transform: `translateX(-${currentSlide * 100}%)` }}
+              >
                 {data.testimonials.map((testimonial, index) => (
                   <div 
                     key={index} 
-                    className="flex-shrink-0 w-full sm:w-[calc(50%-8px)] lg:w-[calc(33.333%-16px)] pl-1"
+                    className="flex-shrink-0 w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)]"
                   >
                     <div className="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow h-full flex flex-col">
                       <div className="flex items-center space-x-1 mb-4">
@@ -270,26 +273,44 @@ const Home = () => {
                     </div>
                   </div>
                 ))}
-                {/* Extra empty space at the end */}
-                <div className="flex-shrink-0 w-4"></div>
               </div>
             </div>
 
             {/* Navigation Buttons */}
-            <button
-              onClick={scrollPrev}
-              className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-2 md:-translate-x-4 w-10 h-10 md:w-12 md:h-12 bg-white rounded-full shadow-lg flex items-center justify-center text-slate-700 hover:bg-red-600 hover:text-white transition-all z-10"
-              aria-label="Previous testimonial"
-            >
-              <ChevronLeft className="w-5 h-5 md:w-6 md:h-6" />
-            </button>
-            <button
-              onClick={scrollNext}
-              className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-2 md:translate-x-4 w-10 h-10 md:w-12 md:h-12 bg-white rounded-full shadow-lg flex items-center justify-center text-slate-700 hover:bg-red-600 hover:text-white transition-all z-10"
-              aria-label="Next testimonial"
-            >
-              <ChevronRight className="w-5 h-5 md:w-6 md:h-6" />
-            </button>
+            {data.testimonials.length > 0 && (
+              <>
+                <button
+                  onClick={scrollPrev}
+                  className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-2 md:-translate-x-4 w-10 h-10 md:w-12 md:h-12 bg-white rounded-full shadow-lg flex items-center justify-center text-slate-700 hover:bg-red-600 hover:text-white transition-all z-10"
+                  aria-label="Previous testimonial"
+                >
+                  <ChevronLeft className="w-5 h-5 md:w-6 md:h-6" />
+                </button>
+                <button
+                  onClick={scrollNext}
+                  className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-2 md:translate-x-4 w-10 h-10 md:w-12 md:h-12 bg-white rounded-full shadow-lg flex items-center justify-center text-slate-700 hover:bg-red-600 hover:text-white transition-all z-10"
+                  aria-label="Next testimonial"
+                >
+                  <ChevronRight className="w-5 h-5 md:w-6 md:h-6" />
+                </button>
+              </>
+            )}
+
+            {/* Dots Indicator */}
+            {data.testimonials.length > 0 && (
+              <div className="flex justify-center mt-6 gap-2">
+                {data.testimonials.map((_, index) => (
+                  <button
+                    key={index}
+                    onClick={() => setCurrentSlide(index)}
+                    className={`w-2 h-2 rounded-full transition-all ${
+                      currentSlide === index ? 'bg-red-600 w-8' : 'bg-gray-300'
+                    }`}
+                    aria-label={`Go to slide ${index + 1}`}
+                  />
+                ))}
+              </div>
+            )}
           </div>
         </div>
       </section>
