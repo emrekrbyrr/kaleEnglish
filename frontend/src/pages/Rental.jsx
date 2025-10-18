@@ -69,7 +69,7 @@ const Rental = () => {
                     <p className="text-sm text-slate-600">{step.description}</p>
                   </div>
                   {index < rentalInfo.process.length - 1 && (
-                    <div className="hidden lg:block absolute top-1/2 -right-3 w-6 h-0.5 bg-blue-200"></div>
+                    <div className="hidden lg:block absolute top-1/2 -right-3 w-6 h-0.5 bg-red-200"></div>
                   )}
                 </div>
               ))}
