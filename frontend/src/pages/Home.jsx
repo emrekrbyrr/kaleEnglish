@@ -241,27 +241,53 @@ const Home = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
-            {data.testimonials.map((testimonial, index) => (
-              <div key={index} className="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow">
-                <div className="flex items-center space-x-1 mb-4">
-                  {[...Array(testimonial.rating)].map((_, i) => (
-                    <svg
-                      key={i}
-                      className="w-5 h-5 text-yellow-400 fill-current"
-                      viewBox="0 0 20 20"
-                    >
-                      <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
-                    </svg>
-                  ))}
-                </div>
-                <p className="text-slate-600 mb-4 text-sm leading-relaxed">"{testimonial.text}"</p>
-                <div className="border-t border-gray-200 pt-4">
-                  <div className="font-semibold text-slate-900 text-sm">{testimonial.name}</div>
-                  <div className="text-xs text-slate-500 mt-1">{testimonial.company}</div>
-                </div>
+          <div className="max-w-7xl mx-auto relative">
+            {/* Carousel Container */}
+            <div className="overflow-hidden" ref={emblaRef}>
+              <div className="flex gap-6">
+                {data.testimonials.map((testimonial, index) => (
+                  <div 
+                    key={index} 
+                    className="flex-[0_0_100%] min-w-0 sm:flex-[0_0_50%] lg:flex-[0_0_33.333%]"
+                  >
+                    <div className="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow h-full">
+                      <div className="flex items-center space-x-1 mb-4">
+                        {[...Array(testimonial.rating)].map((_, i) => (
+                          <svg
+                            key={i}
+                            className="w-5 h-5 text-yellow-400 fill-current"
+                            viewBox="0 0 20 20"
+                          >
+                            <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
+                          </svg>
+                        ))}
+                      </div>
+                      <p className="text-slate-600 mb-4 text-sm leading-relaxed min-h-[120px]">"{testimonial.text}"</p>
+                      <div className="border-t border-gray-200 pt-4">
+                        <div className="font-semibold text-slate-900 text-sm">{testimonial.name}</div>
+                        <div className="text-xs text-slate-500 mt-1">{testimonial.company}</div>
+                      </div>
+                    </div>
+                  </div>
+                ))}
               </div>
-            ))}
+            </div>
+
+            {/* Navigation Buttons */}
+            <button
+              onClick={scrollPrev}
+              className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 w-12 h-12 bg-white rounded-full shadow-lg flex items-center justify-center text-slate-700 hover:bg-red-600 hover:text-white transition-all z-10"
+              aria-label="Previous testimonial"
+            >
+              <ChevronLeft className="w-6 h-6" />
+            </button>
+            <button
+              onClick={scrollNext}
+              className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 w-12 h-12 bg-white rounded-full shadow-lg flex items-center justify-center text-slate-700 hover:bg-red-600 hover:text-white transition-all z-10"
+              aria-label="Next testimonial"
+            >
+              <ChevronRight className="w-6 h-6" />
+            </button>
           </div>
         </div>
       </section>
