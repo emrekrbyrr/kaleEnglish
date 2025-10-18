@@ -282,7 +282,7 @@ const Home = () => {
           </p>
           <Link
             to="/contact"
-            className="inline-flex items-center space-x-2 px-8 py-4 bg-white text-blue-600 rounded-lg hover:bg-blue-50 transition-colors font-medium"
+            className="inline-flex items-center space-x-2 px-8 py-4 bg-white text-red-600 rounded-lg hover:bg-red-50 transition-colors font-medium"
           >
             <span>Contact Us Today</span>
             <ArrowRight className="w-5 h-5" />
