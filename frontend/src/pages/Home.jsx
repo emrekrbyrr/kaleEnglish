@@ -101,7 +101,7 @@ const Home = () => {
               </Link>
               <Link
                 to="/contact"
-                className="px-8 py-4 bg-white text-slate-700 border-2 border-slate-200 rounded-lg hover:border-blue-600 hover:text-blue-600 transition-all font-medium"
+                className="px-8 py-4 bg-white text-slate-700 border-2 border-gray-300 rounded-lg hover:border-red-600 hover:text-red-600 transition-all font-medium"
               >
                 Get a Quote
               </Link>
