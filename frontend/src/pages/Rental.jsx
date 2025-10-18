@@ -184,7 +184,7 @@ const Rental = () => {
             </a>
             <a
               href="tel:+902122125973"
-              className="px-8 py-4 bg-blue-700 text-white rounded-lg hover:bg-blue-800 transition-colors font-medium"
+              className="px-8 py-4 bg-red-700 text-white rounded-lg hover:bg-red-800 transition-colors font-medium"
             >
               Call Now: +90 212 212 5973
             </a>
