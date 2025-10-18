@@ -271,7 +271,7 @@ const Contact = () => {
       </section>
 
       {/* Map Section */}
-      <section className="py-20 bg-slate-50">
+      <section className="py-20 bg-gray-100">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-3xl font-bold text-slate-900 mb-4">Visit Our Location</h2>
