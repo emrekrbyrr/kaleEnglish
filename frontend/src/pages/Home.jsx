@@ -193,9 +193,9 @@ const Home = () => {
             {data.services.map((service, index) => (
               <div
                 key={index}
-                className="p-6 rounded-xl bg-slate-50 hover:bg-blue-50 transition-all duration-300 border border-transparent hover:border-blue-200"
+                className="p-6 rounded-xl bg-white hover:bg-red-50 transition-all duration-300 border border-transparent hover:border-red-200"
               >
-                <div className="w-14 h-14 rounded-lg bg-blue-100 text-blue-600 flex items-center justify-center mb-4">
+                <div className="w-14 h-14 rounded-lg bg-red-100 text-red-600 flex items-center justify-center mb-4">
                   {getIcon(service.icon)}
                 </div>
                 <h3 className="text-lg font-bold text-slate-900 mb-2">{service.title}</h3>
