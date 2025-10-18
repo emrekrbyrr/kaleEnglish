@@ -81,7 +81,7 @@ async def get_clients():
 @api_router.get("/rental-info")
 async def get_rental_info():
     """Get rental information"""
-    rental = await db.rental_info.find_one()
+    rental = await db.rental_info.find_one({}, {"_id": 0})
     if not rental:
         raise HTTPException(status_code=404, detail="Rental information not found")
     return rental
