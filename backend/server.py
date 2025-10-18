@@ -65,7 +65,7 @@ async def get_services():
 @api_router.get("/testimonials", response_model=List[Testimonial])
 async def get_testimonials():
     """Get all active testimonials"""
-    testimonials = await db.testimonials.find({"isActive": True}).to_list(100)
+    testimonials = await db.testimonials.find({"isActive": True}, {"_id": 0}).to_list(100)
     return testimonials
 
 
