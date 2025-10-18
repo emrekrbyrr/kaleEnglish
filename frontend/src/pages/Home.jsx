@@ -245,13 +245,13 @@ const Home = () => {
           <div className="max-w-7xl mx-auto relative">
             {/* Carousel Container */}
             <div className="overflow-hidden" ref={emblaRef}>
-              <div className="flex gap-6">
+              <div className="flex gap-4 md:gap-6">
                 {data.testimonials.map((testimonial, index) => (
                   <div 
                     key={index} 
-                    className="flex-[0_0_100%] min-w-0 sm:flex-[0_0_50%] lg:flex-[0_0_33.333%]"
+                    className="flex-shrink-0 w-full sm:w-[calc(50%-8px)] lg:w-[calc(33.333%-16px)] pl-1"
                   >
-                    <div className="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow h-full">
+                    <div className="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow h-full flex flex-col">
                       <div className="flex items-center space-x-1 mb-4">
                         {[...Array(testimonial.rating)].map((_, i) => (
                           <svg
@@ -263,31 +263,33 @@ const Home = () => {
                           </svg>
                         ))}
                       </div>
-                      <p className="text-slate-600 mb-4 text-sm leading-relaxed min-h-[120px]">"{testimonial.text}"</p>
-                      <div className="border-t border-gray-200 pt-4">
+                      <p className="text-slate-600 mb-4 text-sm leading-relaxed flex-grow">"{testimonial.text}"</p>
+                      <div className="border-t border-gray-200 pt-4 mt-auto">
                         <div className="font-semibold text-slate-900 text-sm">{testimonial.name}</div>
                         <div className="text-xs text-slate-500 mt-1">{testimonial.company}</div>
                       </div>
                     </div>
                   </div>
                 ))}
+                {/* Extra empty space at the end */}
+                <div className="flex-shrink-0 w-4"></div>
               </div>
             </div>
 
             {/* Navigation Buttons */}
             <button
               onClick={scrollPrev}
-              className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 w-12 h-12 bg-white rounded-full shadow-lg flex items-center justify-center text-slate-700 hover:bg-red-600 hover:text-white transition-all z-10"
+              className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-2 md:-translate-x-4 w-10 h-10 md:w-12 md:h-12 bg-white rounded-full shadow-lg flex items-center justify-center text-slate-700 hover:bg-red-600 hover:text-white transition-all z-10"
               aria-label="Previous testimonial"
             >
-              <ChevronLeft className="w-6 h-6" />
+              <ChevronLeft className="w-5 h-5 md:w-6 md:h-6" />
             </button>
             <button
               onClick={scrollNext}
-              className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 w-12 h-12 bg-white rounded-full shadow-lg flex items-center justify-center text-slate-700 hover:bg-red-600 hover:text-white transition-all z-10"
+              className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-2 md:translate-x-4 w-10 h-10 md:w-12 md:h-12 bg-white rounded-full shadow-lg flex items-center justify-center text-slate-700 hover:bg-red-600 hover:text-white transition-all z-10"
               aria-label="Next testimonial"
             >
-              <ChevronRight className="w-6 h-6" />
+              <ChevronRight className="w-5 h-5 md:w-6 md:h-6" />
             </button>
           </div>
         </div>
