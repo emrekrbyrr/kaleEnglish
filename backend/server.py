@@ -10,6 +10,7 @@ from models import (
     ContactSubmission, ContactSubmissionCreate, RentalInfo
 )
 from typing import List
+from email_service import send_contact_email
 
 ROOT_DIR = Path(__file__).parent
 load_dotenv(ROOT_DIR / '.env')
