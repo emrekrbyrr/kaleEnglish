@@ -183,10 +183,10 @@ const Rental = () => {
               Get Started
             </a>
             <a
-              href="tel:+902122125973"
+              href="tel:+905395734636"
               className="px-8 py-4 bg-red-700 text-white rounded-lg hover:bg-red-800 transition-colors font-medium"
             >
-              Call Now: +90 212 212 5973
+              Call Now: +90 539 573 4636
             </a>
           </div>
         </div>
