@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowRight, Award, Users, TrendingDown, ShieldCheck, Clock, CheckCircle, HardHat, Wrench, CreditCard } from 'lucide-react';
+import { ArrowRight, Award, Users, TrendingDown, ShieldCheck, Clock, CheckCircle, HardHat, Wrench, CreditCard, ChevronLeft, ChevronRight } from 'lucide-react';
 import { getCompany, getProducts, getServices, getTestimonials, getClients } from '../services/api';
+import useEmblaCarousel from 'embla-carousel-react';
 
 const Home = () => {
   const [loading, setLoading] = useState(true);
