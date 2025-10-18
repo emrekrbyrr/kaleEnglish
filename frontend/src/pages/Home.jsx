@@ -199,7 +199,7 @@ const Home = () => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {services.map((service, index) => (
+            {data.services.map((service, index) => (
               <div
                 key={index}
                 className="p-6 rounded-xl bg-slate-50 hover:bg-blue-50 transition-all duration-300 border border-transparent hover:border-blue-200"
