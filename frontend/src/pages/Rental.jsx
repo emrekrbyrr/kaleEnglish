@@ -62,7 +62,7 @@ const Rental = () => {
               {rentalInfo.process.map((step, index) => (
                 <div key={index} className="relative">
                   <div className="bg-white rounded-xl p-6 h-full shadow-sm hover:shadow-md transition-shadow">
-                    <div className="w-12 h-12 rounded-full bg-blue-600 text-white flex items-center justify-center text-xl font-bold mb-4">
+                    <div className="w-12 h-12 rounded-full bg-red-600 text-white flex items-center justify-center text-xl font-bold mb-4">
                       {step.step}
                     </div>
                     <h3 className="text-lg font-bold text-slate-900 mb-2">{step.title}</h3>
