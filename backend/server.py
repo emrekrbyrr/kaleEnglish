@@ -40,14 +40,14 @@ async def get_company():
 @api_router.get("/products", response_model=List[Product])
 async def get_products():
     """Get all active products"""
-    products = await db.products.find({"isActive": True}).sort("order", 1).to_list(100)
+    products = await db.products.find({"isActive": True}, {"_id": 0}).sort("order", 1).to_list(100)
     return products
 
 
 @api_router.get("/products/{slug}")
 async def get_product_by_slug(slug: str):
     """Get single product by slug"""
-    product = await db.products.find_one({"slug": slug, "isActive": True})
+    product = await db.products.find_one({"slug": slug, "isActive": True}, {"_id": 0})
     if not product:
         raise HTTPException(status_code=404, detail="Product not found")
     return product
