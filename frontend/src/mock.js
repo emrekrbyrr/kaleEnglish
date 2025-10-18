@@ -5,7 +5,7 @@ export const companyInfo = {
   tagline: "Your Solution Partner While Rising",
   description: "In the suspended scaffold sector, we are proud to offer quality service to you as the Kale Platform family.",
   email: "sales@kaleplatform.com",
-  phone: "+90 212 212 5973",
+  phone: "+90 539 573 4636",
   address: "Büyükçekmece, Istanbul, Turkey",
   established: "2003"
 };
