@@ -2,48 +2,39 @@ import React, { useEffect, useState } from 'react';
 import './AnimatedScaffold.css';
 
 const AnimatedScaffold = () => {
-  const [position, setPosition] = useState(20);
-  const [direction, setDirection] = useState(1);
+  const [position, setPosition] = useState(-10);
 
   useEffect(() => {
     const interval = setInterval(() => {
       setPosition((prev) => {
-        const newPos = prev + direction * 0.5;
-        if (newPos >= 70 || newPos <= 10) {
-          setDirection((d) => -d);
+        // Slow continuous downward movement
+        const newPos = prev + 0.15;
+        // Reset to top when reaches bottom
+        if (newPos >= 100) {
+          return -10;
         }
         return newPos;
       });
     }, 50);
 
     return () => clearInterval(interval);
-  }, [direction]);
+  }, []);
 
   return (
     <div className="animated-scaffold-container">
       <div className="scaffold-wrapper" style={{ top: `${position}%` }}>
-        {/* Ropes */}
+        {/* Suspension Ropes */}
         <div className="rope rope-left"></div>
         <div className="rope rope-right"></div>
         
-        {/* Platform */}
-        <div className="scaffold-platform">
-          <div className="platform-top"></div>
-          <div className="platform-body">
-            <div className="platform-grid">
-              <div className="grid-line"></div>
-              <div className="grid-line"></div>
-              <div className="grid-line"></div>
-            </div>
-            <div className="safety-rail"></div>
-            <div className="safety-rail bottom"></div>
-          </div>
-          <div className="pulley pulley-left"></div>
-          <div className="pulley pulley-right"></div>
+        {/* Actual Scaffold Image */}
+        <div className="scaffold-image-wrapper">
+          <img 
+            src="https://customer-assets.emergentagent.com/job_f26ed2bd-7f38-45ed-a0bc-2f5ec395f275/artifacts/wq6kcr9z_asma_iskele_1.JPG"
+            alt="Kale Platform Suspended Scaffold"
+            className="scaffold-image"
+          />
         </div>
-        
-        {/* Hologram effect */}
-        <div className="hologram-glow"></div>
       </div>
     </div>
   );
