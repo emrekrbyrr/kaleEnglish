@@ -168,7 +168,7 @@ const Home = () => {
           <div className="text-center mt-12">
             <Link
               to="/products"
-              className="inline-flex items-center space-x-2 px-8 py-3 bg-slate-900 text-white rounded-lg hover:bg-slate-800 transition-colors"
+              className="inline-flex items-center space-x-2 px-8 py-3 bg-slate-900 text-white rounded-lg hover:bg-red-600 transition-colors"
             >
               <span>View All Products</span>
               <ArrowRight className="w-5 h-5" />
