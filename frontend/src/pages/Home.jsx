@@ -266,13 +266,17 @@ const Home = () => {
             {/* Simple Slider Container */}
             <div className="overflow-hidden">
               <div 
-                className="flex transition-transform duration-500 ease-in-out gap-4 md:gap-6"
-                style={{ transform: `translateX(-${currentSlide * 100}%)` }}
+                className="flex transition-transform duration-500 ease-in-out"
+                style={{ 
+                  transform: `translateX(-${currentSlide * (100 / cardsPerSlide)}%)`,
+                  width: `${(data.testimonials.length / cardsPerSlide) * 100}%`
+                }}
               >
                 {data.testimonials.map((testimonial, index) => (
                   <div 
                     key={index} 
-                    className="flex-shrink-0 w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)]"
+                    className="px-2 md:px-3"
+                    style={{ width: `${100 / data.testimonials.length}%` }}
                   >
                     <div className="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow h-full flex flex-col">
                       <div className="flex items-center space-x-1 mb-4">
@@ -298,7 +302,7 @@ const Home = () => {
             </div>
 
             {/* Navigation Buttons */}
-            {data.testimonials.length > 0 && (
+            {maxSlides > 1 && (
               <>
                 <button
                   onClick={scrollPrev}
@@ -318,9 +322,9 @@ const Home = () => {
             )}
 
             {/* Dots Indicator */}
-            {data.testimonials.length > 0 && (
+            {maxSlides > 1 && (
               <div className="flex justify-center mt-6 gap-2">
-                {data.testimonials.map((_, index) => (
+                {[...Array(maxSlides)].map((_, index) => (
                   <button
                     key={index}
                     onClick={() => setCurrentSlide(index)}
