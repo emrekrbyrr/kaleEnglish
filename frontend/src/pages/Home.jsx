@@ -207,8 +207,9 @@ const Home = () => {
             <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
               Why Choose Kale Platform
             </h2>
-            <p className="text-lg text-slate-600 max-w-2xl mx-auto">
-              What Sets Our Services Apart
+            <p className="text-lg text-slate-600 max-w-3xl mx-auto leading-relaxed">
+              We provide suspended scaffold sales and rental services from Turkey to clients all over the world. 
+              Our competitive prices, fast response times, and effective solutions ensure your projects run smoothly and efficiently.
             </p>
           </div>
 
