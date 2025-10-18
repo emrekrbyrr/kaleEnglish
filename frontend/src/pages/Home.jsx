@@ -228,7 +228,7 @@ const Home = () => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {testimonials.map((testimonial, index) => (
+            {data.testimonials.map((testimonial, index) => (
               <div key={index} className="bg-white p-6 rounded-xl shadow-sm">
                 <div className="flex items-center space-x-1 mb-4">
                   {[...Array(testimonial.rating)].map((_, i) => (
