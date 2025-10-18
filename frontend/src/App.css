@@ -1,6 +1,11 @@
 /* Smooth scrolling */
 html {
   scroll-behavior: smooth;
+  background-color: #ffffff;
+}
+
+body {
+  background-color: #ffffff;
 }
 
 /* Custom scrollbar */
