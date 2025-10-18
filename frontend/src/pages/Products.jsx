@@ -100,7 +100,7 @@ const Products = () => {
                       </a>
                       <a
                         href="/contact"
-                        className="px-6 py-3 bg-slate-100 text-slate-700 rounded-lg hover:bg-slate-200 transition-colors text-center font-medium"
+                        className="px-6 py-3 bg-gray-100 text-slate-700 rounded-lg hover:bg-gray-200 transition-colors text-center font-medium"
                       >
                         Get a Quote
                       </a>
