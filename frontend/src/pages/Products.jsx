@@ -54,12 +54,14 @@ const Products = () => {
                 id={product.slug}
                 className={`flex flex-col ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'} gap-8 scroll-mt-24`}
               >
-                {/* Product Image Placeholder */}
+                {/* Product Image */}
                 <div className="flex-1">
-                  <div className="h-80 rounded-xl bg-gradient-to-br from-red-50 to-gray-100 flex items-center justify-center shadow-lg">
-                    <div className="text-8xl font-bold text-red-600/30">
-                      {product.name[0]}
-                    </div>
+                  <div className="h-80 rounded-xl overflow-hidden shadow-lg bg-white">
+                    <img 
+                      src={productImages[product.slug]}
+                      alt={product.name}
+                      className="w-full h-full object-contain p-4"
+                    />
                   </div>
                 </div>
 
