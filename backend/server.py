@@ -105,7 +105,7 @@ async def submit_contact_form(contact: ContactSubmissionCreate):
 @api_router.get("/contacts", response_model=List[ContactSubmission])
 async def get_contacts():
     """Get all contact submissions (for admin use)"""
-    contacts = await db.contacts.find().sort("createdAt", -1).to_list(1000)
+    contacts = await db.contacts.find({}, {"_id": 0}).sort("createdAt", -1).to_list(1000)
     return contacts
 
 
