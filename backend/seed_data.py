@@ -116,9 +116,10 @@ services_data = [
 ]
 
 testimonials_data = [
-    {"name": "Mehmet Yılmaz", "company": "Construction Manager, Major Development Corp", "text": "Kale Platform's suspended scaffold rental service has been instrumental in completing our high-rise projects on time. Their professional team and quality equipment are unmatched.", "rating": 5},
-    {"name": "Sarah Johnson", "company": "Project Director, International Building Services", "text": "We've worked with Kale Platform on multiple international projects. Their commitment to safety standards and reliable equipment makes them our preferred partner.", "rating": 5},
-    {"name": "Ali Demir", "company": "Facility Manager, Commercial Complex", "text": "The suspended scaffold systems from Kale Platform are top-quality. Their 24/7 support and maintenance services ensure our operations run smoothly.", "rating": 5}
+    {"name": "David Klein", "company": "Munich, Germany", "text": "We purchased KaleLift suspended platforms from Kale Platform for a façade restoration project in Munich. The quality and stability of the system exceeded our expectations. Communication was smooth, and Mr. Oğuz provided excellent technical support throughout the process. A truly reliable partner!", "rating": 5},
+    {"name": "Maria Fernandes", "company": "Accra, Ghana", "text": "We have been using KaleLift equipment for over a year now, and we are extremely satisfied. The installation team was professional, and the customer service team always responded quickly. Even from Turkey, their coordination felt local and efficient. Highly recommended!", "rating": 5},
+    {"name": "Samuel Adeyemi", "company": "Lagos, Nigeria", "text": "Our company imported suspended scaffolds from Kale Platform, and it was a great experience from start to finish. The equipment is durable and easy to operate. Special thanks to Mr. Serkan for his kind assistance during training and setup. KaleLift brings real value to our projects!", "rating": 5},
+    {"name": "Elena Rossi", "company": "Milan, Italy", "text": "We worked with Kale Platform for our high-rise maintenance project, and the service was flawless. Delivery was on time, and the product performance was outstanding. It's impressive to see a Turkish company offering this level of quality and professionalism. We'll definitely collaborate again!", "rating": 5}
 ]
 
 clients_data = [
