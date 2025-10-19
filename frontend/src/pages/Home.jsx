@@ -183,7 +183,7 @@ const Home = () => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {data.services.map((service, index) => (
+            {services.map((service, index) => (
               <div
                 key={index}
                 className="p-6 rounded-xl bg-white hover:bg-red-50 transition-all duration-300 border border-transparent hover:border-red-200"
