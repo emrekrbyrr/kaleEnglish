@@ -74,7 +74,8 @@ products_data = [
             "Professional installation"
         ],
         "applications": ["Bridge construction", "Stadium maintenance", "Complex structures", "Large-scale projects"],
-        "order": 4
+        "order": 4,
+        "isActive": True
     },
     {
         "name": "Manlift",
