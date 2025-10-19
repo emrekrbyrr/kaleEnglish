@@ -110,15 +110,15 @@ products_data = [
 ]
 
 services_data = [
-    {"title": "Certified Equipment", "description": "In the suspended scaffold sector, we lead with our manufacturing and products compliant with CE and TSE standards.", "icon": "award", "order": 1},
-    {"title": "Professional Team", "description": "Expert team members with years of experience, carefully selected to provide the best solutions for your projects.", "icon": "users", "order": 2},
-    {"title": "Economical Solutions", "description": "Our suspended scaffold rental services offer cost-effective alternatives for those seeking solutions to high-cost purchasing.", "icon": "trending-down", "order": 3},
-    {"title": "Quality Assurance", "description": "We provide everything needed for your construction projects by following the latest technologies and best practices in the sector.", "icon": "shield-check", "order": 4},
-    {"title": "24/7 Service", "description": "Our support team is always with you, available for communication 24/7 whenever you need assistance.", "icon": "clock", "order": 5},
-    {"title": "Warranty", "description": "Our products, spare parts, and accessories are guaranteed, ensuring your peace of mind.", "icon": "check-circle", "order": 6},
-    {"title": "Safety Standards", "description": "Our service team operates in full compliance with occupational safety standards, ensuring safety at every stage of your projects.", "icon": "hard-hat", "order": 7},
-    {"title": "Engineering Solutions", "description": "With our in-house engineers and technical team, we offer custom solutions for your suspended scaffold rental and construction projects.", "icon": "wrench", "order": 8},
-    {"title": "Flexible Payment", "description": "Suspended scaffold rental services and customized financial applications developed for your company are provided with the same care.", "icon": "credit-card", "order": 9}
+    {"title": "Certified Equipment", "description": "In the suspended scaffold sector, we lead with our manufacturing and products compliant with CE and TSE standards.", "icon": "award", "order": 1, "isActive": True},
+    {"title": "Professional Team", "description": "Expert team members with years of experience, carefully selected to provide the best solutions for your projects.", "icon": "users", "order": 2, "isActive": True},
+    {"title": "Economical Solutions", "description": "Our suspended scaffold rental services offer cost-effective alternatives for those seeking solutions to high-cost purchasing.", "icon": "trending-down", "order": 3, "isActive": True},
+    {"title": "Quality Assurance", "description": "We provide everything needed for your construction projects by following the latest technologies and best practices in the sector.", "icon": "shield-check", "order": 4, "isActive": True},
+    {"title": "24/7 Service", "description": "Our support team is always with you, available for communication 24/7 whenever you need assistance.", "icon": "clock", "order": 5, "isActive": True},
+    {"title": "Warranty", "description": "Our products, spare parts, and accessories are guaranteed, ensuring your peace of mind.", "icon": "check-circle", "order": 6, "isActive": True},
+    {"title": "Safety Standards", "description": "Our service team operates in full compliance with occupational safety standards, ensuring safety at every stage of your projects.", "icon": "hard-hat", "order": 7, "isActive": True},
+    {"title": "Engineering Solutions", "description": "With our in-house engineers and technical team, we offer custom solutions for your suspended scaffold rental and construction projects.", "icon": "wrench", "order": 8, "isActive": True},
+    {"title": "Flexible Payment", "description": "Suspended scaffold rental services and customized financial applications developed for your company are provided with the same care.", "icon": "credit-card", "order": 9, "isActive": True}
 ]
 
 testimonials_data = [
