@@ -89,7 +89,8 @@ products_data = [
             "Indoor/outdoor use"
         ],
         "applications": ["Interior maintenance", "Light installation", "Inspection work", "Quick access tasks"],
-        "order": 5
+        "order": 5,
+        "isActive": True
     },
     {
         "name": "Accessories & Consoles",
