@@ -302,7 +302,7 @@ const Home = () => {
           </div>
 
           <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-6">
-            {data.clients.map((client, index) => (
+            {clients.map((client, index) => (
               <div
                 key={index}
                 className="flex items-center justify-center p-4 bg-white rounded-lg hover:bg-gray-100 transition-colors"
