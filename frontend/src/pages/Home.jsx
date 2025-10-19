@@ -25,7 +25,7 @@ const Home = () => {
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
-  const maxSlides = Math.ceil(data.testimonials.length / cardsPerSlide);
+  const maxSlides = Math.ceil(testimonials.length / cardsPerSlide);
 
   const scrollPrev = () => {
     setCurrentSlide((prev) => (prev === 0 ? maxSlides - 1 : prev - 1));
