@@ -1,4 +1,5 @@
-// Mock data for Kale Platform website
+// Static data for Kale Platform website
+// No database needed - all content managed here
 
 export const companyInfo = {
   name: "Kale Platform",
