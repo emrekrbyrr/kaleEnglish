@@ -104,7 +104,8 @@ products_data = [
             "Technical support"
         ],
         "applications": ["System upgrades", "Replacement parts", "Custom solutions", "Maintenance"],
-        "order": 6
+        "order": 6,
+        "isActive": True
     }
 ]
 
