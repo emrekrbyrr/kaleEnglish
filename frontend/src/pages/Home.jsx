@@ -72,7 +72,7 @@ const Home = () => {
         <div className="container mx-auto">
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="text-5xl md:text-6xl font-bold text-slate-900 mb-6">
-              {data.company?.tagline || 'Your Solution Partner While Rising'}
+              {companyInfo?.tagline || 'Your Solution Partner While Rising'}
             </h1>
             <p className="text-xl text-slate-600 mb-8 leading-relaxed">
               Professional suspended scaffold rental and sales for high-rise construction,
