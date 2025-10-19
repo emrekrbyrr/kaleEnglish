@@ -29,7 +29,8 @@ products_data = [
             "Electric and manual options"
         ],
         "applications": ["High-rise construction", "Building maintenance", "Facade cleaning", "Window installation"],
-        "order": 1
+        "order": 1,
+        "isActive": True
     },
     {
         "name": "Facade Platform",
