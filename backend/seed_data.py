@@ -59,7 +59,8 @@ products_data = [
             "Custom configurations"
         ],
         "applications": ["Industrial maintenance", "Warehouse operations", "Ship building", "Aircraft hangars"],
-        "order": 3
+        "order": 3,
+        "isActive": True
     },
     {
         "name": "Matafora System",
