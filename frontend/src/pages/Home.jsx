@@ -1,18 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight, Award, Users, TrendingDown, ShieldCheck, Clock, CheckCircle, HardHat, Wrench, CreditCard, ChevronLeft, ChevronRight } from 'lucide-react';
-import { getCompany, getProducts, getServices, getTestimonials, getClients } from '../services/api';
+import { companyInfo, products, services, testimonials, clients, stats } from '../mock';
 
 const Home = () => {
-  const [loading, setLoading] = useState(true);
   const [currentSlide, setCurrentSlide] = useState(0);
-  const [data, setData] = useState({
-    company: null,
-    products: [],
-    services: [],
-    testimonials: [],
-    clients: []
-  });
 
   // Calculate how many cards to show per slide based on screen size
   const getCardsPerSlide = () => {
