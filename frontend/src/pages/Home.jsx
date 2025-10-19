@@ -218,7 +218,7 @@ const Home = () => {
                 className="flex transition-transform duration-500 ease-in-out"
                 style={{ 
                   transform: `translateX(-${currentSlide * (100 / cardsPerSlide)}%)`,
-                  width: `${(data.testimonials.length / cardsPerSlide) * 100}%`
+                  width: `${(testimonials.length / cardsPerSlide) * 100}%`
                 }}
               >
                 {data.testimonials.map((testimonial, index) => (
