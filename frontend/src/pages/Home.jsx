@@ -221,7 +221,7 @@ const Home = () => {
                   width: `${(testimonials.length / cardsPerSlide) * 100}%`
                 }}
               >
-                {data.testimonials.map((testimonial, index) => (
+                {testimonials.map((testimonial, index) => (
                   <div 
                     key={index} 
                     className="px-2 md:px-3"
