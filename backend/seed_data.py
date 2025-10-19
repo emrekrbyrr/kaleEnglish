@@ -44,7 +44,8 @@ products_data = [
             "Enhanced safety features"
         ],
         "applications": ["Facade installation", "Painting", "Renovation", "Inspection"],
-        "order": 2
+        "order": 2,
+        "isActive": True
     },
     {
         "name": "Monorail System",
