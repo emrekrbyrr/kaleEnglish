@@ -37,32 +37,7 @@ const Home = () => {
 
   useEffect(() => {
     document.title = 'Kale Platform - Suspended Scaffold Rental & Sales | Istanbul, Turkey';
-    fetchData();
   }, []);
-
-  const fetchData = async () => {
-    try {
-      const [companyData, productsData, servicesData, testimonialsData, clientsData] = await Promise.all([
-        getCompany(),
-        getProducts(),
-        getServices(),
-        getTestimonials(),
-        getClients()
-      ]);
-
-      setData({
-        company: companyData,
-        products: productsData,
-        services: servicesData,
-        testimonials: testimonialsData,
-        clients: clientsData
-      });
-    } catch (error) {
-      console.error('Error fetching data:', error);
-    } finally {
-      setLoading(false);
-    }
-  };
 
   const getIcon = (iconName) => {
     const icons = {
