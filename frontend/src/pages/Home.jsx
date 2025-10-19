@@ -64,24 +64,6 @@ const Home = () => {
     'accessories': 'https://customer-assets.emergentagent.com/job_f26ed2bd-7f38-45ed-a0bc-2f5ec395f275/artifacts/xa5cei55_Asma-iskele-Aksesuar-Konsol.webp'
   };
 
-  if (loading) {
-    return (
-      <div className="min-h-screen flex items-center justify-center">
-        <div className="text-center">
-          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-red-600 mx-auto mb-4"></div>
-          <p className="text-slate-600">Loading...</p>
-        </div>
-      </div>
-    );
-  }
-
-  const stats = data.company?.stats ? [
-    { label: "Years of Experience", value: `${data.company.stats.yearsExperience}+` },
-    { label: "Happy Customers", value: `${data.company.stats.customers}+` },
-    { label: "Completed Projects", value: `${data.company.stats.projects}+` },
-    { label: "Countries Exported", value: `${data.company.stats.countries}+` }
-  ] : [];
-
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
