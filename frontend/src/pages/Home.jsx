@@ -225,7 +225,7 @@ const Home = () => {
                   <div 
                     key={index} 
                     className="px-2 md:px-3"
-                    style={{ width: `${100 / data.testimonials.length}%` }}
+                    style={{ width: `${100 / testimonials.length}%` }}
                   >
                     <div className="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow h-full flex flex-col">
                       <div className="flex items-center space-x-1 mb-4">
