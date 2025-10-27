@@ -8,6 +8,7 @@ export const companyInfo = {
   email: "sales@kaleplatform.com",
   phone: "+90 539 573 4636",
   address: "Büyükçekmece, Istanbul, Turkey",
+  warehouseAddress: "Johannesburg, Gauteng, 2001, South Africa",
   established: "2003"
 };
 
