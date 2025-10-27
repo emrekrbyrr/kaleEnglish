@@ -236,9 +236,20 @@ const Contact = () => {
                       <MapPin className="w-6 h-6" />
                     </div>
                     <div>
-                      <h3 className="font-semibold text-slate-900 mb-1">Address</h3>
+                      <h3 className="font-semibold text-slate-900 mb-1">Headquarters</h3>
                       <p className="text-slate-600">{companyInfo.address}</p>
                       <p className="text-sm text-slate-500 mt-1">Visit by appointment</p>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start space-x-4">
+                    <div className="w-12 h-12 rounded-full bg-red-100 text-red-600 flex items-center justify-center flex-shrink-0">
+                      <MapPin className="w-6 h-6" />
+                    </div>
+                    <div>
+                      <h3 className="font-semibold text-slate-900 mb-1">Warehouse - Africa</h3>
+                      <p className="text-slate-600">{companyInfo.warehouseAddress}</p>
+                      <p className="text-sm text-slate-500 mt-1">Storage & Distribution Center</p>
                     </div>
                   </div>
                 </div>
