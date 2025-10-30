@@ -2,10 +2,10 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   
-  <!-- Homepage -->
+  <!-- Homepage - Primary (non-www) -->
   <url>
     <loc>https://kalelift.com/</loc>
-    <lastmod>2025-10-19</lastmod>
+    <lastmod>2025-10-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
@@ -13,7 +13,7 @@
   <!-- About Page -->
   <url>
     <loc>https://kalelift.com/about</loc>
-    <lastmod>2025-10-19</lastmod>
+    <lastmod>2025-10-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -21,7 +21,7 @@
   <!-- Products Page -->
   <url>
     <loc>https://kalelift.com/products</loc>
-    <lastmod>2025-10-19</lastmod>
+    <lastmod>2025-10-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -29,7 +29,7 @@
   <!-- Rental Services Page -->
   <url>
     <loc>https://kalelift.com/rental</loc>
-    <lastmod>2025-10-19</lastmod>
+    <lastmod>2025-10-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -37,7 +37,7 @@
   <!-- Contact Page -->
   <url>
     <loc>https://kalelift.com/contact</loc>
-    <lastmod>2025-10-19</lastmod>
+    <lastmod>2025-10-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
