@@ -23,6 +23,8 @@ function App() {
             <Route path="/about" element={<About />} />
             <Route path="/products" element={<Products />} />
             <Route path="/rental" element={<Rental />} />
+            {/* SEO-friendly alias for the main keyword */}
+            <Route path="/suspended-scaffold-rental" element={<Rental />} />
             <Route path="/contact" element={<Contact />} />
           </Routes>
         </main>
