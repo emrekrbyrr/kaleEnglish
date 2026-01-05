@@ -79,6 +79,10 @@ STORAGE_BACKEND=dynamodb
 # DB_PASS=...
 # DB_DB=kale
 # DB_PORT=5432
+#
+# Table placement (recommended to avoid collisions with existing projects):
+# PG_SCHEMA=kaleplatform
+# PG_CONTACTS_TABLE=contacts
 
 # DynamoDB (when STORAGE_BACKEND=dynamodb)
 AWS_REGION=<aws-region>                  # e.g. eu-central-1

@@ -1,4 +1,5 @@
 import os
+import re
 from datetime import datetime, timezone
 from typing import Any, Dict, List, Optional
 
@@ -124,16 +125,24 @@ class DynamoDbContactStorage(ContactStorage):
 
 
 class PostgresContactStorage(ContactStorage):
-    def __init__(self, dsn: str):
+    def __init__(self, dsn: str, schema: str = "public", table: str = "contacts"):
         self._dsn = dsn
+        self._schema = _validate_pg_ident(schema, "PG_SCHEMA")
+        self._table = _validate_pg_ident(table, "PG_CONTACTS_TABLE")
         self._pool: Optional[asyncpg.Pool] = None
+
+    @property
+    def _fqtn(self) -> str:
+        # Identifiers are validated, safe to format
+        return f'{self._schema}."{self._table}"'
 
     async def startup(self) -> None:
         self._pool = await asyncpg.create_pool(dsn=self._dsn, min_size=1, max_size=5)
         async with self._pool.acquire() as conn:
+            await conn.execute(f'CREATE SCHEMA IF NOT EXISTS {self._schema}')
             await conn.execute(
-                """
-                CREATE TABLE IF NOT EXISTS contacts (
+                f"""
+                CREATE TABLE IF NOT EXISTS {self._fqtn} (
                   id TEXT PRIMARY KEY,
                   created_at TIMESTAMPTZ NOT NULL,
                   name TEXT NOT NULL,
@@ -158,8 +167,8 @@ class PostgresContactStorage(ContactStorage):
         created_at = _parse_datetime(contact.get("createdAt"))
         async with self._pool.acquire() as conn:
             await conn.execute(
-                """
-                INSERT INTO contacts
+                f"""
+                INSERT INTO {self._fqtn}
                   (id, created_at, name, email, phone, company, message, consent, status)
                 VALUES
                   ($1, $2, $3, $4, $5, $6, $7, $8, $9)
@@ -182,9 +191,9 @@ class PostgresContactStorage(ContactStorage):
 
         async with self._pool.acquire() as conn:
             rows = await conn.fetch(
-                """
+                f"""
                 SELECT id, created_at, name, email, phone, company, message, consent, status
-                FROM contacts
+                FROM {self._fqtn}
                 ORDER BY created_at DESC
                 LIMIT $1
                 """,
@@ -234,7 +243,9 @@ def build_contact_storage() -> ContactStorage:
             if not all([host, user, password, db]):
                 raise StorageError("Postgres selected but DATABASE_URL or DB_* vars are missing")
             database_url = f"postgresql://{user}:{password}@{host}:{port}/{db}"
-        return PostgresContactStorage(dsn=database_url)
+        schema = os.environ.get("PG_SCHEMA") or "kaleplatform"
+        table = os.environ.get("PG_CONTACTS_TABLE") or "contacts"
+        return PostgresContactStorage(dsn=database_url, schema=schema, table=table)
 
     if backend == "mongo":
         mongo_url = os.environ.get("MONGO_URL")
@@ -250,4 +261,16 @@ def build_contact_storage() -> ContactStorage:
         return DynamoDbContactStorage(table_name=table)
 
     raise StorageError(f"Unknown STORAGE_BACKEND: {backend}")
+
+
+_PG_IDENT_RE = re.compile(r"^[A-Za-z_][A-Za-z0-9_]*$")
+
+
+def _validate_pg_ident(value: str, env_name: str) -> str:
+    if not _PG_IDENT_RE.match(value):
+        raise StorageError(
+            f"Invalid Postgres identifier for {env_name}: {value!r}. "
+            "Use only letters, digits, underscore; must not start with a digit."
+        )
+    return value
 
