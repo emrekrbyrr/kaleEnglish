@@ -1,20 +1,24 @@
 from fastapi import FastAPI, APIRouter, HTTPException
 from dotenv import load_dotenv
 from starlette.middleware.cors import CORSMiddleware
-from motor.motor_asyncio import AsyncIOMotorClient
 import os
 import logging
 from pathlib import Path
 from models import ContactSubmission, ContactSubmissionCreate
 from email_service import send_contact_email
+from storage import build_contact_storage, StorageError
 
 ROOT_DIR = Path(__file__).parent
 load_dotenv(ROOT_DIR / '.env')
 
-# MongoDB connection (only for contact form storage)
-mongo_url = os.environ['MONGO_URL']
-client = AsyncIOMotorClient(mongo_url)
-db = client[os.environ['DB_NAME']]
+logger = logging.getLogger(__name__)
+
+# Storage (MongoDB or DynamoDB)
+try:
+    contact_storage = build_contact_storage()
+except StorageError as e:
+    # Fail fast with a readable error in logs
+    raise RuntimeError(f"Storage configuration error: {e}") from e
 
 # Create the main app
 app = FastAPI(title="Kale Platform API", version="1.0")
@@ -37,7 +41,7 @@ async def submit_contact_form(contact: ContactSubmissionCreate):
     contact_obj = ContactSubmission(**contact_dict)
     
     # Save to database
-    await db.contacts.insert_one(contact_obj.dict())
+    await contact_storage.save_contact(contact_obj.dict())
     
     # Send email notification
     try:
@@ -64,7 +68,7 @@ async def submit_contact_form(contact: ContactSubmissionCreate):
 @api_router.get("/contacts")
 async def get_contacts():
     """Get all contact submissions (admin endpoint)"""
-    contacts = await db.contacts.find({}, {"_id": 0}).sort("createdAt", -1).to_list(1000)
+    contacts = await contact_storage.list_contacts(limit=1000)
     return contacts
 
 
@@ -73,8 +77,9 @@ app.include_router(api_router)
 
 app.add_middleware(
     CORSMiddleware,
-    allow_credentials=True,
-    allow_origins=["*"],
+    # If you need cookies/credentials, set CORS_ORIGINS to explicit origins.
+    allow_credentials=False,
+    allow_origins=[o.strip() for o in os.environ.get("CORS_ORIGINS", "*").split(",")] if os.environ.get("CORS_ORIGINS") else ["*"],
     allow_methods=["*"],
     allow_headers=["*"],
 )
@@ -84,9 +89,8 @@ logging.basicConfig(
     level=logging.INFO,
     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s'
 )
-logger = logging.getLogger(__name__)
 
 @app.on_event("shutdown")
 async def shutdown_db_client():
-    """Close database connection on shutdown"""
-    client.close()
+    """Close storage connections on shutdown"""
+    await contact_storage.shutdown()

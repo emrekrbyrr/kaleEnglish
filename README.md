@@ -62,8 +62,21 @@ REACT_APP_BACKEND_URL=<backend-url>
 
 ### Backend (.env)
 ```
+#
+# Storage backend:
+#   - dynamodb (recommended for low cost on AWS)
+#   - mongo (if you want to keep MongoDB/Atlas/DocumentDB)
+#
+STORAGE_BACKEND=dynamodb
+
+# DynamoDB (when STORAGE_BACKEND=dynamodb)
+AWS_REGION=<aws-region>                  # e.g. eu-central-1
+DYNAMODB_TABLE=<dynamodb-table-name>     # e.g. kale-contact
+
+# MongoDB (when STORAGE_BACKEND=mongo)
 MONGO_URL=<mongodb-connection-string>
 DB_NAME=<database-name>
+
 SMTP_HOST=<smtp-host>
 SMTP_PORT=<smtp-port>
 SMTP_USER=<smtp-username>
@@ -73,12 +86,60 @@ CONTACT_EMAIL=<destination-email>
 
 ## Deployment
 
-### Production Deployment (Emergent)
-The app is configured for Emergent native deployments:
-- Frontend builds to static files
-- Backend runs on port 8001
-- MongoDB connection automatically configured
-- CORS enabled for all origins
+### AWS’ye taşımak (önerilen düşük maliyetli mimari)
+
+Bu projede dinamik tek parça **contact form** olduğu için AWS’de en ucuz/kolay kurgu:
+
+- **Frontend**: S3 (static hosting) + CloudFront (CDN + HTTPS) + Route53 (domain)
+- **Backend**: tek bir küçük sunucu (EC2/Lightsail) *veya* API Gateway + Lambda
+- **DB**: **DynamoDB (on-demand)** (Mongo çalıştırma derdi yok, düşük trafik için çok ucuz)
+- **Email**: Mevcut SMTP ile devam edebilirsin (istersen AWS SES’e de geçilebilir)
+
+#### 1) DynamoDB tablosu oluştur
+- Table name: örn. `kale-contact`
+- Partition key: `pk` (String)
+- Sort key: `sk` (String)
+- Capacity: **On-demand**
+
+#### 2) Backend’i AWS’ye koy (EC2/Lightsail - en basit “bulut sunucu” yolu)
+- Ubuntu sunucu aç (Lightsail 5$ genelde yeterli)
+- Security Group / firewall: sadece **80/443** açık olsun (SSH 22 kendi IP’ne kısıtla)
+- Sunucuda Python kur, backend’i çalıştır:
+  - `pip install -r backend/requirements.txt`
+  - Env’leri ayarla (aşağıdaki örnek)
+  - `uvicorn backend.server:app --host 0.0.0.0 --port 8001`
+- Nginx reverse proxy ile `/api`’yi 8001’e yönlendir (HTTPS için Let’s Encrypt)
+
+Backend env örneği:
+```
+STORAGE_BACKEND=dynamodb
+AWS_REGION=eu-central-1
+DYNAMODB_TABLE=kale-contact
+SMTP_HOST=...
+SMTP_PORT=465
+SMTP_USER=...
+SMTP_PASSWORD=...
+CONTACT_EMAIL=...
+```
+
+> IAM: EC2/Lightsail tarafında en doğrusu **instance role** ile `dynamodb:PutItem` ve `dynamodb:Query` yetkisi vermek. Access key gömmemeye çalış.
+
+#### 3) Frontend’i S3 + CloudFront’a deploy et
+- `frontend/.env` içine `REACT_APP_BACKEND_URL=https://api.senindomainin.com` koy
+- `yarn build`
+- `frontend/build` içeriğini S3’e upload et
+- CloudFront dağıtımı oluştur (origin: S3), HTTPS sertifikası (ACM) bağla
+- Route53’te domainini CloudFront’a yönlendir
+
+#### 4) Mevcut MongoDB verisini taşı (opsiyonel)
+Sadece contact kayıtların varsa ve Mongo’dan DynamoDB’ye geçeceksen:
+- Eski ortamdan `MONGO_URL` ve `DB_NAME` al
+- AWS’de tabloyu oluşturduktan sonra:
+  - `python backend/migrate_contacts_mongo_to_dynamodb.py`
+
+### Alternatifler
+- **MongoDB’yi AWS’ye taşımak**: ya Atlas (kolay) ya da EC2 üstünde Mongo (bakım/backup senin). Amazon DocumentDB genelde küçük siteler için pahalı kalıyor.
+- **Backend’i serverless yapmak**: FastAPI’yi Lambda’ya taşımak mümkün, ama mevcut yapıda “bulut sunucu” isteğine göre EC2/Lightsail daha az sürprizli.
 
 ### Manual Deployment
 1. Build frontend: `cd frontend && yarn build`
