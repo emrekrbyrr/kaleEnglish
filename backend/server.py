@@ -32,6 +32,10 @@ async def root():
     """API health check"""
     return {"message": "Kale Platform API", "status": "operational"}
 
+@app.on_event("startup")
+async def startup_storage():
+    await contact_storage.startup()
+
 
 # Contact form endpoint - the only endpoint that needs database
 @api_router.post("/contact", response_model=ContactSubmission)

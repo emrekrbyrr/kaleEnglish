@@ -65,9 +65,20 @@ REACT_APP_BACKEND_URL=<backend-url>
 #
 # Storage backend:
 #   - dynamodb (recommended for low cost on AWS)
+#   - postgres (use your existing EC2 Postgres)
 #   - mongo (if you want to keep MongoDB/Atlas/DocumentDB)
 #
 STORAGE_BACKEND=dynamodb
+
+# Postgres (when STORAGE_BACKEND=postgres)
+# Either provide DATABASE_URL:
+# DATABASE_URL=postgresql://user:password@host:5432/dbname
+# Or reuse your existing naming style:
+# DB_HOST=3.89.169.178
+# DB_USER=postgres
+# DB_PASS=...
+# DB_DB=kale
+# DB_PORT=5432
 
 # DynamoDB (when STORAGE_BACKEND=dynamodb)
 AWS_REGION=<aws-region>                  # e.g. eu-central-1
