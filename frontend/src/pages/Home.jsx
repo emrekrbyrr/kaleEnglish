@@ -138,6 +138,10 @@ const Home = () => {
                     src={productImages[product.slug]}
                     alt={product.name}
                     className="w-full h-full object-contain"
+                    width="640"
+                    height="384"
+                    loading="lazy"
+                    decoding="async"
                   />
                 </div>
                 <div className="p-6">

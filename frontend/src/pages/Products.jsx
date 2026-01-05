@@ -61,6 +61,10 @@ const Products = () => {
                       src={productImages[product.slug]}
                       alt={product.name}
                       className="w-full h-full object-contain p-4"
+                      width="960"
+                      height="640"
+                      loading="lazy"
+                      decoding="async"
                     />
                   </div>
                 </div>

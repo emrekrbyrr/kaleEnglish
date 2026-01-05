@@ -27,6 +27,10 @@ const Header = () => {
               src="https://customer-assets.emergentagent.com/job_f26ed2bd-7f38-45ed-a0bc-2f5ec395f275/artifacts/5mgkyw4x_kaleliftlogo.png"
               alt="Kale Lift"
               className="h-10 w-auto"
+              width="160"
+              height="40"
+              decoding="async"
+              fetchpriority="high"
             />
           </Link>
 

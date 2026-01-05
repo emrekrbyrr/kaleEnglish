@@ -33,6 +33,9 @@ const AnimatedScaffold = () => {
             src="https://customer-assets.emergentagent.com/job_f26ed2bd-7f38-45ed-a0bc-2f5ec395f275/artifacts/xgck4nv5_nobackground.png"
             alt="Kale Platform Suspended Scaffold"
             className="scaffold-image"
+            width="320"
+            height="320"
+            decoding="async"
           />
         </div>
       </div>
