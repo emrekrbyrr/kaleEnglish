@@ -15,6 +15,7 @@ def send_contact_email(name: str, email: str, phone: str, company: str, message:
         smtp_user = os.environ.get('SMTP_USER')
         smtp_password = os.environ.get('SMTP_PASSWORD')
         contact_email = os.environ.get('CONTACT_EMAIL')
+        smtp_security = (os.environ.get("SMTP_SECURITY") or "").strip().lower()
         
         if not all([smtp_host, smtp_user, smtp_password, contact_email]):
             logger.error("SMTP configuration is incomplete")
@@ -59,14 +60,25 @@ def send_contact_email(name: str, email: str, phone: str, company: str, message:
         html_part = MIMEText(html_body, 'html')
         msg.attach(html_part)
         
-        # Send email via SSL
-        with smtplib.SMTP_SSL(smtp_host, smtp_port) as server:
-            server.login(smtp_user, smtp_password)
-            server.send_message(msg)
+        # Send email (support both implicit SSL and STARTTLS)
+        timeout = float(os.environ.get("SMTP_TIMEOUT", "15"))
+        if smtp_security in ("ssl", "smtps") or (not smtp_security and smtp_port == 465):
+            with smtplib.SMTP_SSL(smtp_host, smtp_port, timeout=timeout) as server:
+                server.login(smtp_user, smtp_password)
+                server.send_message(msg)
+        else:
+            with smtplib.SMTP(smtp_host, smtp_port, timeout=timeout) as server:
+                server.ehlo()
+                # default to STARTTLS unless explicitly disabled
+                if smtp_security not in ("plain", "none"):
+                    server.starttls()
+                    server.ehlo()
+                server.login(smtp_user, smtp_password)
+                server.send_message(msg)
         
         logger.info(f"Contact email sent successfully from {email}")
         return True
         
     except Exception as e:
-        logger.error(f"Failed to send contact email: {str(e)}")
+        logger.exception(f"Failed to send contact email: {str(e)}")
         return False
