@@ -66,26 +66,12 @@
         {
           "@context": "https://schema.org",
           "@type": "Organization",
+          "@id": "https://kalelift.com/#organization",
           "name": "KaleLift - Kale Platform",
           "url": "https://kalelift.com",
           "logo": "https://kalelift.com/favicon.png",
           "description": "Professional suspended scaffolding rental and sales provider serving Africa and Europe",
           "foundingDate": "2003",
-          "address": [
-            {
-              "@type": "PostalAddress",
-              "addressCountry": "TR",
-              "addressLocality": "Istanbul",
-              "addressRegion": "Büyükçekmece"
-            },
-            {
-              "@type": "PostalAddress",
-              "addressCountry": "ZA",
-              "addressLocality": "Johannesburg",
-              "addressRegion": "Gauteng",
-              "postalCode": "2001"
-            }
-          ],
           "contactPoint": {
             "@type": "ContactPoint",
             "telephone": "+90-539-573-4636",
@@ -135,15 +121,22 @@
         {
           "@context": "https://schema.org",
           "@type": "Service",
+          "@id": "https://kalelift.com/#service-suspended-scaffold-rental",
           "name": "Suspended Scaffolding Rental",
           "serviceType": "Suspended scaffolding rental",
           "description": "Professional suspended scaffolding rental services for construction and facade work.",
           "provider": {
-            "@type": "Organization",
-            "name": "KaleLift - Kale Platform",
-            "url": "https://kalelift.com"
+            "@id": "https://kalelift.com/#organization"
           },
-          "areaServed": ["ZA", "NG", "GH", "KE", "DE", "IT", "TR"],
+          "areaServed": [
+            { "@type": "Country", "name": "South Africa" },
+            { "@type": "Country", "name": "Nigeria" },
+            { "@type": "Country", "name": "Ghana" },
+            { "@type": "Country", "name": "Kenya" },
+            { "@type": "Country", "name": "Germany" },
+            { "@type": "Country", "name": "Italy" },
+            { "@type": "Country", "name": "Turkey" }
+          ],
           "url": "https://kalelift.com/suspended-scaffold-rental"
         }
         </script>
