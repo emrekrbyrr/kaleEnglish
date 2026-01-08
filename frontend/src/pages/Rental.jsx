@@ -1,14 +1,16 @@
-import React, { useEffect } from 'react';
+import React from "react";
 import { rentalInfo } from '../mock';
 import { CheckCircle, Clock, Shield, Wrench, Phone } from 'lucide-react';
+import Seo from "../components/Seo";
 
 const Rental = () => {
-  useEffect(() => {
-    document.title = 'Suspended Scaffold Rental - Kale Platform | Professional Equipment Rental';
-  }, []);
-
   return (
     <div className="min-h-screen">
+      <Seo
+        title="Suspended Scaffold Rental - KaleLift | Professional Equipment Rental"
+        description="Suspended scaffold rental services with CE & TSE certified equipment, professional installation, and 24/7 support. Get a fast quote for your project."
+        canonicalPath="/rental"
+      />
       {/* Hero Section */}
       <section className="pt-32 pb-16 px-4 bg-gradient-to-br from-gray-50 to-gray-100">
         <div className="container mx-auto">

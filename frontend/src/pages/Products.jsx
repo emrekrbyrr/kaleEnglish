@@ -1,11 +1,10 @@
 import React, { useEffect } from 'react';
 import { products } from '../mock';
 import { CheckCircle } from 'lucide-react';
+import Seo from "../components/Seo";
 
 const Products = () => {
   useEffect(() => {
-    document.title = 'Suspended Scaffold Products - Kale Platform | CE & TSE Certified';
-    
     // Scroll to product if hash exists
     if (window.location.hash) {
       const id = window.location.hash.replace('#', '');
@@ -29,6 +28,11 @@ const Products = () => {
 
   return (
     <div className="min-h-screen">
+      <Seo
+        title="Suspended Scaffold Products - KaleLift | CE & TSE Certified"
+        description="Explore KaleLift suspended scaffold systems and facade access equipment. CE & TSE certified products, engineered for safety, durability, and performance."
+        canonicalPath="/products"
+      />
       {/* Hero Section */}
       <section className="pt-32 pb-16 px-4 bg-gradient-to-br from-gray-50 to-gray-100">
         <div className="container mx-auto">

@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight, Award, Users, TrendingDown, ShieldCheck, Clock, CheckCircle, HardHat, Wrench, CreditCard, ChevronLeft, ChevronRight } from 'lucide-react';
 import { companyInfo, products, services, testimonials, clients, stats } from '../mock';
+import Seo from "../components/Seo";
 
 const Home = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -35,10 +36,6 @@ const Home = () => {
     setCurrentSlide((prev) => (prev === maxSlides - 1 ? 0 : prev + 1));
   };
 
-  useEffect(() => {
-    document.title = 'Kale Platform - Suspended Scaffold Rental & Sales | Istanbul, Turkey';
-  }, []);
-
   const getIcon = (iconName) => {
     const icons = {
       'award': Award,
@@ -66,6 +63,11 @@ const Home = () => {
 
   return (
     <div className="min-h-screen">
+      <Seo
+        title="KaleLift - Professional Suspended Scaffolding Rental & Sales | Africa & Europe"
+        description="Leading suspended scaffolding rental and sales provider serving Africa and Europe. CE & TSE certified equipment from Turkey with expert installation and 24/7 support."
+        canonicalPath="/"
+      />
       {/* Hero Section */}
       <section className="relative pt-32 pb-20 px-4 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-gray-50 to-gray-100 -z-10"></div>

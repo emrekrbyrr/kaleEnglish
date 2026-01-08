@@ -1,8 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Mail, Phone, MapPin, Send } from 'lucide-react';
 import { companyInfo } from '../mock';
 import { toast } from 'sonner';
 import { submitContactForm } from '../services/api';
+import Seo from "../components/Seo";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -14,10 +15,6 @@ const Contact = () => {
     consent: false
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
-
-  useEffect(() => {
-    document.title = 'Contact Us - Kale Platform | Get in Touch';
-  }, []);
 
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
@@ -61,6 +58,11 @@ const Contact = () => {
 
   return (
     <div className="min-h-screen">
+      <Seo
+        title="Contact Us - KaleLift | Get a Quote"
+        description="Contact KaleLift for suspended scaffolding rental, sales, and technical support. Get a fast quote and expert guidance for your project."
+        canonicalPath="/contact"
+      />
       {/* Hero Section */}
       <section className="pt-32 pb-16 px-4 bg-gradient-to-br from-gray-50 to-gray-100">
         <div className="container mx-auto">

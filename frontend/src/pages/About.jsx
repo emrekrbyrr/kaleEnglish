@@ -1,14 +1,16 @@
-import React, { useEffect } from 'react';
+import React from "react";
 import { companyInfo, stats, services } from '../mock';
 import { Building, Target, Eye, Award } from 'lucide-react';
+import Seo from "../components/Seo";
 
 const About = () => {
-  useEffect(() => {
-    document.title = 'About Us - Kale Platform | Leading Suspended Scaffold Provider';
-  }, []);
-
   return (
     <div className="min-h-screen">
+      <Seo
+        title="About Us - KaleLift | Leading Suspended Scaffold Provider"
+        description="Learn about KaleLift: a leading suspended scaffolding rental and sales provider. CE & TSE certified equipment, expert installation, and international service across Africa & Europe."
+        canonicalPath="/about"
+      />
       {/* Hero Section */}
       <section className="pt-32 pb-16 px-4 bg-gradient-to-br from-gray-50 to-gray-100">
         <div className="container mx-auto">
