@@ -7,8 +7,8 @@ const Rental = () => {
   return (
     <div className="min-h-screen">
       <Seo
-        title="Suspended Scaffold Rental - KaleLift | Professional Equipment Rental"
-        description="Suspended scaffold rental services with CE & TSE certified equipment, professional installation, and 24/7 support. Get a fast quote for your project."
+        title="Swing Stage Rental & Suspended Platform Rental - KaleLift"
+        description="Swing stage rental, suspended working platform (SWP) systems, and temporary suspended scaffold (TSS) compliance with CE & TSE certified equipment, installation, and 24/7 support."
         canonicalPath="/rental"
       />
       {/* Hero Section */}
@@ -16,10 +16,14 @@ const Rental = () => {
         <div className="container mx-auto">
           <div className="max-w-3xl mx-auto text-center">
             <h1 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6">
-              Suspended Scaffold Rental Services
+              Swing Stage & Suspended Platform Rental
             </h1>
-            <p className="text-xl text-slate-600 leading-relaxed mb-8">
+            <p className="text-xl text-slate-600 leading-relaxed mb-4">
               {rentalInfo.description}
+            </p>
+            <p className="text-lg text-slate-600 leading-relaxed mb-8">
+              From Electric Cradle System installations to Temporary Suspended Scaffold (TSS) compliance,
+              we deliver Facade Access Solutions with Suspended Scaffolding Safety Hoist options for high-rise projects.
             </p>
             <a
               href="/contact"
@@ -36,8 +40,12 @@ const Rental = () => {
         <div className="container mx-auto px-4">
           <div className="max-w-5xl mx-auto">
             <h2 className="text-3xl font-bold text-slate-900 mb-12 text-center">
-              Rental Service Benefits
+              Swing Stage & Suspended Platform Rental
             </h2>
+            <p className="text-lg text-slate-600 text-center mb-10">
+              Built for high-rise construction and exterior building maintenance equipment teams, our rental packages
+              focus on fast deployment, certified systems, and reliable support.
+            </p>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {rentalInfo.benefits.map((benefit, index) => (
                 <div
@@ -128,6 +136,60 @@ const Rental = () => {
                 </p>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Technical Specifications */}
+      <section className="py-20 bg-gray-100">
+        <div className="container mx-auto px-4">
+          <div className="max-w-5xl mx-auto">
+            <h2 className="text-3xl font-bold text-slate-900 mb-4 text-center">
+              Technical Specifications of Our Modular Suspended Platforms
+            </h2>
+            <p className="text-lg text-slate-600 text-center mb-10">
+              Typical configurations for Suspended Working Platform (SWP) rentals, Temporary Suspended Scaffold (TSS)
+              compliance, and facade access solutions across diverse project types.
+            </p>
+            <div className="overflow-x-auto bg-white rounded-2xl shadow-lg">
+              <table className="min-w-full text-left">
+                <thead className="bg-gray-50">
+                  <tr>
+                    <th className="px-6 py-4 text-sm font-semibold text-slate-700">Platform / System</th>
+                    <th className="px-6 py-4 text-sm font-semibold text-slate-700">Rated Load</th>
+                    <th className="px-6 py-4 text-sm font-semibold text-slate-700">Platform Length</th>
+                    <th className="px-6 py-4 text-sm font-semibold text-slate-700">Drive & Safety</th>
+                    <th className="px-6 py-4 text-sm font-semibold text-slate-700">Typical Use</th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-gray-200 text-sm text-slate-600">
+                  <tr>
+                    <td className="px-6 py-4 font-semibold text-slate-900">ZLP800 Suspended Platform</td>
+                    <td className="px-6 py-4">Up to 800 kg</td>
+                    <td className="px-6 py-4">Modular lengths (project-based)</td>
+                    <td className="px-6 py-4">Electric Cradle System with Suspended Scaffolding Safety Hoist</td>
+                    <td className="px-6 py-4">Gondola Lift for Construction and high-rise facade work</td>
+                  </tr>
+                  <tr>
+                    <td className="px-6 py-4 font-semibold text-slate-900">Modular Suspended Platform</td>
+                    <td className="px-6 py-4">Project-based</td>
+                    <td className="px-6 py-4">Custom modular spans</td>
+                    <td className="px-6 py-4">Suspended Working Platform (SWP) compliant safety locks</td>
+                    <td className="px-6 py-4">Facade Access Solutions for complex structures</td>
+                  </tr>
+                  <tr>
+                    <td className="px-6 py-4 font-semibold text-slate-900">Temporary Suspended Scaffold (TSS)</td>
+                    <td className="px-6 py-4">Site-specific</td>
+                    <td className="px-6 py-4">Configured per site</td>
+                    <td className="px-6 py-4">Certified suspension and guardrail systems</td>
+                    <td className="px-6 py-4">Exterior Building Maintenance Equipment programs</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <p className="text-sm text-slate-500 mt-4">
+              Specifications vary by configuration and regional compliance requirements.
+            </p>
           </div>
         </div>
       </section>

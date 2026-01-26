@@ -29,8 +29,8 @@ const Products = () => {
   return (
     <div className="min-h-screen">
       <Seo
-        title="Suspended Scaffold Products - KaleLift | CE & TSE Certified"
-        description="Explore KaleLift suspended scaffold systems and facade access equipment. CE & TSE certified products, engineered for safety, durability, and performance."
+        title="Suspended Scaffold Products & Facade Access Solutions - KaleLift"
+        description="Explore modular suspended platform systems, ZLP800 suspended platform options, and suspended working platform (SWP) configurations engineered for safety, durability, and performance."
         canonicalPath="/products"
       />
       {/* Hero Section */}
@@ -41,8 +41,8 @@ const Products = () => {
               Suspended Scaffold Products
             </h1>
             <p className="text-xl text-slate-600 leading-relaxed">
-              Complete range of CE & TSE certified suspended scaffold systems for all your
-              construction and maintenance needs.
+              Complete range of CE & TSE certified suspended scaffold systems, modular suspended platform options,
+              and facade access solutions for construction and maintenance teams worldwide.
             </p>
           </div>
         </div>

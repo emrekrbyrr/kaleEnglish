@@ -24,7 +24,7 @@ export const products = [
     id: 1,
     name: "Suspended Scaffold",
     slug: "suspended-scaffold",
-    description: "Professional suspended scaffold systems for safe and efficient facade access. CE and TSE certified equipment designed for high-rise building maintenance and construction.",
+    description: "Professional suspended scaffold systems for safe and efficient facade access. The flagship ZLP800 Suspended Platform delivers up to 800 kg capacity as a Gondola Lift for Construction and can be configured as an Electric Cradle System for high-rise building maintenance.",
     features: [
       "CE & TSE Certified",
       "Load capacity up to 800kg",
@@ -38,7 +38,7 @@ export const products = [
     id: 2,
     name: "Facade Platform",
     slug: "facade-platform",
-    description: "Advanced facade platform systems designed for modern building projects. Provides stable and secure working platforms for exterior work.",
+    description: "Advanced facade platform systems designed for modern building projects, offering Modular Suspended Platform layouts, Suspended Working Platform (SWP) compliance, and Façade Access Solutions for complex exteriors.",
     features: [
       "Modular design",
       "Weather resistant",
@@ -94,7 +94,7 @@ export const products = [
     id: 6,
     name: "Accessories & Consoles",
     slug: "accessories",
-    description: "Complete range of accessories and support systems for suspended scaffold installations. Quality components for enhanced safety and functionality.",
+    description: "Complete range of accessories and support systems for suspended scaffold installations, including Suspended Scaffolding Safety Hoist options and safety lock upgrades.",
     features: [
       "Wide product range",
       "Compatible with all systems",
@@ -206,7 +206,7 @@ export const testimonials = [
 
 export const rentalInfo = {
   title: "Suspended Scaffold Rental",
-  description: "Professional suspended scaffold rental services for your construction and maintenance projects. We offer flexible rental periods and comprehensive support.",
+  description: "Professional Swing Stage Rental and suspended scaffold services for construction and exterior building maintenance equipment needs. We supply CE & TSE certified Suspended Working Platform (SWP) systems with flexible rental terms and full project support.",
   benefits: [
     "Cost-effective alternative to purchasing",
     "Latest equipment and technology",
