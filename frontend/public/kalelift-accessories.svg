@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="420" viewBox="0 0 640 420" role="img" aria-labelledby="title desc">
+  <title id="title">KaleLift Accessories and Consoles</title>
+  <desc id="desc">Stylized accessories and consoles illustration</desc>
+  <rect width="640" height="420" fill="#f8fafc"/>
+  <rect x="48" y="70" width="544" height="280" rx="18" fill="#ffffff" stroke="#e2e8f0" stroke-width="4"/>
+  <circle cx="220" cy="210" r="46" fill="#f1f5f9" stroke="#94a3b8" stroke-width="4"/>
+  <circle cx="220" cy="210" r="18" fill="#94a3b8"/>
+  <rect x="310" y="170" width="120" height="80" rx="10" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="3"/>
+  <rect x="330" y="190" width="80" height="16" rx="6" fill="#dc2626"/>
+  <rect x="330" y="214" width="80" height="12" rx="6" fill="#e2e8f0"/>
+  <rect x="450" y="190" width="90" height="60" rx="10" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="3"/>
+  <text x="80" y="50" font-family="Arial, sans-serif" font-size="20" fill="#0f172a" font-weight="700">KaleLift</text>
+  <text x="80" y="330" font-family="Arial, sans-serif" font-size="18" fill="#475569">Accessories &amp; Consoles</text>
+</svg>

@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="420" viewBox="0 0 640 420" role="img" aria-labelledby="title desc">
+  <title id="title">KaleLift Facade Platform</title>
+  <desc id="desc">Stylized facade access platform illustration</desc>
+  <rect width="640" height="420" fill="#f8fafc"/>
+  <rect x="48" y="60" width="544" height="300" rx="18" fill="#ffffff" stroke="#e2e8f0" stroke-width="4"/>
+  <rect x="90" y="90" width="140" height="220" rx="8" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="3"/>
+  <rect x="250" y="90" width="140" height="220" rx="8" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="3"/>
+  <rect x="410" y="90" width="140" height="220" rx="8" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="3"/>
+  <rect x="430" y="250" width="170" height="30" rx="8" fill="#dc2626"/>
+  <line x1="515" y1="250" x2="515" y2="140" stroke="#94a3b8" stroke-width="6"/>
+  <line x1="565" y1="250" x2="565" y2="140" stroke="#94a3b8" stroke-width="6"/>
+  <text x="80" y="40" font-family="Arial, sans-serif" font-size="20" fill="#0f172a" font-weight="700">KaleLift</text>
+  <text x="80" y="350" font-family="Arial, sans-serif" font-size="18" fill="#475569">Facade Platform</text>
+</svg>

@@ -59,8 +59,8 @@ const Contact = () => {
   return (
     <div className="min-h-screen">
       <Seo
-        title="Contact Us - KaleLift | Get a Quote"
-        description="Contact KaleLift for suspended scaffolding rental, sales, and technical support. Get a fast quote and expert guidance for your project."
+        title="Contact KaleLift | Suspended Platform Quotes"
+        description="Contact KaleLift for suspended platform rentals, sales, and technical support across Africa and Europe. Get a fast quote and expert guidance."
         canonicalPath="/contact"
       />
       {/* Hero Section */}
@@ -71,8 +71,8 @@ const Contact = () => {
               Get in Touch
             </h1>
             <p className="text-xl text-slate-600 leading-relaxed">
-              Have questions about our suspended scaffold rental or sales? Our expert team is here
-              to help.
+              Have questions about rentals, sales, or export logistics? Our team supports projects
+              across Africa and Europe.
             </p>
           </div>
         </div>
@@ -289,7 +289,7 @@ const Contact = () => {
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-3xl font-bold text-slate-900 mb-4">Visit Our Location</h2>
             <p className="text-slate-600 mb-8">
-              Located in Büyükçekmece, Istanbul, we serve clients across Turkey and internationally.
+              Headquartered in Istanbul with an Africa warehouse in Johannesburg for faster regional delivery.
             </p>
             <div className="bg-slate-200 rounded-xl h-96 flex items-center justify-center">
               <p className="text-slate-500">Map integration will be added here</p>

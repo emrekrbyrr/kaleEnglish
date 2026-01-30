@@ -7,8 +7,8 @@ const About = () => {
   return (
     <div className="min-h-screen">
       <Seo
-        title="About Us - KaleLift | Leading Suspended Scaffold Provider"
-        description="Learn about KaleLift: a leading suspended scaffolding rental and sales provider. CE & TSE certified equipment, expert installation, and international service across Africa & Europe."
+        title="About KaleLift | Export-Focused Suspended Access"
+        description="KaleLift is the export brand of Kale Platform, providing certified suspended platform rentals, sales, and engineering support for Africa and Europe."
         canonicalPath="/about"
       />
       {/* Hero Section */}
@@ -33,22 +33,18 @@ const About = () => {
               <h2 className="text-3xl font-bold text-slate-900 mb-6">Our Story</h2>
               <div className="space-y-4 text-slate-600 leading-relaxed">
                 <p>
-                  Since {companyInfo.established}, Kale Platform has been at the forefront of the
-                  suspended scaffold industry in Turkey and the region. Based in {companyInfo.address},
-                  we have built a reputation for excellence, safety, and reliability in providing
-                  professional access solutions for construction and maintenance projects.
+                  Founded in {companyInfo.established} as part of Kale Platform, KaleLift was created to
+                  serve international projects. Based in {companyInfo.address} with a logistics hub in
+                  {companyInfo.warehouseAddress}, we focus on reliable suspended access for Africa and Europe.
                 </p>
                 <p>
-                  Our journey began with a simple mission: to provide the highest quality suspended
-                  scaffold equipment and services to the construction industry. Over the years, we have
-                  grown from a small local operation to a leading provider serving major construction
-                  companies and industrial facilities across multiple countries.
+                  Our mission started with building safe, compliant platforms and supporting crews on site.
+                  We expanded into rentals, sales, and engineering support for high-rise construction,
+                  facade restoration, and industrial maintenance.
                 </p>
                 <p>
-                  Today, we are proud to be the trusted partner of choice for hundreds of clients,
-                  including some of the most prestigious construction and industrial companies in the
-                  region. Our commitment to quality, safety, and customer satisfaction has remained
-                  unwavering throughout our growth.
+                  Today we work with contractors and facility owners across multiple countries, delivering
+                  export-ready documentation, training, and responsive support from planning to dismantling.
                 </p>
               </div>
             </div>
@@ -76,8 +72,8 @@ const About = () => {
               </div>
               <h3 className="text-xl font-bold text-slate-900 mb-3">Our Mission</h3>
               <p className="text-slate-600">
-                To provide safe, reliable, and cost-effective suspended scaffold solutions that
-                enable our clients to complete their projects efficiently and successfully.
+                Deliver safe suspended access systems with clear planning, certification, and on-site
+                support that keeps projects moving.
               </p>
             </div>
 
@@ -87,8 +83,7 @@ const About = () => {
               </div>
               <h3 className="text-xl font-bold text-slate-900 mb-3">Our Vision</h3>
               <p className="text-slate-600">
-                To be the leading suspended scaffold provider in the region, recognized for
-                innovation, quality, and exceptional service in the construction access industry.
+                To be the most trusted export partner for suspended platforms across Africa and Europe.
               </p>
             </div>
 
@@ -98,8 +93,7 @@ const About = () => {
               </div>
               <h3 className="text-xl font-bold text-slate-900 mb-3">Our Values</h3>
               <p className="text-slate-600">
-                Safety first, quality always, customer satisfaction paramount. We uphold the
-                highest standards in everything we do, from equipment to service delivery.
+                Safety, transparency, responsiveness, and engineering discipline guide everything we do.
               </p>
             </div>
           </div>
@@ -122,8 +116,7 @@ const About = () => {
                   <div>
                     <h3 className="font-bold text-slate-900 mb-2">CE Certification</h3>
                     <p className="text-sm text-slate-600">
-                      All our equipment meets European Conformity standards, ensuring the highest
-                      level of safety and quality.
+                      CE-marked systems with documentation suited to European project requirements.
                     </p>
                   </div>
                 </div>
@@ -135,8 +128,7 @@ const About = () => {
                   <div>
                     <h3 className="font-bold text-slate-900 mb-2">TSE Standards</h3>
                     <p className="text-sm text-slate-600">
-                      Compliant with Turkish Standards Institution requirements for construction
-                      equipment and safety.
+                      Manufactured to Turkish Standards Institution requirements with regular audits.
                     </p>
                   </div>
                 </div>
@@ -148,8 +140,7 @@ const About = () => {
                   <div>
                     <h3 className="font-bold text-slate-900 mb-2">ISO 9001</h3>
                     <p className="text-sm text-slate-600">
-                      Quality Management System certification ensuring consistent service excellence
-                      and continuous improvement.
+                      Quality management processes that keep manufacturing and service consistent.
                     </p>
                   </div>
                 </div>
@@ -161,8 +152,7 @@ const About = () => {
                   <div>
                     <h3 className="font-bold text-slate-900 mb-2">Safety Standards</h3>
                     <p className="text-sm text-slate-600">
-                      Full compliance with international occupational health and safety standards in
-                      all our operations.
+                      International safety procedures and risk assessments applied to every site.
                     </p>
                   </div>
                 </div>
@@ -177,7 +167,7 @@ const About = () => {
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-3xl font-bold text-slate-900 mb-12 text-center">
-              Why Choose Kale Platform
+              Why Choose KaleLift
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {services.map((service, index) => (
@@ -201,7 +191,7 @@ const About = () => {
             <h2 className="text-3xl font-bold text-slate-900 mb-4">Our Location</h2>
             <p className="text-lg text-slate-600 mb-2">{companyInfo.address}</p>
             <p className="text-slate-500 mb-8">
-              Strategically located to serve clients across Turkey and international markets
+              Headquartered in Istanbul with a Johannesburg logistics hub for faster African deliveries
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <a

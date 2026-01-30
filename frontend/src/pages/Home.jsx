@@ -53,19 +53,19 @@ const Home = () => {
   };
 
   const productImages = {
-    'suspended-scaffold': 'https://customer-assets.emergentagent.com/job_f26ed2bd-7f38-45ed-a0bc-2f5ec395f275/artifacts/gb68hohd_asma_iskele_1.png',
-    'facade-platform': 'https://customer-assets.emergentagent.com/job_f26ed2bd-7f38-45ed-a0bc-2f5ec395f275/artifacts/47094lly_ASMA-ISKELE-CEPHE-PLATFORMU.webp',
-    'monorail': 'https://customer-assets.emergentagent.com/job_f26ed2bd-7f38-45ed-a0bc-2f5ec395f275/artifacts/jh99or1g_monoray.webp',
-    'matafora': 'https://customer-assets.emergentagent.com/job_f26ed2bd-7f38-45ed-a0bc-2f5ec395f275/artifacts/gb68hohd_asma_iskele_1.png',
-    'manlift': 'https://customer-assets.emergentagent.com/job_f26ed2bd-7f38-45ed-a0bc-2f5ec395f275/artifacts/0ac5688b_manlift.jpg',
-    'accessories': 'https://customer-assets.emergentagent.com/job_f26ed2bd-7f38-45ed-a0bc-2f5ec395f275/artifacts/xa5cei55_Asma-iskele-Aksesuar-Konsol.webp'
+    'suspended-scaffold': '/kalelift-suspended-platform.svg',
+    'facade-platform': '/kalelift-facade-platform.svg',
+    'monorail': '/kalelift-monorail-system.svg',
+    'matafora': '/kalelift-matafora-system.svg',
+    'manlift': '/kalelift-manlift.svg',
+    'accessories': '/kalelift-accessories.svg'
   };
 
   return (
     <div className="min-h-screen">
       <Seo
-        title="KaleLift - Professional Suspended Scaffolding Rental & Sales | Africa & Europe"
-        description="Leading suspended scaffolding rental and sales provider serving Africa and Europe. CE & TSE certified equipment from Turkey with expert installation and 24/7 support."
+        title="KaleLift | Suspended Platform Rental & Sales for Africa & Europe"
+        description="Certified suspended access systems, rentals, and installation support for high-rise projects across Africa and Europe. Export-ready solutions from Turkey with fast logistics."
         canonicalPath="/"
       />
       {/* Hero Section */}
@@ -77,9 +77,9 @@ const Home = () => {
               {companyInfo?.tagline || 'Your Solution Partner While Rising'}
             </h1>
             <p className="text-xl text-slate-600 mb-8 leading-relaxed">
-              Professional suspended scaffold rental and sales for high-rise construction,
-              building maintenance, and facade access. CE & TSE certified equipment with
-              expert installation services.
+              Certified suspended platform rental and sales for high-rise construction,
+              facade restoration, and maintenance across Africa and Europe. Modular decks,
+              safety-locked hoists, and expert setup keep crews moving.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <Link
@@ -124,8 +124,8 @@ const Home = () => {
               Our Products
             </h2>
             <p className="text-lg text-slate-600 max-w-2xl mx-auto">
-              In the suspended scaffold sector, we are proud to offer quality service with our
-              complete range of certified equipment.
+              From ZLP800 platforms to monorail access and accessories, our range is built for
+              export projects with configurable spans and reliable delivery.
             </p>
           </div>
 
@@ -176,11 +176,12 @@ const Home = () => {
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
-              Why Choose Kale Platform
+              Why Teams Choose KaleLift
             </h2>
             <p className="text-lg text-slate-600 max-w-3xl mx-auto leading-relaxed">
-              We provide suspended scaffold sales and rental services from Turkey to clients all over the world. 
-              Our competitive prices, fast response times, and effective solutions ensure your projects run smoothly and efficiently.
+              We deliver suspended platform systems from Turkey with documentation, engineering
+              guidance, and on-site support tailored to African and European requirements.
+              Transparent pricing and fast response keep projects on schedule.
             </p>
           </div>
 
@@ -206,10 +207,10 @@ const Home = () => {
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
-              Client Testimonials
+              What Contractors Say
             </h2>
             <p className="text-lg text-slate-600">
-              What Our International Customers Say About Us
+              Feedback from international construction and maintenance teams
             </p>
           </div>
 
@@ -296,10 +297,10 @@ const Home = () => {
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
-              Trusted by Leading Companies
+              Trusted by Contractors Worldwide
             </h2>
             <p className="text-lg text-slate-600">
-              Major construction and industrial companies rely on our services
+              Construction and industrial teams across Turkey, Africa, and Europe rely on our access solutions
             </p>
           </div>
 
@@ -322,11 +323,10 @@ const Home = () => {
       <section className="py-20 bg-red-600">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-            Ready to Start Your Project?
+            Ready to Plan Your Access Solution?
           </h2>
           <p className="text-xl text-red-50 mb-8 max-w-2xl mx-auto">
-            Get in touch with our expert team for a free consultation and quote on suspended
-            scaffold rental or sales.
+            Talk to our team for a fast consultation and a clear rental or sales quote.
           </p>
           <Link
             to="/contact"

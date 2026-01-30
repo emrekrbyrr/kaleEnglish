@@ -1,10 +1,10 @@
-// Static data for Kale Platform website
+// Static data for KaleLift website
 // No database needed - all content managed here
 
 export const companyInfo = {
-  name: "Kale Platform",
-  tagline: "Your Solution Partner While Rising",
-  description: "In the suspended scaffold sector, we are proud to offer quality service to you as the Kale Platform family.",
+  name: "KaleLift",
+  tagline: "Suspended access solutions for Africa & Europe",
+  description: "KaleLift is the export-focused brand of Kale Platform, delivering certified suspended platforms, rentals, and on-site support for projects across Africa and Europe.",
   email: "sales@kaleplatform.com",
   phone: "+90 539 573 4636",
   address: "Büyükçekmece, Istanbul, Turkey",
@@ -13,10 +13,10 @@ export const companyInfo = {
 };
 
 export const stats = [
-  { label: "Years of Experience", value: "20+" },
-  { label: "Happy Customers", value: "100+" },
-  { label: "Completed Projects", value: "500+" },
-  { label: "Countries Exported", value: "10+" }
+  { label: "Years in access systems", value: "20+" },
+  { label: "Projects delivered", value: "500+" },
+  { label: "Client teams supported", value: "100+" },
+  { label: "Markets served", value: "10+" }
 ];
 
 export const products = [
@@ -24,82 +24,82 @@ export const products = [
     id: 1,
     name: "Suspended Scaffold",
     slug: "suspended-scaffold",
-    description: "Professional suspended scaffold systems for safe and efficient facade access. The flagship ZLP800 Suspended Platform delivers up to 800 kg capacity as a Gondola Lift for Construction and can be configured as an Electric Cradle System for high-rise building maintenance.",
+    description: "Heavy-duty suspended platform packages for high-rise facades and maintenance work. Our ZLP800-based systems deliver up to 800 kg rated load with modular deck lengths, certified hoists, and export-ready documentation.",
     features: [
-      "CE & TSE Certified",
-      "Load capacity up to 800kg",
-      "Adjustable platform length",
-      "Safety lock systems",
-      "Electric and manual options"
+      "CE & TSE certified assemblies",
+      "Rated load up to 800 kg",
+      "Modular deck lengths",
+      "Dual safety locks",
+      "Electric or manual drive kits"
     ],
-    applications: ["High-rise construction", "Building maintenance", "Facade cleaning", "Window installation"]
+    applications: ["High-rise construction", "Facade restoration", "Exterior maintenance", "Window installation"]
   },
   {
     id: 2,
     name: "Facade Platform",
     slug: "facade-platform",
-    description: "Advanced facade platform systems designed for modern building projects, offering Modular Suspended Platform layouts, Suspended Working Platform (SWP) compliance, and Façade Access Solutions for complex exteriors.",
+    description: "Facade access platforms engineered for envelope installation and refurbishment. Modular suspended platform layouts with SWP compliance and options for wind protection, suited to African and European site conditions.",
     features: [
-      "Modular design",
-      "Weather resistant",
-      "Easy installation",
-      "Multiple size options",
-      "Enhanced safety features"
+      "Modular span planning",
+      "Corrosion-resistant finish",
+      "Fast rigging and relocation",
+      "Multiple deck widths",
+      "Guardrail and toe-board kits"
     ],
-    applications: ["Facade installation", "Painting", "Renovation", "Inspection"]
+    applications: ["Facade installation", "Cladding", "Renovation", "Inspection"]
   },
   {
     id: 3,
     name: "Monorail System",
     slug: "monorail",
-    description: "Efficient monorail suspended scaffold systems for specialized access requirements. Perfect for industrial and commercial applications.",
+    description: "Single-rail suspended access for long, linear structures where standard platforms are impractical. Ideal for industrial bays, hangars, and production lines.",
     features: [
-      "Single rail design",
-      "Space-efficient",
-      "High maneuverability",
-      "Durable construction",
-      "Custom configurations"
+      "Compact single-rail track",
+      "Smooth trolley movement",
+      "Low clearance operation",
+      "Heavy-duty steel frame",
+      "Custom rail lengths"
     ],
-    applications: ["Industrial maintenance", "Warehouse operations", "Ship building", "Aircraft hangars"]
+    applications: ["Industrial maintenance", "Warehouse aisles", "Shipyards", "Aircraft hangars"]
   },
   {
     id: 4,
     name: "Matafora System",
     slug: "matafora",
-    description: "Specialized matafora systems for complex access challenges. Engineered for demanding construction and maintenance projects.",
+    description: "Specialized matafora systems for complex geometry access. Engineered outrigger layouts provide stable reach around corners and stepped facades.",
     features: [
-      "Flexible configuration",
-      "Heavy-duty construction",
-      "Multi-level access",
-      "Safety certified",
-      "Professional installation"
+      "Flexible outrigger geometry",
+      "High-strength support arms",
+      "Multi-bay access",
+      "Certified anchoring points",
+      "Engineered per site"
     ],
-    applications: ["Bridge construction", "Stadium maintenance", "Complex structures", "Large-scale projects"]
+    applications: ["Bridge construction", "Stadium maintenance", "Curved facades", "Large-scale projects"]
   },
   {
     id: 5,
     name: "Manlift",
     slug: "manlift",
-    description: "Reliable manlift solutions for vertical access needs. Ideal for maintenance, installation, and inspection tasks.",
+    description: "Compact manlift solutions for vertical access in tight areas. Ideal for maintenance, installation, and inspection tasks where quick setup matters.",
     features: [
-      "Vertical mobility",
-      "Compact design",
-      "Easy operation",
-      "Safety platforms",
+      "Vertical reach options",
+      "Compact footprint",
+      "Simple controls",
+      "Safety rails",
       "Indoor/outdoor use"
     ],
-    applications: ["Interior maintenance", "Light installation", "Inspection work", "Quick access tasks"]
+    applications: ["Interior maintenance", "Lighting installation", "Inspection work", "Rapid access tasks"]
   },
   {
     id: 6,
     name: "Accessories & Consoles",
     slug: "accessories",
-    description: "Complete range of accessories and support systems for suspended scaffold installations, including Suspended Scaffolding Safety Hoist options and safety lock upgrades.",
+    description: "Accessory packages and consoles that complete suspended platform systems, from safety hoists and rigging to guardrails, counterweights, and control boxes.",
     features: [
-      "Wide product range",
-      "Compatible with all systems",
-      "Quality guaranteed",
-      "Quick availability",
+      "Compatible with KaleLift systems",
+      "Rapid spare parts",
+      "Certified safety components",
+      "Upgrade kits available",
       "Technical support"
     ],
     applications: ["System upgrades", "Replacement parts", "Custom solutions", "Maintenance"]
@@ -108,48 +108,48 @@ export const products = [
 
 export const services = [
   {
-    title: "Certified Equipment",
-    description: "In the suspended scaffold sector, we lead with our manufacturing and products compliant with CE and TSE standards.",
+    title: "Certified Export Packages",
+    description: "Every shipment includes CE/TSE compliance checks and export-ready documentation for Africa and Europe projects.",
     icon: "award"
   },
   {
-    title: "Professional Team",
-    description: "Expert team members with years of experience, carefully selected to provide the best solutions for your projects.",
+    title: "Experienced Field Teams",
+    description: "On-site crews and remote engineers support planning, installation, and safe handover.",
     icon: "users"
   },
   {
-    title: "Economical Solutions",
-    description: "Our suspended scaffold rental services offer cost-effective alternatives for those seeking solutions to high-cost purchasing.",
+    title: "Cost-Focused Rentals",
+    description: "Rental programs that reduce upfront costs while keeping the right equipment on site.",
     icon: "trending-down"
   },
   {
-    title: "Quality Assurance",
-    description: "We provide everything needed for your construction projects by following the latest technologies and best practices in the sector.",
+    title: "Quality Control",
+    description: "Consistent manufacturing and inspection routines keep systems stable and reliable.",
     icon: "shield-check"
   },
   {
-    title: "24/7 Service",
-    description: "Our support team is always with you, available for communication 24/7 whenever you need assistance.",
+    title: "Rapid Response",
+    description: "Fast turnaround on quotes, parts, and technical questions across time zones.",
     icon: "clock"
   },
   {
-    title: "Warranty",
-    description: "Our products, spare parts, and accessories are guaranteed, ensuring your peace of mind.",
+    title: "Warranty & Spares",
+    description: "Genuine parts and warranty coverage protect uptime and safety on site.",
     icon: "check-circle"
   },
   {
-    title: "Safety Standards",
-    description: "Our service team operates in full compliance with occupational safety standards, ensuring safety at every stage of your projects.",
+    title: "Safety Oversight",
+    description: "Safety-first procedures and compliant training for crews and supervisors.",
     icon: "hard-hat"
   },
   {
-    title: "Engineering Solutions",
-    description: "With our in-house engineers and technical team, we offer custom solutions for your suspended scaffold rental and construction projects.",
+    title: "Engineering Desk",
+    description: "Custom drawings and load planning from in-house engineers and technical staff.",
     icon: "wrench"
   },
   {
-    title: "Flexible Payment",
-    description: "Suspended scaffold rental services and customized financial applications developed for your company are provided with the same care.",
+    title: "Flexible Payments",
+    description: "Payment options and staged schedules tailored to export project timelines.",
     icon: "credit-card"
   }
 ];
@@ -181,62 +181,62 @@ export const testimonials = [
   {
     name: "David Klein",
     company: "Munich, Germany",
-    text: "We purchased KaleLift suspended platforms from Kale Platform for a façade restoration project in Munich. The quality and stability of the system exceeded our expectations. Communication was smooth, and Mr. Oğuz provided excellent technical support throughout the process. A truly reliable partner!",
+    text: "We rented KaleLift suspended platforms for a facade restoration in Munich. The modular decks felt solid, safety locks worked flawlessly, and delivery from Turkey was on schedule.",
     rating: 5
   },
   {
     name: "Maria Fernandes",
     company: "Accra, Ghana",
-    text: "We have been using KaleLift equipment for over a year now, and we are extremely satisfied. The installation team was professional, and the customer service team always responded quickly. Even from Turkey, their coordination felt local and efficient. Highly recommended!",
+    text: "KaleLift's rental package fit our high-rise maintenance schedule in Accra. Setup guidance was clear, and their support line answered quickly across time zones.",
     rating: 5
   },
   {
     name: "Samuel Adeyemi",
     company: "Lagos, Nigeria",
-    text: "Our company imported suspended scaffolds from Kale Platform, and it was a great experience from start to finish. The equipment is durable and easy to operate. Special thanks to Mr. Serkan for his kind assistance during training and setup. KaleLift brings real value to our projects!",
+    text: "Importing KaleLift systems was straightforward. Training was practical, and the equipment handled daily use without downtime for our Lagos teams.",
     rating: 5
   },
   {
     name: "Elena Rossi",
     company: "Milan, Italy",
-    text: "We worked with Kale Platform for our high-rise maintenance project, and the service was flawless. Delivery was on time, and the product performance was outstanding. It's impressive to see a Turkish company offering this level of quality and professionalism. We'll definitely collaborate again!",
+    text: "For a redevelopment project in Milan, KaleLift provided a custom platform layout and on-site checks. Build quality and documentation matched EU expectations.",
     rating: 5
   }
 ];
 
 export const rentalInfo = {
   title: "Suspended Scaffold Rental",
-  description: "Professional Swing Stage Rental and suspended scaffold services for construction and exterior building maintenance equipment needs. We supply CE & TSE certified Suspended Working Platform (SWP) systems with flexible rental terms and full project support.",
+  description: "Export-ready swing stage rentals and suspended platform systems for high-rise construction and facade maintenance across Africa and Europe. CE & TSE certified SWP configurations with installation, inspections, and on-call support.",
   benefits: [
-    "Cost-effective alternative to purchasing",
-    "Latest equipment and technology",
-    "Flexible rental periods",
-    "Professional installation and setup",
-    "Maintenance included",
-    "24/7 technical support",
-    "Insurance coverage available",
-    "Trained operator services"
+    "Lower upfront costs versus purchase",
+    "Latest platform revisions and safety locks",
+    "Short or long-term rental windows",
+    "Site survey and install planning",
+    "Routine inspections included",
+    "24/7 technical hotline",
+    "Insurance options on request",
+    "Operator training support"
   ],
   process: [
     {
       step: 1,
-      title: "Consultation",
-      description: "Contact us to discuss your project requirements and receive expert advice on the best equipment for your needs."
+      title: "Project Review",
+      description: "Share site details and scope so we can recommend the right platform configuration."
     },
     {
       step: 2,
-      title: "Quote & Planning",
-      description: "Receive a detailed quote and work with our team to plan the installation timeline and logistics."
+      title: "Quote & Logistics",
+      description: "We prepare pricing, export documentation, and an installation schedule."
     },
     {
       step: 3,
-      title: "Installation",
-      description: "Our professional team installs the suspended scaffold system ensuring all safety standards are met."
+      title: "Delivery & Setup",
+      description: "Our team completes delivery, installation, and on-site safety checks."
     },
     {
       step: 4,
-      title: "Support & Maintenance",
-      description: "Throughout your rental period, we provide ongoing support, maintenance, and safety inspections."
+      title: "Ongoing Support",
+      description: "During the rental term, we provide maintenance, inspections, and technical support."
     }
   ]
 };

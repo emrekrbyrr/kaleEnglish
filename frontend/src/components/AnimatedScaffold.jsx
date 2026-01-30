@@ -29,9 +29,9 @@ const AnimatedScaffold = () => {
         
         {/* Actual Scaffold Image */}
         <div className="scaffold-image-wrapper">
-          <img 
-            src="https://customer-assets.emergentagent.com/job_f26ed2bd-7f38-45ed-a0bc-2f5ec395f275/artifacts/xgck4nv5_nobackground.png"
-            alt="Kale Platform Suspended Scaffold"
+          <img
+            src="/kalelift-scaffold-animated.svg"
+            alt="KaleLift suspended platform"
             className="scaffold-image"
           />
         </div>

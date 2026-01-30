@@ -18,19 +18,19 @@ const Products = () => {
   }, []);
 
   const productImages = {
-    'suspended-scaffold': 'https://customer-assets.emergentagent.com/job_f26ed2bd-7f38-45ed-a0bc-2f5ec395f275/artifacts/gb68hohd_asma_iskele_1.png',
-    'facade-platform': 'https://customer-assets.emergentagent.com/job_f26ed2bd-7f38-45ed-a0bc-2f5ec395f275/artifacts/47094lly_ASMA-ISKELE-CEPHE-PLATFORMU.webp',
-    'monorail': 'https://customer-assets.emergentagent.com/job_f26ed2bd-7f38-45ed-a0bc-2f5ec395f275/artifacts/jh99or1g_monoray.webp',
-    'matafora': 'https://customer-assets.emergentagent.com/job_f26ed2bd-7f38-45ed-a0bc-2f5ec395f275/artifacts/gb68hohd_asma_iskele_1.png',
-    'manlift': 'https://customer-assets.emergentagent.com/job_f26ed2bd-7f38-45ed-a0bc-2f5ec395f275/artifacts/0ac5688b_manlift.jpg',
-    'accessories': 'https://customer-assets.emergentagent.com/job_f26ed2bd-7f38-45ed-a0bc-2f5ec395f275/artifacts/xa5cei55_Asma-iskele-Aksesuar-Konsol.webp'
+    'suspended-scaffold': '/kalelift-suspended-platform.svg',
+    'facade-platform': '/kalelift-facade-platform.svg',
+    'monorail': '/kalelift-monorail-system.svg',
+    'matafora': '/kalelift-matafora-system.svg',
+    'manlift': '/kalelift-manlift.svg',
+    'accessories': '/kalelift-accessories.svg'
   };
 
   return (
     <div className="min-h-screen">
       <Seo
-        title="Suspended Scaffold Products & Facade Access Solutions - KaleLift"
-        description="Explore modular suspended platform systems, ZLP800 suspended platform options, and suspended working platform (SWP) configurations engineered for safety, durability, and performance."
+        title="Suspended Platform Products | KaleLift Systems"
+        description="Explore KaleLift suspended platforms, facade access systems, monorails, and accessories engineered for Africa and Europe projects with CE/TSE compliance."
         canonicalPath="/products"
       />
       {/* Hero Section */}
@@ -38,11 +38,11 @@ const Products = () => {
         <div className="container mx-auto">
           <div className="max-w-3xl mx-auto text-center">
             <h1 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6">
-              Suspended Scaffold Products
+              Suspended Platform Products
             </h1>
             <p className="text-xl text-slate-600 leading-relaxed">
-              Complete range of CE & TSE certified suspended scaffold systems, modular suspended platform options,
-              and facade access solutions for construction and maintenance teams worldwide.
+              Complete range of CE & TSE certified suspended platform systems, modular layouts,
+              and facade access solutions for construction and maintenance teams across Africa and Europe.
             </p>
           </div>
         </div>
@@ -133,11 +133,10 @@ const Products = () => {
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center">
             <h2 className="text-3xl font-bold text-slate-900 mb-4">
-              Need Help Choosing the Right Equipment?
+              Need Help Selecting the Right System?
             </h2>
             <p className="text-lg text-slate-600 mb-8">
-              Our expert team can help you select the perfect suspended scaffold solution for your
-              project requirements.
+              Our team can recommend the best suspended platform configuration for your project and region.
             </p>
             <a
               href="/contact"
