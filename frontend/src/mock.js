@@ -103,6 +103,20 @@ export const products = [
       "Technical support"
     ],
     applications: ["System upgrades", "Replacement parts", "Custom solutions", "Maintenance"]
+  },
+  {
+    id: 7,
+    name: "Turning Platform (Turning Climber)",
+    slug: "turning-platform",
+    description: "Designed by our in-house engineering team, this patented platform removes the limits of traditional suspended scaffold systems. It rotates up to 90 degrees around its own axis, letting crews change facade lines instantly without dismantling the platform. During turning, the platform forms a plus-shaped layout to reach inner corners and recessed architectural details.",
+    features: [
+      "Patented 90-degree turning system",
+      "Switch facade lines without disassembly",
+      "Plus-shaped positioning for inner corners",
+      "Built for recessed and complex facades",
+      "Engineered and tested in-house"
+    ],
+    applications: ["Complex facade access", "Inner corners", "Recessed elevations", "Modern architectural projects"]
   }
 ];
 

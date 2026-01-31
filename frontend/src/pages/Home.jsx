@@ -53,12 +53,13 @@ const Home = () => {
   };
 
   const productImages = {
-    'suspended-scaffold': '/kalelift-suspended-platform.svg',
-    'facade-platform': '/kalelift-facade-platform.svg',
-    'monorail': '/kalelift-monorail-system.svg',
-    'matafora': '/kalelift-matafora-system.svg',
-    'manlift': '/kalelift-manlift.svg',
-    'accessories': '/kalelift-accessories.svg'
+    'suspended-scaffold': '/suspended-scaffold.jpg',
+    'facade-platform': '/facade-platform.jpg',
+    'monorail': '/monorail-system.webp',
+    'matafora': '/matafora-system.webp',
+    'manlift': '/manlift.jpg',
+    'accessories': '/accessories-consoles.webp',
+    'turning-platform': '/turning-platform.jpg'
   };
 
   return (
@@ -130,7 +131,7 @@ const Home = () => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {products.slice(0, 6).map((product) => (
+            {products.map((product) => (
               <div
                 key={product.id}
                 className="group bg-white rounded-xl overflow-hidden hover:shadow-xl transition-all duration-300"

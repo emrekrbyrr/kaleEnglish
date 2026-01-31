@@ -18,12 +18,13 @@ const Products = () => {
   }, []);
 
   const productImages = {
-    'suspended-scaffold': '/kalelift-suspended-platform.svg',
-    'facade-platform': '/kalelift-facade-platform.svg',
-    'monorail': '/kalelift-monorail-system.svg',
-    'matafora': '/kalelift-matafora-system.svg',
-    'manlift': '/kalelift-manlift.svg',
-    'accessories': '/kalelift-accessories.svg'
+    'suspended-scaffold': '/suspended-scaffold.jpg',
+    'facade-platform': '/facade-platform.jpg',
+    'monorail': '/monorail-system.webp',
+    'matafora': '/matafora-system.webp',
+    'manlift': '/manlift.jpg',
+    'accessories': '/accessories-consoles.webp',
+    'turning-platform': '/turning-platform.jpg'
   };
 
   return (
