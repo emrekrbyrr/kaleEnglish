@@ -1,6 +1,6 @@
-# Kale Platform Website
+# KaleLift Website
 
-Modern, elegant website for Kale Platform - professional suspended scaffold rental and sales company.
+Modern, elegant website for KaleLift - professional suspended scaffold rental and sales company.
 
 ## Architecture
 

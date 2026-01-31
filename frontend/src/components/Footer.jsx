@@ -127,7 +127,7 @@ const Footer = () => {
         <div className="border-t border-slate-800 mt-8 pt-8">
           <div className="text-center mb-4">
             <p className="text-sm text-slate-400">
-              KaleLift is the export brand of Kale Platform.
+              KaleLift supports export projects across Africa and Europe.
             </p>
           </div>
           <p className="text-sm text-slate-400 text-center">

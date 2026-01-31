@@ -48,7 +48,7 @@ def send_contact_email(name: str, email: str, phone: str, company: str, message:
                     </div>
                     
                     <div style="margin-top: 30px; padding-top: 20px; border-top: 1px solid #ddd; text-align: center; color: #666; font-size: 12px;">
-                        <p>This email was sent from the Kale Platform contact form at kalelift.com</p>
+                        <p>This email was sent from the KaleLift contact form at kalelift.com</p>
                     </div>
                 </div>
             </body>

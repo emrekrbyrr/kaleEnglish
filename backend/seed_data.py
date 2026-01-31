@@ -1,9 +1,9 @@
 # Seed data from frontend mock.js
 
 company_data = {
-    "name": "Kale Platform",
+    "name": "KaleLift",
     "tagline": "Your Solution Partner While Rising",
-    "description": "In the suspended scaffold sector, we are proud to offer quality service to you as the Kale Platform family.",
+    "description": "In the suspended scaffold sector, we are proud to offer quality service to you as the KaleLift team.",
     "email": "sales@kaleplatform.com",
     "phone": "+90 539 573 4636",
     "address": "Büyükçekmece, Istanbul, Turkey",
@@ -122,10 +122,10 @@ services_data = [
 ]
 
 testimonials_data = [
-    {"name": "David Klein", "company": "Munich, Germany", "text": "We purchased KaleLift suspended platforms from Kale Platform for a façade restoration project in Munich. The quality and stability of the system exceeded our expectations. Communication was smooth, and Mr. Oğuz provided excellent technical support throughout the process. A truly reliable partner!", "rating": 5, "isActive": True},
+    {"name": "David Klein", "company": "Munich, Germany", "text": "We purchased KaleLift suspended platforms from KaleLift for a façade restoration project in Munich. The quality and stability of the system exceeded our expectations. Communication was smooth, and Mr. Oğuz provided excellent technical support throughout the process. A truly reliable partner!", "rating": 5, "isActive": True},
     {"name": "Maria Fernandes", "company": "Accra, Ghana", "text": "We have been using KaleLift equipment for over a year now, and we are extremely satisfied. The installation team was professional, and the customer service team always responded quickly. Even from Turkey, their coordination felt local and efficient. Highly recommended!", "rating": 5, "isActive": True},
-    {"name": "Samuel Adeyemi", "company": "Lagos, Nigeria", "text": "Our company imported suspended scaffolds from Kale Platform, and it was a great experience from start to finish. The equipment is durable and easy to operate. Special thanks to Mr. Serkan for his kind assistance during training and setup. KaleLift brings real value to our projects!", "rating": 5, "isActive": True},
-    {"name": "Elena Rossi", "company": "Milan, Italy", "text": "We worked with Kale Platform for our high-rise maintenance project, and the service was flawless. Delivery was on time, and the product performance was outstanding. It's impressive to see a Turkish company offering this level of quality and professionalism. We'll definitely collaborate again!", "rating": 5, "isActive": True}
+    {"name": "Samuel Adeyemi", "company": "Lagos, Nigeria", "text": "Our company imported suspended scaffolds from KaleLift, and it was a great experience from start to finish. The equipment is durable and easy to operate. Special thanks to Mr. Serkan for his kind assistance during training and setup. KaleLift brings real value to our projects!", "rating": 5, "isActive": True},
+    {"name": "Elena Rossi", "company": "Milan, Italy", "text": "We worked with KaleLift for our high-rise maintenance project, and the service was flawless. Delivery was on time, and the product performance was outstanding. It's impressive to see a Turkish company offering this level of quality and professionalism. We'll definitely collaborate again!", "rating": 5, "isActive": True}
 ]
 
 clients_data = [

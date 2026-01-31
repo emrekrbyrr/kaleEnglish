@@ -1,7 +1,7 @@
-# Kale Platform - API Contracts & Integration Plan
+# KaleLift - API Contracts & Integration Plan
 
 ## Overview
-This document outlines the API contracts and integration plan for transforming the Kale Platform frontend from mock data to a fully functional backend-integrated application.
+This document outlines the API contracts and integration plan for transforming the KaleLift frontend from mock data to a fully functional backend-integrated application.
 
 ## Current Mock Data Structure (mock.js)
 
