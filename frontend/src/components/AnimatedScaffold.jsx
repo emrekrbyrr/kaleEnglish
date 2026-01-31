@@ -30,8 +30,8 @@ const AnimatedScaffold = () => {
         {/* Actual Scaffold Image */}
         <div className="scaffold-image-wrapper">
           <img
-            src="/suspended-scaffold.jpg"
-            alt="KaleLift suspended scaffold"
+            src="/kalelift-scaffold-animated.svg"
+            alt="KaleLift suspended platform"
             className="scaffold-image"
           />
         </div>
