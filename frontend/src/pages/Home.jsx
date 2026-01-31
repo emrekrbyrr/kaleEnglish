@@ -55,10 +55,10 @@ const Home = () => {
   const productImages = {
     'suspended-scaffold': '/suspended-scaffold.jpg',
     'facade-platform': '/facade-platform.jpg',
-    'monorail': '/monorail-system.jpg',
-    'matafora': '/matafora-system.jpg',
+    'monorail': '/monorail-system.webp',
+    'matafora': '/matafora-system.webp',
     'manlift': '/manlift.jpg',
-    'accessories': '/accessories-consoles.jpg',
+    'accessories': '/accessories-consoles.webp',
     'turning-platform': '/turning-platform.jpg'
   };
 
