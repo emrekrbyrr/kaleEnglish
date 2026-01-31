@@ -129,7 +129,7 @@ async def get_contacts():
 # Health check
 @api_router.get("/")
 async def root():
-    return {"message": "Kale Platform API", "status": "operational"}
+    return {"message": "KaleLift API", "status": "operational"}
 
 
 # Seed database endpoint (for initial setup)

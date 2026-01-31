@@ -21,7 +21,7 @@ except StorageError as e:
     raise RuntimeError(f"Storage configuration error: {e}") from e
 
 # Create the main app
-app = FastAPI(title="Kale Platform API", version="1.0")
+app = FastAPI(title="KaleLift API", version="1.0")
 
 # Create a router with the /api prefix
 api_router = APIRouter(prefix="/api")
@@ -30,7 +30,7 @@ api_router = APIRouter(prefix="/api")
 @api_router.get("/")
 async def root():
     """API health check"""
-    return {"message": "Kale Platform API", "status": "operational"}
+    return {"message": "KaleLift API", "status": "operational"}
 
 @app.on_event("startup")
 async def startup_storage():

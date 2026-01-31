@@ -4,7 +4,7 @@
 export const companyInfo = {
   name: "KaleLift",
   tagline: "Suspended access solutions for Africa & Europe",
-  description: "KaleLift is the export-focused brand of Kale Platform, delivering certified suspended platforms, rentals, and on-site support for projects across Africa and Europe.",
+  description: "KaleLift delivers certified suspended platforms, rentals, and on-site support for projects across Africa and Europe.",
   email: "sales@kaleplatform.com",
   phone: "+90 539 573 4636",
   address: "Büyükçekmece, Istanbul, Turkey",

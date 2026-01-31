@@ -8,7 +8,7 @@ const About = () => {
     <div className="min-h-screen">
       <Seo
         title="About KaleLift | Export-Focused Suspended Access"
-        description="KaleLift is the export brand of Kale Platform, providing certified suspended platform rentals, sales, and engineering support for Africa and Europe."
+        description="KaleLift provides certified suspended platform rentals, sales, and engineering support for Africa and Europe."
         canonicalPath="/about"
       />
       {/* Hero Section */}
@@ -33,9 +33,9 @@ const About = () => {
               <h2 className="text-3xl font-bold text-slate-900 mb-6">Our Story</h2>
               <div className="space-y-4 text-slate-600 leading-relaxed">
                 <p>
-                  Founded in {companyInfo.established} as part of Kale Platform, KaleLift was created to
-                  serve international projects. Based in {companyInfo.address} with a logistics hub in
-                  {companyInfo.warehouseAddress}, we focus on reliable suspended access for Africa and Europe.
+                  Founded in {companyInfo.established}, KaleLift was created to serve international projects.
+                  Based in {companyInfo.address} with a logistics hub in {companyInfo.warehouseAddress}, we
+                  focus on reliable suspended access for Africa and Europe.
                 </p>
                 <p>
                   Our mission started with building safe, compliant platforms and supporting crews on site.
