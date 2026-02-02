@@ -31,7 +31,7 @@ export const dynamic = "force-static";
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="tr">
+    <html lang="en">
       <body className="min-h-screen bg-white text-slate-900">
         <Header />
         <AnimatedScaffold />
