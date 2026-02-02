@@ -1,17 +1,23 @@
-import React from "react";
-import { rentalInfo } from '../mock';
-import { CheckCircle, Clock, Shield, Wrench, Phone } from 'lucide-react';
-import Seo from "../components/Seo";
+import Link from "next/link";
+import { CheckCircle, Clock, Shield, Wrench, Phone } from "lucide-react";
+import { rentalInfo } from "@/mock";
 
-const Rental = () => {
+export const dynamic = "force-static";
+
+export function generateMetadata() {
+  return {
+    title: "Suspended Platform Rental | KaleLift Swing Stage Packages",
+    description:
+      "Export-ready swing stage rentals, suspended working platform (SWP) systems, and temporary suspended scaffold (TSS) compliance with CE & TSE certified equipment and on-site support.",
+    alternates: {
+      canonical: "/rental",
+    },
+  };
+}
+
+const RentalPage = () => {
   return (
     <div className="min-h-screen">
-      <Seo
-        title="Suspended Platform Rental | KaleLift Swing Stage Packages"
-        description="Export-ready swing stage rentals, suspended working platform (SWP) systems, and temporary suspended scaffold (TSS) compliance with CE & TSE certified equipment and on-site support."
-        canonicalPath="/rental"
-      />
-      {/* Hero Section */}
       <section className="pt-32 pb-16 px-4 bg-gradient-to-br from-gray-50 to-gray-100">
         <div className="container mx-auto">
           <div className="max-w-3xl mx-auto text-center">
@@ -25,17 +31,16 @@ const Rental = () => {
               From electric cradle setups to temporary suspended scaffold compliance, we design
               platform lengths, hoists, and tie-ins around your facade and safety requirements.
             </p>
-            <a
+            <Link
               href="/contact"
               className="inline-flex items-center space-x-2 px-8 py-4 bg-red-600 text-white rounded-lg hover:bg-red-700 transition-colors font-medium"
             >
               <span>Get Rental Quote</span>
-            </a>
+            </Link>
           </div>
         </div>
       </section>
 
-      {/* Benefits Section */}
       <section className="py-20 bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="max-w-5xl mx-auto">
@@ -61,7 +66,6 @@ const Rental = () => {
         </div>
       </section>
 
-      {/* Process Section */}
       <section className="py-20 bg-gray-100">
         <div className="container mx-auto px-4">
           <div className="max-w-5xl mx-auto">
@@ -88,7 +92,6 @@ const Rental = () => {
         </div>
       </section>
 
-      {/* Features Grid */}
       <section className="py-20 bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="max-w-5xl mx-auto">
@@ -140,7 +143,6 @@ const Rental = () => {
         </div>
       </section>
 
-      {/* Technical Specifications */}
       <section className="py-20 bg-gray-100">
         <div className="container mx-auto px-4">
           <div className="max-w-5xl mx-auto">
@@ -194,7 +196,6 @@ const Rental = () => {
         </div>
       </section>
 
-      {/* Pricing Info */}
       <section className="py-20 bg-gray-100">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto bg-white rounded-2xl p-8 shadow-lg">
@@ -218,18 +219,17 @@ const Rental = () => {
               </ul>
             </div>
             <div className="text-center">
-              <a
+              <Link
                 href="/contact"
                 className="inline-block px-8 py-4 bg-red-600 text-white rounded-lg hover:bg-red-700 transition-colors font-medium"
               >
                 Request Custom Quote
-              </a>
+              </Link>
             </div>
           </div>
         </div>
       </section>
 
-      {/* CTA Section */}
       <section className="py-20 bg-red-600">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
@@ -239,12 +239,12 @@ const Rental = () => {
             Contact us for a fast consultation and a clear rental quote.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <a
+            <Link
               href="/contact"
               className="px-8 py-4 bg-white text-red-600 rounded-lg hover:bg-red-50 transition-colors font-medium"
             >
               Get Started
-            </a>
+            </Link>
             <a
               href="tel:+905395734636"
               className="px-8 py-4 bg-red-700 text-white rounded-lg hover:bg-red-800 transition-colors font-medium"
@@ -258,4 +258,4 @@ const Rental = () => {
   );
 };
 
-export default Rental;
+export default RentalPage;

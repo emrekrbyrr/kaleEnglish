@@ -1,4 +1,4 @@
-.animated-scaffold-container {
+.animatedScaffoldContainer {
   position: fixed;
   right: 30px;
   top: 0;
@@ -9,18 +9,27 @@
   overflow: hidden;
 }
 
-.scaffold-wrapper {
+.scaffoldWrapper {
   position: absolute;
   width: 100%;
-  transition: top 0.05s linear;
+  animation: scaffoldDrop 40s linear infinite;
 }
 
-/* Suspension Ropes */
+@keyframes scaffoldDrop {
+  0% {
+    top: -10%;
+  }
+  100% {
+    top: 100%;
+  }
+}
+
 .rope {
   position: absolute;
   width: 3px;
   height: 200vh;
-  background: linear-gradient(180deg, 
+  background: linear-gradient(
+    180deg,
     rgba(80, 80, 80, 0.9) 0%,
     rgba(100, 100, 100, 0.7) 50%,
     rgba(120, 120, 120, 0.6) 100%
@@ -29,16 +38,15 @@
   box-shadow: 0 0 4px rgba(0, 0, 0, 0.3);
 }
 
-.rope-left {
+.ropeLeft {
   left: 25px;
 }
 
-.rope-right {
+.ropeRight {
   right: 25px;
 }
 
-/* Scaffold Image */
-.scaffold-image-wrapper {
+.scaffoldImageWrapper {
   position: relative;
   width: 150px;
   height: auto;
@@ -46,7 +54,7 @@
   animation: scaffoldSway 4s ease-in-out infinite;
 }
 
-.scaffold-image {
+.scaffoldImage {
   width: 100%;
   height: auto;
   display: block;
@@ -54,74 +62,74 @@
 }
 
 @keyframes scaffoldSway {
-  0%, 100% { 
+  0%,
+  100% {
     transform: translateX(0) rotate(0deg);
   }
-  50% { 
+  50% {
     transform: translateX(2px) rotate(0.5deg);
   }
 }
 
-/* Responsive */
 @media (max-width: 1024px) {
-  .animated-scaffold-container {
+  .animatedScaffoldContainer {
     right: 15px;
     width: 100px;
   }
-  
-  .scaffold-image-wrapper {
+
+  .scaffoldImageWrapper {
     width: 100px;
   }
-  
-  .rope-left {
+
+  .ropeLeft {
     left: 18px;
   }
-  
-  .rope-right {
+
+  .ropeRight {
     right: 18px;
   }
 }
 
 @media (max-width: 768px) {
-  .animated-scaffold-container {
+  .animatedScaffoldContainer {
     right: 10px;
     width: 70px;
     opacity: 1;
   }
-  
-  .scaffold-image-wrapper {
+
+  .scaffoldImageWrapper {
     width: 70px;
   }
-  
+
   .rope {
     width: 2px;
   }
-  
-  .rope-left {
+
+  .ropeLeft {
     left: 12px;
   }
-  
-  .rope-right {
+
+  .ropeRight {
     right: 12px;
   }
 }
 
 @media (max-width: 480px) {
-  .animated-scaffold-container {
+  .animatedScaffoldContainer {
     right: 5px;
     width: 50px;
     opacity: 0.95;
   }
-  
-  .scaffold-image-wrapper {
+
+  .scaffoldImageWrapper {
     width: 50px;
   }
-  
-  .rope-left {
+
+  .ropeLeft {
     left: 8px;
   }
-  
-  .rope-right {
+
+  .ropeRight {
     right: 8px;
   }
 }

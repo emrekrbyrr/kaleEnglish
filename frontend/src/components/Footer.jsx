@@ -1,7 +1,6 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import { Mail, Phone, MapPin, Linkedin, Instagram } from 'lucide-react';
-import { companyInfo } from '../mock';
+import Link from "next/link";
+import { Mail, Phone, MapPin, Linkedin, Instagram } from "lucide-react";
+import { companyInfo } from "../mock";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -22,27 +21,27 @@ const Footer = () => {
             <h4 className="text-white text-sm font-semibold mb-4">Quick Links</h4>
             <ul className="space-y-2">
               <li>
-                <Link to="/" className="text-sm hover:text-red-400 transition-colors">
+                <Link href="/" className="text-sm hover:text-red-400 transition-colors">
                   Home
                 </Link>
               </li>
               <li>
-                <Link to="/about" className="text-sm hover:text-red-400 transition-colors">
+                <Link href="/about" className="text-sm hover:text-red-400 transition-colors">
                   About Us
                 </Link>
               </li>
               <li>
-                <Link to="/products" className="text-sm hover:text-red-400 transition-colors">
+                <Link href="/products" className="text-sm hover:text-red-400 transition-colors">
                   Products
                 </Link>
               </li>
               <li>
-                <Link to="/rental" className="text-sm hover:text-red-400 transition-colors">
+                <Link href="/rental" className="text-sm hover:text-red-400 transition-colors">
                   Rental Services
                 </Link>
               </li>
               <li>
-                <Link to="/contact" className="text-sm hover:text-red-400 transition-colors">
+                <Link href="/contact" className="text-sm hover:text-red-400 transition-colors">
                   Contact
                 </Link>
               </li>

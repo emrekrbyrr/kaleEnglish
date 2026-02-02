@@ -1,81 +1,107 @@
-import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
-import { ArrowRight, Award, Users, TrendingDown, ShieldCheck, Clock, CheckCircle, HardHat, Wrench, CreditCard, ChevronLeft, ChevronRight } from 'lucide-react';
-import { companyInfo, products, services, testimonials, clients, stats } from '../mock';
-import Seo from "../components/Seo";
+import Image from "next/image";
+import Link from "next/link";
+import {
+  ArrowRight,
+  Award,
+  Users,
+  TrendingDown,
+  ShieldCheck,
+  Clock,
+  CheckCircle,
+  HardHat,
+  Wrench,
+  CreditCard,
+} from "lucide-react";
+import {
+  companyInfo,
+  products,
+  services,
+  testimonials,
+  clients,
+  stats,
+} from "@/mock";
+import { SITE_URL } from "@/lib/site";
 
-const Home = () => {
-  const [currentSlide, setCurrentSlide] = useState(0);
+export const dynamic = "force-static";
 
-  // Calculate how many cards to show per slide based on screen size
-  const getCardsPerSlide = () => {
-    if (typeof window === 'undefined') return 1;
-    if (window.innerWidth >= 1024) return 3; // Desktop: 3 cards
-    if (window.innerWidth >= 640) return 2;  // Tablet: 2 cards
-    return 1; // Mobile: 1 card
+export function generateMetadata() {
+  return {
+    title: "KaleLift | Suspended Platform Rental & Sales",
+    description:
+      "Certified suspended access systems, rentals, and installation support for high-rise projects across Africa and Europe.",
+    alternates: {
+      canonical: "/",
+    },
   };
+}
 
-  const [cardsPerSlide, setCardsPerSlide] = useState(getCardsPerSlide());
+const productImages = {
+  "suspended-scaffold": "/suspended-scaffold.jpg",
+  "facade-platform": "/facade-platform.jpg",
+  monorail: "/monorail-system.webp",
+  matafora: "/matafora-system.webp",
+  manlift: "/manlift.jpg",
+  accessories: "/accessories-consoles.webp",
+  "turning-platform": "/turning-platform.jpg",
+};
 
-  useEffect(() => {
-    const handleResize = () => {
-      setCardsPerSlide(getCardsPerSlide());
-    };
-    
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
-  }, []);
+const iconMap = {
+  award: Award,
+  users: Users,
+  "trending-down": TrendingDown,
+  "shield-check": ShieldCheck,
+  clock: Clock,
+  "check-circle": CheckCircle,
+  "hard-hat": HardHat,
+  wrench: Wrench,
+  "credit-card": CreditCard,
+};
 
-  const maxSlides = Math.ceil(testimonials.length / cardsPerSlide);
+const structuredData = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      name: companyInfo.name,
+      url: SITE_URL,
+      description: companyInfo.description,
+      email: companyInfo.email,
+      telephone: companyInfo.phone,
+      address: companyInfo.address,
+      sameAs: [
+        "https://www.kaleplatform.com",
+        "https://www.linkedin.com/company/kale-platform/",
+        "https://www.instagram.com/kale_platform",
+        "https://www.youtube.com/channel/UC7hO-P7SET0U-I7x8TWxwBA",
+      ],
+    },
+    {
+      "@type": "Service",
+      serviceType: "Suspended platform rental",
+      provider: {
+        "@type": "Organization",
+        name: companyInfo.name,
+      },
+      areaServed: ["Africa", "Europe", "Turkey"],
+      description:
+        "Suspended platform rental, sales, and installation support for high-rise construction and facade maintenance projects.",
+    },
+  ],
+};
 
-  const scrollPrev = () => {
-    setCurrentSlide((prev) => (prev === 0 ? maxSlides - 1 : prev - 1));
-  };
-
-  const scrollNext = () => {
-    setCurrentSlide((prev) => (prev === maxSlides - 1 ? 0 : prev + 1));
-  };
-
-  const getIcon = (iconName) => {
-    const icons = {
-      'award': Award,
-      'users': Users,
-      'trending-down': TrendingDown,
-      'shield-check': ShieldCheck,
-      'clock': Clock,
-      'check-circle': CheckCircle,
-      'hard-hat': HardHat,
-      'wrench': Wrench,
-      'credit-card': CreditCard
-    };
-    const Icon = icons[iconName] || Award;
-    return <Icon className="w-8 h-8" />;
-  };
-
-  const productImages = {
-    'suspended-scaffold': '/suspended-scaffold.jpg',
-    'facade-platform': '/facade-platform.jpg',
-    'monorail': '/monorail-system.webp',
-    'matafora': '/matafora-system.webp',
-    'manlift': '/manlift.jpg',
-    'accessories': '/accessories-consoles.webp',
-    'turning-platform': '/turning-platform.jpg'
-  };
-
+const HomePage = () => {
   return (
     <div className="min-h-screen">
-      <Seo
-        title="KaleLift | Suspended Platform Rental & Sales for Africa & Europe"
-        description="Certified suspended access systems, rentals, and installation support for high-rise projects across Africa and Europe. Export-ready solutions from Turkey with fast logistics."
-        canonicalPath="/"
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
       />
-      {/* Hero Section */}
       <section className="relative pt-32 pb-20 px-4 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-gray-50 to-gray-100 -z-10"></div>
         <div className="container mx-auto">
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="text-5xl md:text-6xl font-bold text-slate-900 mb-6">
-              {companyInfo?.tagline || 'Your Solution Partner While Rising'}
+              {companyInfo?.tagline || "Your Solution Partner While Rising"}
             </h1>
             <p className="text-xl text-slate-600 mb-8 leading-relaxed">
               Certified suspended platform rental and sales for high-rise construction,
@@ -84,14 +110,14 @@ const Home = () => {
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <Link
-                to="/rental"
+                href="/rental"
                 className="group px-8 py-4 bg-red-600 text-white rounded-lg hover:bg-red-700 transition-all hover:shadow-lg flex items-center space-x-2"
               >
                 <span className="font-medium">Explore Rental Services</span>
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </Link>
               <Link
-                to="/contact"
+                href="/contact"
                 className="px-8 py-4 bg-white text-slate-700 border-2 border-gray-300 rounded-lg hover:border-red-600 hover:text-red-600 transition-all font-medium"
               >
                 Get a Quote
@@ -101,7 +127,6 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Stats Section */}
       <section className="py-16 bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
@@ -117,7 +142,6 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Featured Products */}
       <section className="py-20 bg-gray-100">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
@@ -137,10 +161,13 @@ const Home = () => {
                 className="group bg-white rounded-xl overflow-hidden hover:shadow-xl transition-all duration-300"
               >
                 <div className="h-48 bg-white flex items-center justify-center p-4">
-                  <img 
+                  <Image
                     src={productImages[product.slug]}
                     alt={product.name}
+                    width={560}
+                    height={320}
                     className="w-full h-full object-contain"
+                    sizes="(min-width: 1024px) 30vw, (min-width: 768px) 45vw, 90vw"
                   />
                 </div>
                 <div className="p-6">
@@ -149,7 +176,7 @@ const Home = () => {
                     {product.description}
                   </p>
                   <Link
-                    to={`/products#${product.slug}`}
+                    href={`/products#${product.slug}`}
                     className="inline-flex items-center space-x-2 text-red-600 hover:text-red-700 font-medium text-sm group-hover:translate-x-1 transition-transform"
                   >
                     <span>Learn More</span>
@@ -162,7 +189,7 @@ const Home = () => {
 
           <div className="text-center mt-12">
             <Link
-              to="/products"
+              href="/products"
               className="inline-flex items-center space-x-2 px-8 py-3 bg-slate-900 text-white rounded-lg hover:bg-red-600 transition-colors"
             >
               <span>View All Products</span>
@@ -172,7 +199,6 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Services Section */}
       <section className="py-20 bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
@@ -187,23 +213,25 @@ const Home = () => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {services.map((service, index) => (
-              <div
-                key={index}
-                className="p-6 rounded-xl bg-white hover:bg-red-50 transition-all duration-300 border border-transparent hover:border-red-200"
-              >
-                <div className="w-14 h-14 rounded-lg bg-red-100 text-red-600 flex items-center justify-center mb-4">
-                  {getIcon(service.icon)}
+            {services.map((service, index) => {
+              const Icon = iconMap[service.icon] || Award;
+              return (
+                <div
+                  key={index}
+                  className="p-6 rounded-xl bg-white hover:bg-red-50 transition-all duration-300 border border-transparent hover:border-red-200"
+                >
+                  <div className="w-14 h-14 rounded-lg bg-red-100 text-red-600 flex items-center justify-center mb-4">
+                    <Icon className="w-8 h-8" />
+                  </div>
+                  <h3 className="text-lg font-bold text-slate-900 mb-2">{service.title}</h3>
+                  <p className="text-sm text-slate-600">{service.description}</p>
                 </div>
-                <h3 className="text-lg font-bold text-slate-900 mb-2">{service.title}</h3>
-                <p className="text-sm text-slate-600">{service.description}</p>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </div>
       </section>
 
-      {/* Testimonials Section */}
       <section className="py-20 bg-gray-100">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
@@ -215,85 +243,37 @@ const Home = () => {
             </p>
           </div>
 
-          <div className="max-w-7xl mx-auto relative">
-            {/* Simple Slider Container */}
-            <div className="overflow-hidden">
-              <div 
-                className="flex transition-transform duration-500 ease-in-out"
-                style={{ 
-                  transform: `translateX(-${currentSlide * (100 / cardsPerSlide)}%)`,
-                  width: `${(testimonials.length / cardsPerSlide) * 100}%`
-                }}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {testimonials.map((testimonial, index) => (
+              <div
+                key={index}
+                className="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow h-full flex flex-col"
               >
-                {testimonials.map((testimonial, index) => (
-                  <div 
-                    key={index} 
-                    className="px-2 md:px-3"
-                    style={{ width: `${100 / testimonials.length}%` }}
-                  >
-                    <div className="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow h-full flex flex-col">
-                      <div className="flex items-center space-x-1 mb-4">
-                        {[...Array(testimonial.rating)].map((_, i) => (
-                          <svg
-                            key={i}
-                            className="w-5 h-5 text-yellow-400 fill-current"
-                            viewBox="0 0 20 20"
-                          >
-                            <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
-                          </svg>
-                        ))}
-                      </div>
-                      <p className="text-slate-600 mb-4 text-sm leading-relaxed flex-grow">"{testimonial.text}"</p>
-                      <div className="border-t border-gray-200 pt-4 mt-auto">
-                        <div className="font-semibold text-slate-900 text-sm">{testimonial.name}</div>
-                        <div className="text-xs text-slate-500 mt-1">{testimonial.company}</div>
-                      </div>
-                    </div>
-                  </div>
-                ))}
+                <div className="flex items-center space-x-1 mb-4">
+                  {[...Array(testimonial.rating)].map((_, i) => (
+                    <svg
+                      key={i}
+                      className="w-5 h-5 text-yellow-400 fill-current"
+                      viewBox="0 0 20 20"
+                      aria-hidden="true"
+                    >
+                      <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
+                    </svg>
+                  ))}
+                </div>
+                <p className="text-slate-600 mb-4 text-sm leading-relaxed flex-grow">
+                  "{testimonial.text}"
+                </p>
+                <div className="border-t border-gray-200 pt-4 mt-auto">
+                  <div className="font-semibold text-slate-900 text-sm">{testimonial.name}</div>
+                  <div className="text-xs text-slate-500 mt-1">{testimonial.company}</div>
+                </div>
               </div>
-            </div>
-
-            {/* Navigation Buttons */}
-            {maxSlides > 1 && (
-              <>
-                <button
-                  onClick={scrollPrev}
-                  className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-2 md:-translate-x-4 w-10 h-10 md:w-12 md:h-12 bg-white rounded-full shadow-lg flex items-center justify-center text-slate-700 hover:bg-red-600 hover:text-white transition-all z-10"
-                  aria-label="Previous testimonial"
-                >
-                  <ChevronLeft className="w-5 h-5 md:w-6 md:h-6" />
-                </button>
-                <button
-                  onClick={scrollNext}
-                  className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-2 md:translate-x-4 w-10 h-10 md:w-12 md:h-12 bg-white rounded-full shadow-lg flex items-center justify-center text-slate-700 hover:bg-red-600 hover:text-white transition-all z-10"
-                  aria-label="Next testimonial"
-                >
-                  <ChevronRight className="w-5 h-5 md:w-6 md:h-6" />
-                </button>
-              </>
-            )}
-
-            {/* Dots Indicator */}
-            {maxSlides > 1 && (
-              <div className="flex justify-center mt-6 gap-2">
-                {[...Array(maxSlides)].map((_, index) => (
-                  <button
-                    key={index}
-                    onClick={() => setCurrentSlide(index)}
-                    className={`w-2 h-2 rounded-full transition-all ${
-                      currentSlide === index ? 'bg-red-600 w-8' : 'bg-gray-300'
-                    }`}
-                    aria-label={`Go to slide ${index + 1}`}
-                  />
-                ))}
-              </div>
-            )}
+            ))}
           </div>
         </div>
       </section>
 
-      {/* Clients Section */}
       <section className="py-16 bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
@@ -320,7 +300,6 @@ const Home = () => {
         </div>
       </section>
 
-      {/* CTA Section */}
       <section className="py-20 bg-red-600">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
@@ -330,7 +309,7 @@ const Home = () => {
             Talk to our team for a fast consultation and a clear rental or sales quote.
           </p>
           <Link
-            to="/contact"
+            href="/contact"
             className="inline-flex items-center space-x-2 px-8 py-4 bg-white text-red-600 rounded-lg hover:bg-red-50 transition-colors font-medium"
           >
             <span>Contact Us Today</span>
@@ -342,4 +321,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default HomePage;

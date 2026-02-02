@@ -1,17 +1,45 @@
-import React from "react";
-import { companyInfo, stats, services } from '../mock';
-import { Building, Target, Eye, Award } from 'lucide-react';
-import Seo from "../components/Seo";
+import { Building, Target, Eye, Award } from "lucide-react";
+import { companyInfo, stats, services } from "@/mock";
 
-const About = () => {
+export const dynamic = "force-static";
+
+export function generateMetadata() {
+  return {
+    title: "About KaleLift | Export-Focused Suspended Access",
+    description:
+      "KaleLift provides certified suspended platform rentals, sales, and engineering support for Africa and Europe.",
+    alternates: {
+      canonical: "/about",
+    },
+  };
+}
+
+const AboutPage = () => {
+  const certifications = [
+    {
+      title: "CE Certification",
+      description:
+        "CE-marked systems with documentation suited to European project requirements.",
+    },
+    {
+      title: "TSE Standards",
+      description:
+        "Manufactured to Turkish Standards Institution requirements with regular audits.",
+    },
+    {
+      title: "ISO 9001",
+      description:
+        "Quality management processes that keep manufacturing and service consistent.",
+    },
+    {
+      title: "Safety Standards",
+      description:
+        "International safety procedures and risk assessments applied to every site.",
+    },
+  ];
+
   return (
     <div className="min-h-screen">
-      <Seo
-        title="About KaleLift | Export-Focused Suspended Access"
-        description="KaleLift provides certified suspended platform rentals, sales, and engineering support for Africa and Europe."
-        canonicalPath="/about"
-      />
-      {/* Hero Section */}
       <section className="pt-32 pb-16 px-4 bg-gradient-to-br from-gray-50 to-gray-100">
         <div className="container mx-auto">
           <div className="max-w-3xl mx-auto text-center">
@@ -25,7 +53,6 @@ const About = () => {
         </div>
       </section>
 
-      {/* Company Story */}
       <section className="py-20 bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
@@ -49,7 +76,6 @@ const About = () => {
               </div>
             </div>
 
-            {/* Stats */}
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6 py-12 border-y border-slate-200">
               {stats.map((stat, index) => (
                 <div key={index} className="text-center">
@@ -62,7 +88,6 @@ const About = () => {
         </div>
       </section>
 
-      {/* Mission & Vision */}
       <section className="py-20 bg-gray-100">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
@@ -100,7 +125,6 @@ const About = () => {
         </div>
       </section>
 
-      {/* Certifications & Standards */}
       <section className="py-20 bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
@@ -109,60 +133,23 @@ const About = () => {
             </h2>
             <div className="bg-gray-100 rounded-xl p-8">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div className="flex items-start space-x-4">
-                  <div className="w-12 h-12 rounded-full bg-red-100 text-red-600 flex items-center justify-center flex-shrink-0">
-                    <Award className="w-6 h-6" />
+                {certifications.map((item) => (
+                  <div key={item.title} className="flex items-start space-x-4">
+                    <div className="w-12 h-12 rounded-full bg-red-100 text-red-600 flex items-center justify-center flex-shrink-0">
+                      <Award className="w-6 h-6" />
+                    </div>
+                    <div>
+                      <h3 className="font-bold text-slate-900 mb-2">{item.title}</h3>
+                      <p className="text-sm text-slate-600">{item.description}</p>
+                    </div>
                   </div>
-                  <div>
-                    <h3 className="font-bold text-slate-900 mb-2">CE Certification</h3>
-                    <p className="text-sm text-slate-600">
-                      CE-marked systems with documentation suited to European project requirements.
-                    </p>
-                  </div>
-                </div>
-
-                <div className="flex items-start space-x-4">
-                  <div className="w-12 h-12 rounded-full bg-red-100 text-red-600 flex items-center justify-center flex-shrink-0">
-                    <Award className="w-6 h-6" />
-                  </div>
-                  <div>
-                    <h3 className="font-bold text-slate-900 mb-2">TSE Standards</h3>
-                    <p className="text-sm text-slate-600">
-                      Manufactured to Turkish Standards Institution requirements with regular audits.
-                    </p>
-                  </div>
-                </div>
-
-                <div className="flex items-start space-x-4">
-                  <div className="w-12 h-12 rounded-full bg-red-100 text-red-600 flex items-center justify-center flex-shrink-0">
-                    <Award className="w-6 h-6" />
-                  </div>
-                  <div>
-                    <h3 className="font-bold text-slate-900 mb-2">ISO 9001</h3>
-                    <p className="text-sm text-slate-600">
-                      Quality management processes that keep manufacturing and service consistent.
-                    </p>
-                  </div>
-                </div>
-
-                <div className="flex items-start space-x-4">
-                  <div className="w-12 h-12 rounded-full bg-red-100 text-red-600 flex items-center justify-center flex-shrink-0">
-                    <Award className="w-6 h-6" />
-                  </div>
-                  <div>
-                    <h3 className="font-bold text-slate-900 mb-2">Safety Standards</h3>
-                    <p className="text-sm text-slate-600">
-                      International safety procedures and risk assessments applied to every site.
-                    </p>
-                  </div>
-                </div>
+                ))}
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Why Choose Us */}
       <section className="py-20 bg-gray-100">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
@@ -181,7 +168,6 @@ const About = () => {
         </div>
       </section>
 
-      {/* Location */}
       <section className="py-20 bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
@@ -214,4 +200,4 @@ const About = () => {
   );
 };
 
-export default About;
+export default AboutPage;

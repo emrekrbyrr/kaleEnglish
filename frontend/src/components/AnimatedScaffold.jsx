@@ -1,38 +1,21 @@
-import React, { useEffect, useState } from 'react';
-import './AnimatedScaffold.css';
+import Image from "next/image";
+import styles from "./AnimatedScaffold.module.css";
 
 const AnimatedScaffold = () => {
-  const [position, setPosition] = useState(-10);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setPosition((prev) => {
-        // Slow continuous downward movement
-        const newPos = prev + 0.15;
-        // Reset to top when reaches bottom
-        if (newPos >= 100) {
-          return -10;
-        }
-        return newPos;
-      });
-    }, 50);
-
-    return () => clearInterval(interval);
-  }, []);
-
   return (
-    <div className="animated-scaffold-container">
-      <div className="scaffold-wrapper" style={{ top: `${position}%` }}>
-        {/* Suspension Ropes */}
-        <div className="rope rope-left"></div>
-        <div className="rope rope-right"></div>
-        
-        {/* Actual Scaffold Image */}
-        <div className="scaffold-image-wrapper">
-          <img
+    <div className={styles.animatedScaffoldContainer} aria-hidden="true">
+      <div className={styles.scaffoldWrapper}>
+        <div className={`${styles.rope} ${styles.ropeLeft}`}></div>
+        <div className={`${styles.rope} ${styles.ropeRight}`}></div>
+
+        <div className={styles.scaffoldImageWrapper}>
+          <Image
             src="/suspended-scaffold.png"
             alt="KaleLift suspended scaffold"
-            className="scaffold-image"
+            width={300}
+            height={120}
+            className={styles.scaffoldImage}
+            sizes="(max-width: 480px) 50px, (max-width: 768px) 70px, (max-width: 1024px) 100px, 150px"
           />
         </div>
       </div>
