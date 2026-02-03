@@ -6,11 +6,11 @@ export const dynamic = "force-static";
 
 export function generateMetadata() {
   return {
-    title: "Suspended Platform Rental | KaleLift Swing Stage Packages",
+    title: "Swing Stage & Suspended Platform Rental for Africa & Europe",
     description:
-      "Export-ready swing stage rentals, suspended working platform (SWP) systems, and temporary suspended scaffold (TSS) compliance with CE & TSE certified equipment and on-site support.",
+      "Swing Stage Rental and suspended platform rental with ZLP800/ZLP630 options, temporary suspended access solutions, and export-ready support across Africa and Europe.",
     alternates: {
-      canonical: "/rental",
+      canonical: "/suspended-platform-rental-africa-europe",
     },
   };
 }
@@ -22,14 +22,22 @@ const RentalPage = () => {
         <div className="container mx-auto">
           <div className="max-w-3xl mx-auto text-center">
             <h1 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6">
-              Suspended Platform Rental for Africa & Europe
+              Swing Stage & Suspended Platform Rental for Africa & Europe
             </h1>
             <p className="text-xl text-slate-600 leading-relaxed mb-4">
               {rentalInfo.description}
             </p>
-            <p className="text-lg text-slate-600 leading-relaxed mb-8">
+            <h2 className="text-xl md:text-2xl font-semibold text-slate-800 mb-3">
+              Temporary suspended access solutions
+            </h2>
+            <p className="text-lg text-slate-600 leading-relaxed mb-4">
               From electric cradle setups to temporary suspended scaffold compliance, we design
-              platform lengths, hoists, and tie-ins around your facade and safety requirements.
+              platform lengths, motorized hoists, wire rope lines, and tie-ins around your facade
+              and safety requirements.
+            </p>
+            <p className="text-lg text-slate-600 leading-relaxed mb-8">
+              International shipping for suspended cradle systems to Africa (Nigeria, Ghana, Kenya)
+              and Europe (Germany, France).
             </p>
             <Link
               href="/contact"
@@ -139,6 +147,10 @@ const RentalPage = () => {
                 </p>
               </div>
             </div>
+            <p className="text-sm text-slate-600 text-center mt-10">
+              Each rental kit includes counterweights, galvanized steel or aluminum platforms,
+              wire rope lifelines, motorized hoists, and safety lock (parachute lock) assemblies.
+            </p>
           </div>
         </div>
       </section>
@@ -169,21 +181,23 @@ const RentalPage = () => {
                     <td className="px-6 py-4 font-semibold text-slate-900">ZLP800 Suspended Platform</td>
                     <td className="px-6 py-4">Up to 800 kg</td>
                     <td className="px-6 py-4">Modular lengths by project</td>
-                    <td className="px-6 py-4">Electric cradle with certified safety locks</td>
+                    <td className="px-6 py-4">
+                      Motorized hoists with wire rope and safety/parachute locks
+                    </td>
                     <td className="px-6 py-4">High-rise construction and facade work</td>
                   </tr>
                   <tr>
                     <td className="px-6 py-4 font-semibold text-slate-900">Modular Suspended Platform</td>
                     <td className="px-6 py-4">Project-based</td>
                     <td className="px-6 py-4">Custom modular spans</td>
-                    <td className="px-6 py-4">SWP-compliant safety lock systems</td>
+                    <td className="px-6 py-4">SWP-compliant safety lock systems with wire rope sets</td>
                     <td className="px-6 py-4">Facade access for complex structures</td>
                   </tr>
                   <tr>
                     <td className="px-6 py-4 font-semibold text-slate-900">Temporary Suspended Scaffold (TSS)</td>
                     <td className="px-6 py-4">Site-specific</td>
                     <td className="px-6 py-4">Configured per site</td>
-                    <td className="px-6 py-4">Certified suspension and guardrail sets</td>
+                    <td className="px-6 py-4">Certified suspension, counterweights, and guardrail sets</td>
                     <td className="px-6 py-4">Exterior maintenance and retrofit programs</td>
                   </tr>
                 </tbody>
@@ -225,6 +239,47 @@ const RentalPage = () => {
               >
                 Request Custom Quote
               </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-20 bg-gray-50">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-3xl font-bold text-slate-900 mb-8 text-center">
+              Suspended Platform Rental FAQ
+            </h2>
+            <div className="space-y-6">
+              <div className="bg-white rounded-2xl p-6 shadow-sm">
+                <h3 className="text-lg font-semibold text-slate-900">
+                  What is the monthly cost of suspended platform rental?
+                </h3>
+                <p className="text-sm text-slate-600 mt-2">
+                  Monthly pricing depends on platform length, load rating, and whether you select
+                  ZLP800 or ZLP630 swing stage rental packages. We quote based on project duration,
+                  installation scope, and shipping destination.
+                </p>
+              </div>
+              <div className="bg-white rounded-2xl p-6 shadow-sm">
+                <h3 className="text-lg font-semibold text-slate-900">
+                  Do you provide ZLP800 rental for African projects?
+                </h3>
+                <p className="text-sm text-slate-600 mt-2">
+                  Yes. We provide ZLP800 rental systems with export-ready documentation and on-site
+                  support for projects in Nigeria, Ghana, Kenya, and other African markets.
+                </p>
+              </div>
+              <div className="bg-white rounded-2xl p-6 shadow-sm">
+                <h3 className="text-lg font-semibold text-slate-900">
+                  What safety certifications do your rental scaffolds have?
+                </h3>
+                <p className="text-sm text-slate-600 mt-2">
+                  Our rental scaffolds meet CE and TSE requirements and are inspected before
+                  dispatch. Each system includes documented safety locks (parachute lock),
+                  wire rope assemblies, and compliant guardrail sets.
+                </p>
+              </div>
             </div>
           </div>
         </div>

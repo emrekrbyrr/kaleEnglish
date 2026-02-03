@@ -7,7 +7,7 @@ const navLinks = [
   { path: "/", label: "Home" },
   { path: "/about", label: "About Us" },
   { path: "/products", label: "Products" },
-  { path: "/rental", label: "Rental Services" },
+  { path: "/suspended-platform-rental-africa-europe", label: "Rental Services" },
   { path: "/contact", label: "Contact" },
 ];
 

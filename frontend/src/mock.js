@@ -219,8 +219,8 @@ export const testimonials = [
 ];
 
 export const rentalInfo = {
-  title: "Suspended Scaffold Rental",
-  description: "Export-ready swing stage rentals and suspended platform systems for high-rise construction and facade maintenance across Africa and Europe. CE & TSE certified SWP configurations with installation, inspections, and on-call support.",
+  title: "Swing Stage & Suspended Platform Rental",
+  description: "Swing Stage rental and suspended platform systems for high-rise construction and facade maintenance across Africa and Europe. We offer ZLP800 and ZLP630 series packages with CE & TSE certified SWP compliance, installation, inspections, and on-call support.",
   benefits: [
     "Lower upfront costs versus purchase",
     "Latest platform revisions and safety locks",

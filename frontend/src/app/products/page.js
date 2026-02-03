@@ -99,7 +99,7 @@ const ProductsPage = () => {
 
                     <div className="flex flex-col sm:flex-row gap-3">
                       <Link
-                        href="/rental"
+                        href="/suspended-platform-rental-africa-europe"
                         className="px-6 py-3 bg-red-600 text-white rounded-lg hover:bg-red-700 transition-colors text-center font-medium"
                       >
                         Rent This Product

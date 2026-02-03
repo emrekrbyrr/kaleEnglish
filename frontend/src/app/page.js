@@ -26,9 +26,9 @@ export const dynamic = "force-static";
 
 export function generateMetadata() {
   return {
-    title: "KaleLift | Suspended Platform Rental & Sales",
+    title: "KaleLift | Swing Stage & Suspended Platform Rental",
     description:
-      "Certified suspended access systems, rentals, and installation support for high-rise projects across Africa and Europe.",
+      "Certified swing stage rental, suspended platform sales, and installation support for high-rise projects across Africa and Europe.",
     alternates: {
       canonical: "/",
     },
@@ -77,14 +77,14 @@ const structuredData = {
     },
     {
       "@type": "Service",
-      serviceType: "Suspended platform rental",
+      serviceType: "Swing stage and suspended platform rental",
       provider: {
         "@type": "Organization",
         name: companyInfo.name,
       },
       areaServed: ["Africa", "Europe", "Turkey"],
       description:
-        "Suspended platform rental, sales, and installation support for high-rise construction and facade maintenance projects.",
+        "Swing stage rental, suspended platform sales, and installation support for high-rise construction and facade maintenance projects.",
     },
   ],
 };
@@ -101,16 +101,16 @@ const HomePage = () => {
         <div className="container mx-auto">
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="text-5xl md:text-6xl font-bold text-slate-900 mb-6">
-              {companyInfo?.tagline || "Your Solution Partner While Rising"}
+              Suspended Platform & Swing Stage Rental for Africa & Europe
             </h1>
             <p className="text-xl text-slate-600 mb-8 leading-relaxed">
-              Certified suspended platform rental and sales for high-rise construction,
+              Certified swing stage rental and suspended platform sales for high-rise construction,
               facade restoration, and maintenance across Africa and Europe. Modular decks,
               safety-locked hoists, and expert setup keep crews moving.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <Link
-                href="/rental"
+                href="/suspended-platform-rental-africa-europe"
                 className="group px-8 py-4 bg-red-600 text-white rounded-lg hover:bg-red-700 transition-all hover:shadow-lg flex items-center space-x-2"
               >
                 <span className="font-medium">Explore Rental Services</span>

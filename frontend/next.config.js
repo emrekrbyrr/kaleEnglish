@@ -8,6 +8,15 @@ const nextConfig = {
       },
     ],
   },
+  async redirects() {
+    return [
+      {
+        source: "/rental",
+        destination: "/suspended-platform-rental-africa-europe",
+        permanent: true,
+      },
+    ];
+  },
 };
 
 module.exports = nextConfig;
