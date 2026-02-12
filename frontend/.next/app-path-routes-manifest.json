@@ -1,0 +1,12 @@
+{
+  "/_global-error/page": "/_global-error",
+  "/_not-found/page": "/_not-found",
+  "/about/page": "/about",
+  "/api/contact/route": "/api/contact",
+  "/contact/page": "/contact",
+  "/page": "/",
+  "/products/page": "/products",
+  "/rental/page": "/rental",
+  "/sitemap.xml/route": "/sitemap.xml",
+  "/suspended-platform-rental-africa-europe/page": "/suspended-platform-rental-africa-europe"
+}

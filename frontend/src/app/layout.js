@@ -12,18 +12,26 @@ export const metadata = {
     template: "%s | KaleLift",
   },
   description: companyInfo.description,
+  // İkonları buraya ekliyoruz:
+  icons: {
+    icon: [
+      { url: "/K_icon.png", sizes: "48x48", type: "image/png" },
+      { url: "/K_icon.png", sizes: "96x96", type: "image/png" },
+    ],
+    apple: "/K_icon.png",
+  },
   openGraph: {
     type: "website",
     url: SITE_URL,
     title: "KaleLift",
     description: companyInfo.description,
-    images: ["/favicon.png"],
+    images: ["/K_icon.png"], // Burayı da güncelledik
   },
   twitter: {
     card: "summary_large_image",
     title: "KaleLift",
     description: companyInfo.description,
-    images: ["/favicon.png"],
+    images: ["/K_icon.png"], // Burayı da güncelledik
   },
 };
 

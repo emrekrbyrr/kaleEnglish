@@ -1,0 +1,15 @@
+{
+  "headers": {
+    "x-nextjs-stale-time": "300",
+    "x-nextjs-prerender": "1",
+    "x-next-cache-tags": "_N_T_/layout,_N_T_/suspended-platform-rental-africa-europe/layout,_N_T_/suspended-platform-rental-africa-europe/page,_N_T_/suspended-platform-rental-africa-europe"
+  },
+  "segmentPaths": [
+    "/_tree",
+    "/_full",
+    "/suspended-platform-rental-africa-europe/__PAGE__",
+    "/suspended-platform-rental-africa-europe",
+    "/_index",
+    "/_head"
+  ]
+}
