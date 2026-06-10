@@ -15,9 +15,60 @@ export function generateMetadata() {
   };
 }
 
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "What is the monthly cost of suspended platform rental?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Monthly pricing depends on platform length, load rating, and whether you select ZLP800 or ZLP630 swing stage rental packages. We quote based on project duration, installation scope, and shipping destination.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Do you provide ZLP800 rental for African projects?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Yes. We provide ZLP800 rental systems with export-ready documentation and on-site support for projects in Nigeria, Ghana, Kenya, South Africa, and other African markets.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "What safety certifications do your rental scaffolds have?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Our rental scaffolds meet CE and TSE requirements and are inspected before dispatch. Each system includes documented safety locks (parachute lock), wire rope assemblies, and compliant guardrail sets.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "How long does shipping take to Africa?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Shipping times vary by destination. For West Africa (Nigeria, Ghana) expect 3–5 weeks. East Africa (Kenya) 4–6 weeks. We maintain a logistics hub in Johannesburg, South Africa for faster regional distribution.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Do you offer installation and training support?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Yes. Every rental package includes on-site rigging, setup guidance, and crew safety training. Our team coordinates with site supervisors to ensure safe installation and handover.",
+      },
+    },
+  ],
+};
+
 const RentalPage = () => {
   return (
     <div className="min-h-screen">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
       <section className="pt-32 pb-16 px-4 bg-gradient-to-br from-gray-50 to-gray-100">
         <div className="container mx-auto">
           <div className="max-w-3xl mx-auto text-center">
@@ -278,6 +329,26 @@ const RentalPage = () => {
                   Our rental scaffolds meet CE and TSE requirements and are inspected before
                   dispatch. Each system includes documented safety locks (parachute lock),
                   wire rope assemblies, and compliant guardrail sets.
+                </p>
+              </div>
+              <div className="bg-white rounded-2xl p-6 shadow-sm">
+                <h3 className="text-lg font-semibold text-slate-900">
+                  How long does shipping take to Africa?
+                </h3>
+                <p className="text-sm text-slate-600 mt-2">
+                  Shipping times vary by destination. For West Africa (Nigeria, Ghana) expect
+                  3–5 weeks. East Africa (Kenya) 4–6 weeks. We maintain a logistics hub in
+                  Johannesburg, South Africa for faster regional distribution.
+                </p>
+              </div>
+              <div className="bg-white rounded-2xl p-6 shadow-sm">
+                <h3 className="text-lg font-semibold text-slate-900">
+                  Do you offer installation and training support?
+                </h3>
+                <p className="text-sm text-slate-600 mt-2">
+                  Yes. Every rental package includes on-site rigging, setup guidance, and crew
+                  safety training. Our team coordinates with site supervisors to ensure safe
+                  installation and handover.
                 </p>
               </div>
             </div>

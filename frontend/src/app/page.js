@@ -61,30 +61,76 @@ const structuredData = {
   "@context": "https://schema.org",
   "@graph": [
     {
-      "@type": "Organization",
+      "@type": ["Organization", "LocalBusiness"],
+      "@id": `${SITE_URL}/#organization`,
       name: companyInfo.name,
       url: SITE_URL,
       description: companyInfo.description,
       email: companyInfo.email,
       telephone: companyInfo.phone,
-      address: companyInfo.address,
+      foundingDate: companyInfo.established,
+      address: {
+        "@type": "PostalAddress",
+        addressLocality: "Büyükçekmece",
+        addressRegion: "Istanbul",
+        addressCountry: "TR",
+      },
       sameAs: [
         "https://www.kaleplatform.com",
         "https://www.linkedin.com/company/kale-platform/",
         "https://www.instagram.com/kale_platform",
         "https://www.youtube.com/channel/UC7hO-P7SET0U-I7x8TWxwBA",
       ],
+      areaServed: [
+        { "@type": "Continent", name: "Africa" },
+        { "@type": "Continent", name: "Europe" },
+        { "@type": "Country", name: "Nigeria" },
+        { "@type": "Country", name: "Ghana" },
+        { "@type": "Country", name: "Kenya" },
+        { "@type": "Country", name: "South Africa" },
+        { "@type": "Country", name: "Germany" },
+        { "@type": "Country", name: "France" },
+        { "@type": "Country", name: "United Kingdom" },
+        { "@type": "Country", name: "Italy" },
+      ],
     },
     {
       "@type": "Service",
+      "@id": `${SITE_URL}/#service`,
       serviceType: "Swing stage and suspended platform rental",
-      provider: {
-        "@type": "Organization",
-        name: companyInfo.name,
-      },
+      provider: { "@id": `${SITE_URL}/#organization` },
       areaServed: ["Africa", "Europe", "Turkey"],
       description:
         "Swing stage rental, suspended platform sales, and installation support for high-rise construction and facade maintenance projects.",
+      hasOfferCatalog: {
+        "@type": "OfferCatalog",
+        name: "Suspended Platform Rental & Sales",
+        itemListElement: [
+          {
+            "@type": "Offer",
+            itemOffered: {
+              "@type": "Service",
+              name: "ZLP800 Swing Stage Rental",
+              description: "ZLP800 suspended platform rental with CE/TSE certification, installation support, and export documentation.",
+            },
+          },
+          {
+            "@type": "Offer",
+            itemOffered: {
+              "@type": "Service",
+              name: "Suspended Scaffold Sales",
+              description: "CE/TSE certified suspended scaffold systems for purchase with full engineering and export documentation.",
+            },
+          },
+        ],
+      },
+    },
+    {
+      "@type": "WebSite",
+      "@id": `${SITE_URL}/#website`,
+      url: SITE_URL,
+      name: "KaleLift",
+      publisher: { "@id": `${SITE_URL}/#organization` },
     },
   ],
 };

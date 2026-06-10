@@ -26,9 +26,42 @@ const productImages = {
   "turning-platform": "/turning-platform.jpg",
 };
 
+const productSchema = {
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  name: "KaleLift Suspended Platform Products",
+  description:
+    "CE and TSE certified suspended platform systems, swing stages, and facade access solutions for construction projects in Africa and Europe.",
+  itemListElement: products.map((product, index) => ({
+    "@type": "ListItem",
+    position: index + 1,
+    item: {
+      "@type": "Product",
+      name: product.name,
+      description: product.description,
+      brand: {
+        "@type": "Brand",
+        name: "KaleLift",
+      },
+      offers: {
+        "@type": "Offer",
+        availability: "https://schema.org/InStock",
+        seller: {
+          "@type": "Organization",
+          name: "KaleLift",
+        },
+      },
+    },
+  })),
+};
+
 const ProductsPage = () => {
   return (
     <div className="min-h-screen">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(productSchema) }}
+      />
       <section className="pt-32 pb-16 px-4 bg-gradient-to-br from-gray-50 to-gray-100">
         <div className="container mx-auto">
           <div className="max-w-3xl mx-auto text-center">
