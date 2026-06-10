@@ -21,6 +21,7 @@ import {
   stats,
 } from "@/mock";
 import { SITE_URL } from "@/lib/site";
+import HeroSection from "@/components/HeroSection";
 
 export const dynamic = "force-static";
 
@@ -142,36 +143,7 @@ const HomePage = () => {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
       />
-      <section className="relative pt-32 pb-20 px-4 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-gray-50 to-gray-100 -z-10"></div>
-        <div className="container mx-auto">
-          <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-5xl md:text-6xl font-bold text-slate-900 mb-6">
-              Suspended Platform & Swing Stage Rental for Africa & Europe
-            </h1>
-            <p className="text-xl text-slate-600 mb-8 leading-relaxed">
-              Certified swing stage rental and suspended platform sales for high-rise construction,
-              facade restoration, and maintenance across Africa and Europe. Modular decks,
-              safety-locked hoists, and expert setup keep crews moving.
-            </p>
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <Link
-                href="/suspended-platform-rental-africa-europe"
-                className="group px-8 py-4 bg-red-600 text-white rounded-lg hover:bg-red-700 transition-all hover:shadow-lg flex items-center space-x-2"
-              >
-                <span className="font-medium">Explore Rental Services</span>
-                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-              </Link>
-              <Link
-                href="/contact"
-                className="px-8 py-4 bg-white text-slate-700 border-2 border-gray-300 rounded-lg hover:border-red-600 hover:text-red-600 transition-all font-medium"
-              >
-                Get a Quote
-              </Link>
-            </div>
-          </div>
-        </div>
-      </section>
+      <HeroSection companyInfo={companyInfo} />
 
       <section className="py-16 bg-gray-50">
         <div className="container mx-auto px-4">
